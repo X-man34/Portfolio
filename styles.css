@@ -155,3 +155,25 @@ footer {
         margin: 0 10px;
     }
 }
+/* Style for multiple links in project card */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.project-links a {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+.project-links a:hover {
+    background: #2980b9;
+}
