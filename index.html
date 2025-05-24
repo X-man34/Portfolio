@@ -3,70 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Caleb Hottes</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My Portfolio - [Your Name]</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles for specific elements */
+        .project-media {
+            transition: transform 0.3s ease;
+        }
+        .project-media:hover {
+            transform: scale(1.05);
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(to right, #3b82f6, #60a5fa);
+        }
+    </style>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>[Your Name]</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+<body class="bg-gray-100 font-sans text-gray-800">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">[Your Name]</h1>
+            <div class="space-x-6">
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-primary text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-4">Hello, I'm [Your Name]</h1>
+            <p class="text-xl mb-6">A passionate engineer and developer with a focus on innovative solutions.</p>
+            <a href="#projects" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">View My Work</a>
         </div>
     </header>
 
-    <!-- About Me Section -->
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>Hi, I'm [Your Name], a [your major] student at [Your University]. I’m passionate about [your interests, e.g., software development, data science, etc.], and I love working on projects that solve real-world problems. Below, you’ll find some of the projects I’ve completed during my time at university.</p>
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="max-w-3xl mx-auto text-lg text-gray-700 text-center">
+                <p class="mb-4">I'm a 19-year-old student from Boise State university. I have a strong background in design and software development, with a particular interest in creating practical and mechanical systems. I don't shy away from integrating software into whatever i'm making.</p>
+                <p class="mb-4">I recently completed a design class where I honed my skills in conceptualizing and executing projects, culminating in a final design report and working prototype. I'm excited to apply my skills in real-world applications.</p>
+                <p>Outside of work, I enjoy coding, engineering, hiking, and exploring new technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">My Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-paint-brush text-blue-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Design</h3>
+                    <p class="text-gray-600">Experienced in creating detailed design reports, prototypes, and drawing packages using tools like Solidworks, Autodesk Inventor, VSCode, etc. </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-code text-blue-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Development</h3>
+                    <p class="text-gray-600">Proficient in Python and java, and implementing machine learning algorithms and AI to play board games.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-lightbulb text-blue-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Problem Solving</h3>
+                    <p class="text-gray-600">Strong analytical skills to tackle complex challenges and deliver effective, user-centered solutions.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="container">
-        <h2>My University Projects</h2>
-        <div class="project-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <h3>Design 1-All Terrain Trailer</h3>
-                <p>For my design I class project, I created a all terrain trailer....  NEEDS UPDATING HERE The goal was to develop a functional and manufacturable design while adhering to engineering principles. I used tools like SolidWorks for CAD modeling and conducted simulations to validate the design. Through this project, I learned about iterative design processes, material selection, and technical documentation. Below are links to various components of the project:</p>
-                <div class="project-links">
-                    <a href="assets/ME287/ME287_Final_Design_Report_Hottes_Caleb.pdf" target="_blank">Design Report (PDF)</a>
-                    <a href="assets/ME287/FailureAtInitalTesting.mov" target="_blank">Video Demonstration</a>
-                    <a href="assets/ME287/drawing_package.pdf" target="_blank">Drawing Package (PDF)</a>
-                    <a href="assets/ME287/TrailerV2.html" target="_blank">Interactive CAD Model</a>
+    <section id="projects" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
+            <div class="max-w-5xl mx-auto">
+                <!-- Project 1: Design Project -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Design Project I: All terrain trailer</h3>
+                    <p class="text-gray-700 mb-6">During my  first design class I worked on a project involving creating a functional design from concept to prototype, including detailed documentation, testing and iteration. Below, you can explore the various components of this project.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Final Design Report (PDF) -->
+                        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
+                            <h4 class="text-lg font-semibold mb-2">Final Design Report (PDF)</h4>
+                            <p class="text-gray-600 mb-4">A detailed report outlining the design process, analysis, and conclusions.</p>
+                            <iframe src="assets/ME287/ME287_Final_Design_Report_Hottes_Caleb.pdf" title="Final Design Report (PDF)" class="w-full h-48 rounded"></iframe>
+                            <a href="assets/ME287/ME287_Final_Design_Report_Hottes_Caleb.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Open in Full Screen</a>
+                        </div>
+                        <!-- Video of it Working -->
+                        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
+                            <h4 class="text-lg font-semibold mb-2">Video Demonstration</h4>
+                            <p class="text-gray-600 mb-4">A video showcasing the prototype in action.</p>
+                            <iframe class="w-full h-48 rounded" width="1905" height="748" src="https://www.youtube.com/embed/J1KkbxedkgE" title="ME287FinalProjectTest" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                        </div>
+                        <!-- Drawing Package (PDF) -->
+                        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
+                            <h4 class="text-lg font-semibold mb-2">Drawing Package (PDF)</h4>
+                            <p class="text-gray-600 mb-4">Technical drawings and schematics for the design.</p>
+                            <iframe src="assets/ME287/ME287DrawingPackage.pdf" title="Drawing Package (PDF)" class="w-full h-48 rounded"></iframe>
+                            <a href="assets/ME287/ME287DrawingPackage.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Open in Full Screen</a>
+                        </div>
+                        <!-- Interactive CAD Model (HTML) -->
+                        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
+                            <h4 class="text-lg font-semibold mb-2">Interactive CAD Model</h4>
+                            <p class="text-gray-600 mb-4">An interactive 3D model of the design (view in full screen for best experience).</p>
+                            <iframe src="assets/ME287/TrailerV2.html" title="Interactive CAD Model" class="w-full h-48 rounded"></iframe>
+                            <a href="assets/ME287/TrailerV2.html" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition mt-2 inline-block">Open in Full Screen</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- Project 2 -->
-            <div class="project-card">
-                <h3>Project Title 2</h3>
-                <p>[Description of the project. What was the goal? What technologies did you use? What did you learn?]</p>
-                <a href="[Link to GitHub or live demo, if available]" target="_blank">View Project</a>
-            </div>
-            <!-- Add more projects as needed -->
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:[your-email@example.com]">[your-email@example.com]</a></p>
-        <p>LinkedIn: <a href="[your LinkedIn URL]" target="_blank">linkedin.com/in/[your-username]</a></p>
-        <p>GitHub: <a href="[your GitHub URL]" target="_blank">github.com/[your-username]</a></p>
+    <section id="contact" class="py-16 bg-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Get In Touch</h2>
+            <p class="text-lg text-gray-700 mb-6">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="mailto:your.email@example.com" class="text-blue-600 hover:text-blue-800 transition">
+                    <i class="fas fa-envelope text-3xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                    <i class="fab fa-linkedin text-3xl"></i>
+                </a>
+                <a href="https://github.com/yourusername" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                    <i class="fab fa-github text-3xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-600">Email: <a href="mailto:your.email@example.com" class="hover:underline">your.email@example.com</a></p>
+            <p class="text-gray-600">Phone: [Your Phone Number]</p>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 [Your Name]. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
