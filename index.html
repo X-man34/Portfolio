@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - [Your Name]</title>
+    <title>Placeholder</title>
     <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for icons -->
@@ -21,24 +21,15 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 font-sans text-gray-800">
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-600">[Your Name]</h1>
-            <div class="space-x-6">
-                <a href="#about" class="hover:text-blue-600 transition">About</a>
-                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
-                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
-                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
-            </div>
-        </div>
-    </nav>
+<script src="scripts/common.js"></script>
 
+<body class="bg-gray-100 font-sans text-gray-800">
+
+    <div id="navbar-placeholder"></div>
     <!-- Hero Section -->
     <header class="bg-gradient-primary text-white py-20">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl font-bold mb-4">Hello, I'm [Your Name]</h1>
+            <h1 class="text-5xl font-bold mb-4">Hello, I'm  <span class="my-name"></span></h1>
             <p class="text-xl mb-6">A passionate engineer and developer with a focus on innovative solutions.</p>
             <a href="#projects" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">View My Work</a>
         </div>
@@ -88,36 +79,35 @@
                 <!-- Project 1: Design Project -->
                 <div class="bg-white rounded-lg shadow-md p-6 mb-8">
                     <h3 class="text-2xl font-bold mb-4">Design Project I: All terrain trailer</h3>
-                    <p class="text-gray-700 mb-6">During my  first design class I worked on a project involving creating a functional design from concept to prototype, including detailed documentation, testing and iteration. Below, you can explore the various components of this project.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Final Design Report (PDF) -->
+                    <p class="text-gray-700 mb-6">During my first design class I designed, fabricated, tested, iterated, and documented a solution to the given challenge. The challenge was to design a trailer that can transport a 5.5lb payload across an uneven course.  The key constraint was that the payload must be balanced on the top of the solution. Below you can see my final design and explore more of the details of this project.</p>
+                        
                         <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
-                            <h4 class="text-lg font-semibold mb-2">Final Design Report (PDF)</h4>
-                            <p class="text-gray-600 mb-4">A detailed report outlining the design process, analysis, and conclusions.</p>
-                            <iframe src="assets/ME287/ME287_Final_Design_Report_Hottes_Caleb.pdf" title="Final Design Report (PDF)" class="w-full h-48 rounded"></iframe>
-                            <a href="assets/ME287/ME287_Final_Design_Report_Hottes_Caleb.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Open in Full Screen</a>
+                            <h4 class="text-lg font-semibold mb-2">My Solution</h4>
+                            <div class="flex gap-4 mb-6">
+                                <img src="assets/ME287/FinalDesignTop.jpg" alt="Top of Solution" class="w-1/3 rounded-lg shadow-md object-cover mx-auto" />
+                                <img src="assets/ME287/FinalDesignBottom.jpg" alt="Bottom of Solution" class="w-1/3 rounded-lg shadow-md object-cover mx-auto" />
+                            </div>
+                            <a href="AllTerrainTrailer.html"  class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more details</a>
+                        </div>
+                </div>
+                <!-- Robotics Project 1-->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Robotics: Furuta Pendulum Kinematics</h3>
+                    <p class="text-gray-700 mb-6">In my first robotics project my partner and I worked together to analyze and simulate the kinematics of a Futura Pendulum using analytical and software methods. We derived and evaluated formulas with code, modeled the pendulum with MuJoCo, (A python library) and verified analytical results using the model. Below is an image of our simulated pendulum and a video of the simulation. Click the button to see reports, code, and more details. </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Simulation Image -->
+                        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
+                            <h4 class="text-lg font-semibold mb-2">Image of simulation</h4>
+                            <img src="assets/ME467Project1/Simulation.png" alt="Image of simulation" class="rounded-lg shadow-md object-cover mx-auto" />
                         </div>
                         <!-- Video of it Working -->
                         <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
                             <h4 class="text-lg font-semibold mb-2">Video Demonstration</h4>
                             <p class="text-gray-600 mb-4">A video showcasing the prototype in action.</p>
-                            <iframe class="w-full h-48 rounded" width="1905" height="748" src="https://www.youtube.com/embed/J1KkbxedkgE" title="ME287FinalProjectTest" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe class="w-full h-48 rounded" width="1905" height="748" src="https://www.youtube.com/embed/dJtKOITcGIg" title="ME287FinalProjectTest" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                         </div>
-                        <!-- Drawing Package (PDF) -->
-                        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
-                            <h4 class="text-lg font-semibold mb-2">Drawing Package (PDF)</h4>
-                            <p class="text-gray-600 mb-4">Technical drawings and schematics for the design.</p>
-                            <iframe src="assets/ME287/ME287DrawingPackage.pdf" title="Drawing Package (PDF)" class="w-full h-48 rounded"></iframe>
-                            <a href="assets/ME287/ME287DrawingPackage.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Open in Full Screen</a>
-                        </div>
-                        <!-- Interactive CAD Model (HTML) -->
-                        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
-                            <h4 class="text-lg font-semibold mb-2">Interactive CAD Model</h4>
-                            <p class="text-gray-600 mb-4">An interactive 3D model of the design (view in full screen for best experience).</p>
-                            <iframe src="assets/ME287/TrailerV2.html" title="Interactive CAD Model" class="w-full h-48 rounded"></iframe>
-                            <a href="assets/ME287/TrailerV2.html" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition mt-2 inline-block">Open in Full Screen</a>
-                        </div>
+                        <a href="RoboticsProject1.html"  class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition mx-auto col-span-2 justify-self-center">See more details</a>
                     </div>
                 </div>
             </div>
@@ -130,26 +120,29 @@
             <h2 class="text-3xl font-bold mb-12">Get In Touch</h2>
             <p class="text-lg text-gray-700 mb-6">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
             <div class="flex justify-center space-x-6 mb-8">
-                <a href="mailto:your.email@example.com" class="text-blue-600 hover:text-blue-800 transition">
+                <a href="#" class="hover:underline email-link" class="text-blue-600 hover:text-blue-800 transition">
                     <i class="fas fa-envelope text-3xl"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
                     <i class="fab fa-linkedin text-3xl"></i>
                 </a>
-                <a href="https://github.com/yourusername" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                <a href="https://github.com/X-man34" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
                     <i class="fab fa-github text-3xl"></i>
                 </a>
             </div>
-            <p class="text-gray-600">Email: <a href="mailto:your.email@example.com" class="hover:underline">your.email@example.com</a></p>
-            <p class="text-gray-600">Phone: [Your Phone Number]</p>
+            <p class="text-gray-600">Email: <a href="#" class="hover:underline email-link"><span class="my-email"></span></a></p>
+            <p class="text-gray-600">Phone: <span class="my-phone"></span></p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2023 [Your Name]. All rights reserved.</p>
+            <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
         </div>
     </footer>
+
+
+
 </body>
 </html>

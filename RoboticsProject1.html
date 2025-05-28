@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Terrain Trailer | Design Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<script src="scripts/common.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+<div id="navbar-placeholder"></div>
+  <!-- Header -->
+  <header class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
+      <h1 class="text-xl md:text-2xl font-bold">All Terrain Trailer</h1>
+      <a href="index.html" class="text-blue-600 hover:underline text-sm">← Back to Portfolio</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <section class="bg-white rounded-lg shadow-md p-6">
+      <h2 class="text-3xl font-semibold mb-4">Robotics Project I: Furuta Pendulum Kinematics</h2>
+      <p class="text-gray-700 mb-6 text-lg">
+        The Furuta pendulum project forced me to learn Lee Algebra and was my first taste of using sympy for math. There were four questions in the project summarized below:
+      </p>
+      <ul>
+        <li class="mb-2">1. Resolve the position-level forward and inverse kinematics of the Furuta pendulum with
+the help of the coordinate systems shown as shown in the figure. Once you have the
+kinematic equations, answer the following questions...</li>
+        <li class="mb-2">2. Resolve the velocity-level forward and inverse kinematics of the Furuta pendulum and
+answer the following questions...</li>
+        <li class="mb-2">3. Implement the Furuta pendulum in MuJoCo and use its utility functions to verify all
+the kinematic equations you derived in Questions 1 and 2. Make sure that the frames
+that you define in MuJoCo match the ones given in the figure above.
+</li>
+        <li class="mb-2">4. Simulate the Furuta pendulum with MuJoCo using the fourth-order Runge-Kutta integrator for 15s under the action of gravity and a control torque on the first link given
+by <p>
+    \[ \tau = -15 sgn \dot{\theta_2} \]
+
+</p> and record the motion of the system. Make the links cylindrical with a radius of 0.1m
+for the part of length d2 and 0.075m for the part with length d3...</li>
+      </ul>
+
+
+      <p class="text-gray-700 mb-6 text-lg">
+        
+        Below you can find the full version of the instructions, the report, answers the individual questions and various other resources.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Final Report -->
+        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">Final Design Report</h3>
+          <p class="text-gray-600 mb-4">A detailed technical report exhaustively detailing all math and reasoning, assumes a high degree of familiarity with subject matter.</p>
+          <iframe src="assets/ME467Project1/Friley_Hottes_Project1.html" title="Final Report" class="w-full h-56 rounded border"></iframe>
+          <a href="assets/ME467Project1/Friley_Hottes_Project1.html" target="_blank" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open</a>
+        </div>
+
+        <!-- Instructions -->
+        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">Project Instructions</h3>
+          <p class="text-gray-600 mb-4">The instructions we were given for the project</p>
+          <iframe class="w-full h-56 rounded border" src="assets/ME467Project1/Instructions.pdf" title="Instructions" allowfullscreen></iframe>
+          <a href="assets/ME467Project1/Instructions.pdf" target="_blank" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open</a>
+        </div>
+
+        <!-- Video of it Working -->
+        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
+            <h4 class="text-lg font-semibold mb-2">Video of the Simulation</h4>
+            <p class="text-gray-600 mb-4">Here is a video of me running the Jupyter notebook for question 4, it shows the simulation and the graphs created by it.</p>
+            <iframe class="w-full h-48 rounded" width="1905" height="748" src="https://www.youtube.com/embed/dJtKOITcGIg" title="ME467SimulationVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        </div>
+
+        <!-- Question 1 and 2 -->
+        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">Question 1 and 2 code</h3>
+          <p class="text-gray-600 mb-4">Jupyter export of code for questions 1 and 2</p>
+          <iframe src="assets/ME467Project1/Question1+2_final.html" title="Question 1 and 2" class="w-full h-56 rounded border"></iframe>
+          <a href="assets/ME467Project1/Question1+2_final.html" target="_blank" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open</a>
+        </div>
+        
+        <!-- Question 3 -->
+        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">Question 3</h3>
+          <p class="text-gray-600 mb-4">Jupyter export of code for question 3</p>
+          <iframe src="assets/ME467Project1/Question3.html" title="Question 3" class="w-full h-56 rounded border"></iframe>
+          <a href="assets/ME467Project1/Question3.html" target="_blank" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open</a>
+        </div>
+        <!-- Question 3 -->
+        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">Question 4</h3>
+          <p class="text-gray-600 mb-4">Jupyter export of code for question 4</p>
+          <iframe src="assets/ME467Project1/Question4.html" title="Question 4" class="w-full h-56 rounded border"></iframe>
+          <a href="assets/ME467Project1/Question4.html" target="_blank" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto px-6 text-center">
+          <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
+      </div>
+  </footer>
+
+</body>
+</html>
