@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robotics: Localization</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<script src="scripts/common.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+<div id="navbar-placeholder"></div>
+  <!-- Header -->
+  <header class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
+      <h1 class="text-xl md:text-2xl font-bold">DH-Kinematics</h1>
+      <a href="index.html" class="text-blue-600 hover:underline text-sm">← Back to Portfolio</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <section class="bg-white rounded-lg shadow-md p-6">
+      <h2 class="text-3xl font-semibold mb-4">Robotics Project III: DH-Kinematics</h2>
+      <div class="mb-6">
+      <a href="https://github.com/X-man34/ME467_robotics_Project3" target="_blank" class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.28 3.438 9.75 8.205 11.325.6.112.82-.262.82-.582 0-.287-.01-1.05-.015-2.06-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.832 2.805 1.303 3.49.997.108-.775.418-1.303.76-1.603-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.465-2.382 1.235-3.222-.123-.303-.535-1.523.117-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 013.003-.403c1.02.005 2.045.138 3.003.403 2.28-1.552 3.285-1.23 3.285-1.23.657 1.653.245 2.873.12 3.176.77.84 1.23 1.912 1.23 3.222 0 4.61-2.807 5.625-5.48 5.92.43.37.823 1.103.823 2.222 0 1.604-.015 2.896-.015 3.29 0 .322.217.698.825.58C20.565 22.247 24 17.778 24 12.5 24 5.87 18.63.5 12 .5z"/>
+        </svg>
+        View on GitHub
+      </a>
+    </div>
+
+      <p class="text-gray-700 mb-6 text-lg">In my third robotics project the foreward and inverse position and velocity level kinematics were solved for a 6 degree of freedom robot arm. using analytical and closed form methods. The robot considered is the NexCOM miniBoT which has an articulated first joint and a spherical wrist. Foreward kinematics is simple, after assigning coordinate frames with the Denavit Hartenburg convention a simple matrix equation gives the position level kinematics. Then for velocity a kinematic Jacobian matrix can be created following a given formula and used to compute foreward and inverse velocity level kinematics. The tricky part is the inverse position kinematics. Because the robot has a spherical wrist the calculations for the position and orientation of the end-effector can be decoupled vastly simplifying the problem. The inverse kinematics function created is a fast closed-form function that yields 4 solutions in all positions, however it does not check if it is physically possible for the robot to reach the solutions. Finally, after writing all the code to solve this stuff, I decided to put it to use and created some code which creates a series of interpolated poses along a path and animates this movement using the inverse kinematics. Below you will find the final report which I have summarized here, the project instructions, the robot arm control animation and pictures of the arm model. </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Final Report -->
+        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">Final Report</h3>
+          <p class="text-gray-600 mb-4">A detailed report presenting what code was written, how that code approached the problem, what math it implemented, and how the code was put to use.</p>
+          <iframe src="assets/ME467Project3/Hottes_Caleb_Final_Report.html" title="Final Report" class="w-full h-56 rounded border"></iframe>
+          <a href="assets/ME467Project3/Hottes_Caleb_Final_Report.html" target="_blank" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open</a>
+        </div>
+
+        <!-- Instructions -->
+        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">Project Instructions</h3>
+          <p class="text-gray-600 mb-4">The instructions we were given for the project</p>
+          <iframe class="w-full h-56 rounded border" src="assets/ME467Project3/Instructions.pdf" title="Instructions" allowfullscreen></iframe>
+          <a href="assets/ME467Project3/Instructions.pdf" target="_blank" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open</a>
+        </div>
+
+        <!-- Video of it Working -->
+        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
+            <h4 class="text-lg font-semibold mb-2">Robot Arm Control Animation</h4>
+            <p class="text-gray-600 mb-4">Here is an animation of the robot arm being moved through a series of interpolated poses.</p>
+            <img src="assets/ME467Project3/Animation.gif" alt="Robot Arm Simulation" class="w-full h-48 object-contain rounded" />
+            <a href="assets/ME467Project3/Animation.gif" target="_blank" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open</a>
+        </div>
+        
+        <!-- Actual robot-->
+        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
+            <h4 class="text-lg font-semibold mb-2">Picture of the actual robot</h4>
+            <img src="assets/ME467Project3/Actual_robot.png" alt="Robot Arm Simulation" class="w-full h-48 object-contain rounded" />
+            <a href="assets/ME467Project3/Actual_robot.png" target="_blank" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open</a>
+        </div>
+
+        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
+            <h4 class="text-lg font-semibold mb-2">Picture of coordinate frames</h4>
+            <img src="assets/ME467Project3/mujoco_q1a.png" alt="Robot Arm Simulation" class="w-full h-48 object-contain rounded" />
+            <a href="assets/ME467Project3/mujoco_q1a.png" target="_blank" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open</a>
+        </div>
+
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto px-6 text-center">
+          <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
+      </div>
+  </footer>
+
+</body>
+</html>
