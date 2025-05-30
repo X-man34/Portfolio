@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Robotics: Localization</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+      /* Custom styles for specific elements */
+      .project-media {
+          transition: transform 0.3s ease;
+      }
+      .project-media:hover {
+          transform: scale(1.05);
+      }
+      .bg-gradient-primary {
+          background: linear-gradient(to right, #3b82f6, #60a5fa);
+      }
+  
+  </style>
+</head>
 </head>
 <script src="scripts/common.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -40,7 +58,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <!-- Final Report -->
-        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
           <h3 class="text-xl font-medium mb-2">Final Report</h3>
           <p class="text-gray-600 mb-4">A detailed report presenting what code was written, how that code approached the problem, what math it implemented, and how the code was put to use.</p>
           <iframe src="assets/ME467Project3/Hottes_Caleb_Final_Report.html" title="Final Report" class="w-full h-56 rounded border"></iframe>
@@ -48,7 +66,7 @@
         </div>
 
         <!-- Instructions -->
-        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
           <h3 class="text-xl font-medium mb-2">Project Instructions</h3>
           <p class="text-gray-600 mb-4">The instructions we were given for the project</p>
           <iframe class="w-full h-56 rounded border" src="assets/ME467Project3/Instructions.pdf" title="Instructions" allowfullscreen></iframe>

@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>All Terrain Trailer | Design Project</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles for specific elements */
+        .project-media {
+            transition: transform 0.3s ease;
+        }
+        .project-media:hover {
+            transform: scale(1.05);
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(to right, #3b82f6, #60a5fa);
+        }
+    
+    </style>
+</head>
 </head>
 <script src="scripts/common.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -63,7 +81,7 @@ for the part of length d2 and 0.075m for the part with length d3...</li>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <!-- Final Report -->
-        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
           <h3 class="text-xl font-medium mb-2">Final Design Report</h3>
           <p class="text-gray-600 mb-4">A detailed technical report exhaustively detailing all math and reasoning, assumes a high degree of familiarity with subject matter.</p>
           <iframe src="assets/ME467Project1/Friley_Hottes_Project1.html" title="Final Report" class="w-full h-56 rounded border"></iframe>
@@ -71,7 +89,7 @@ for the part of length d2 and 0.075m for the part with length d3...</li>
         </div>
 
         <!-- Instructions -->
-        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
           <h3 class="text-xl font-medium mb-2">Project Instructions</h3>
           <p class="text-gray-600 mb-4">The instructions we were given for the project</p>
           <iframe class="w-full h-56 rounded border" src="assets/ME467Project1/Instructions.pdf" title="Instructions" allowfullscreen></iframe>
@@ -87,7 +105,7 @@ for the part of length d2 and 0.075m for the part with length d3...</li>
         </div>
 
         <!-- Question 1 and 2 -->
-        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
           <h3 class="text-xl font-medium mb-2">Question 1 and 2 code</h3>
           <p class="text-gray-600 mb-4">Jupyter export of code for questions 1 and 2</p>
           <iframe src="assets/ME467Project1/Question1+2_final.html" title="Question 1 and 2" class="w-full h-56 rounded border"></iframe>
@@ -95,14 +113,14 @@ for the part of length d2 and 0.075m for the part with length d3...</li>
         </div>
         
         <!-- Question 3 -->
-        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
           <h3 class="text-xl font-medium mb-2">Question 3</h3>
           <p class="text-gray-600 mb-4">Jupyter export of code for question 3</p>
           <iframe src="assets/ME467Project1/Question3.html" title="Question 3" class="w-full h-56 rounded border"></iframe>
           <a href="assets/ME467Project1/Question3.html" target="_blank" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open</a>
         </div>
-        <!-- Question 3 -->
-        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+        <!-- Question 4 -->
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
           <h3 class="text-xl font-medium mb-2">Question 4</h3>
           <p class="text-gray-600 mb-4">Jupyter export of code for question 4</p>
           <iframe src="assets/ME467Project1/Question4.html" title="Question 4" class="w-full h-56 rounded border"></iframe>
