@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>All Terrain Trailer | Design Project</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+      /* Custom styles for specific elements */
+      .project-media {
+          transition: transform 0.3s ease;
+      }
+      .project-media:hover {
+          transform: scale(1.05);
+      }
+      .bg-gradient-primary {
+          background: linear-gradient(to right, #3b82f6, #60a5fa);
+      }
+  
+  </style>
+</head>
 </head>
 <script src="scripts/common.js"></script>
 
@@ -29,7 +47,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <!-- Final Report -->
-        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
           <h3 class="text-xl font-medium mb-2">Final Design Report</h3>
           <p class="text-gray-600 mb-4">A detailed overview of the entire design process, including sketches, analysis, and conclusions.</p>
           <iframe src="assets/ME287/ME287_Final_Design_Report_Hottes_Caleb.pdf" title="Final Report" class="w-full h-56 rounded border"></iframe>
@@ -37,14 +55,14 @@
         </div>
 
         <!-- Video -->
-        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
           <h3 class="text-xl font-medium mb-2">Video Demonstration</h3>
           <p class="text-gray-600 mb-4">See the prototype in action during testing.</p>
           <iframe class="w-full h-56 rounded border" src="https://www.youtube.com/embed/J1KkbxedkgE" title="Project Video" allowfullscreen></iframe>
         </div>
 
         <!-- Drawing Package -->
-        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
           <h3 class="text-xl font-medium mb-2">Drawing Package</h3>
           <p class="text-gray-600 mb-4">Technical schematics and mechanical drawings for manufacturing.</p>
           <iframe src="assets/ME287/ME287DrawingPackage.pdf" title="Drawing Package" class="w-full h-56 rounded border"></iframe>
@@ -52,7 +70,7 @@
         </div>
 
         <!-- CAD Model -->
-        <div class="bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
           <h3 class="text-xl font-medium mb-2">Interactive CAD Model</h3>
           <p class="text-gray-600 mb-4">Explore the 3D CAD model interactively in your browser.</p>
           <iframe src="assets/ME287/TrailerV2.html" title="Interactive CAD Model" class="w-full h-56 rounded border"></iframe>
