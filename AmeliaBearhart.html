@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AmeliaBearhart Viewer (legacy scripts)</title>
+   <style>
+    body, html { margin: 0; padding: 0; overflow: hidden; width: 100%; height: 100%; }
+    canvas { display: block; }
+
+    /* Loading screen styles */
+    #loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+      font-size: 1.5em;
+      z-index: 9999;
+    }
+
+    .loader {
+      animation: pulse 1.2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+  </style>
+</head>
+<body>
+     <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader">Loading model...</div>
+  </div>
+
+  <!-- Legacy scripts from same version -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.138.3/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/loaders/GLTFLoader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/loaders/DRACOLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/controls/OrbitControls.js"></script>
+
+  <script>
+    // ─── Scene Setup ─────────────────────────────────────────────
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    // Zoomed out and looking from above
+    camera.position.set(100, 100, 100);  // (x, y, z) → higher Y and farther Z
+    camera.lookAt(0, 0, 50);          // Aim at model center (assuming it's at origin)
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = false; // optional for smoother movement
+    controls.enableZoom = true;       // allow zoom (pinch)
+    controls.enableRotate = true;     // allow rotation (one-finger drag)
+    controls.enablePan = true;        // allow pan (two-finger drag)
+    controls.screenSpacePanning = false; // vertical panning or orbit
+
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0x202020);
+    document.body.appendChild(renderer.domElement);
+
+    // ─── Lighting ────────────────────────────────────────────────
+    const ambientLight = new THREE.AmbientLight(0xffffff, .4);
+    scene.add(ambientLight);
+
+    const radius = 10;   // Distance from the center
+    const height = 5;    // Y position of each light
+
+    for (let i = 0; i < 6; i++) {
+    const angle = (i / 6) * Math.PI * 2; // 0 to 2π in 6 steps
+    const x = Math.cos(angle) * radius;
+    const z = Math.sin(angle) * radius;
+
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1.5); // Adjust intensity as needed
+    dirLight.position.set(x, height, z);
+    dirLight.lookAt(0, 0, 0); // Point each light toward the center
+    scene.add(dirLight);
+    }
+    // ─── DRACO Loader Setup ───────────────────────────────────────
+    const dracoLoader = new THREE.DRACOLoader();
+    // Specify the path to DRACO decoder files
+    dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+
+
+    // ─── GLTF Loader with DRACO support ──────────────────────────
+    const loader = new THREE.GLTFLoader();
+    loader.setDRACOLoader(dracoLoader);
+
+loader.load(
+      'assets/FIRST/FRC/AmeliaBearhartCompressed.glb',
+      (gltf) => {
+        scene.add(gltf.scene);
+        document.getElementById('loading-screen').style.display = 'none'; // Hide loader
+      },
+      (xhr) => {
+        // Optional: progress tracking
+        const percent = (xhr.loaded / xhr.total) * 100;
+        console.log(`Loading: ${percent.toFixed(2)}%`);
+      },
+      (error) => {
+        console.error('Model load failed:', error);
+        document.getElementById('loading-screen').textContent = 'Failed to load model.';
+      }
+    );
+
+    // ─── Camera and Animation ────────────────────────────────────
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update(); // required if enableDamping is true
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
