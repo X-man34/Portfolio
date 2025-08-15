@@ -12,19 +12,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="scripts/media-gallery.js"></script>
-</head>
+  <!--- Loads re-useable text, hides back button on android, and other things that need to happen on all webpages. -->
+  <script src="scripts/common.js"></script>
+  <!--helps with browser compatibility-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <!--- Makrdown parser-->
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+  <!--renders latex-->
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 
-<!--- Loads re-useable text, hides back button on android, and other things that need to happen on all webpages. -->
-<script src="scripts/common.js"></script>
 
-<!--helps with browser compatibility-->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<!--- Makrdown parser-->
-<script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
-<!--renders latex-->
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
 
 <body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
   <div id="navbar-placeholder"></div><!--This is filled in by common.js at runtime with a common navbar.-->

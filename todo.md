@@ -13,3 +13,16 @@ There is a lot to do for the portfolio
 - add coding projects from my computer
 - coasters
 - Change Title to Caleb's Portfolio - [whatever page you are on home, FTC, FRC, etc.]
+
+changes to make to each page
+
+- fix header
+    - make back button use js back
+    - make sure it doens't scrunch up on mobile
+    - make it just say back
+- check mobile support
+    - padding
+    - things going on top of other things
+- review what it actually says
+- make sure back button on bottom hides itself on android
+- audit media presentation and ensure reasonable loading time. 
