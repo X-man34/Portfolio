@@ -7,3 +7,9 @@ There is a lot to do for the portfolio
 - make image gallery more intuitive
 - improve loading speeds 
     - maybe ditch iframes and just have thumbnails
+- add internship
+- add rocket launcher
+- add boat?
+- add coding projects from my computer
+- coasters
+- Change Title to Caleb's Portfolio - [whatever page you are on home, FTC, FRC, etc.]
