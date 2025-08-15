@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-</head>
+  <script src="scripts/media-gallery.js"></script>
 </head>
 <script src="scripts/common.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -47,16 +47,20 @@
         </div>
 
         <!-- Image Gallery 2020-2021 season-->
-        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
-          <h3 class="text-xl font-medium mb-2">The 2020-2021 Robot</h3>
-          <p class="text-gray-600 mb-4">Picture of the 2020-2021 robot, click to see gallery of build montage</p>
+       <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center" id="gallery-2020">
+        <h3 class="text-xl font-medium mb-2">The 2020-2021 Robot</h3>
+        <p class="text-gray-600 mb-4">Picture of the 2020-2021 robot, click to see gallery of build montage</p>
 
-          <!-- Gallery Thumbnails -->
-          <div class="grid grid-cols-1 gap-4">
-            <img src="assets/FIRST/FTC/2020-2021Robot.png" alt="Image 1" class="gallery-item h-auto rounded-lg shadow-md object-cover mx-auto mb-4" data-index="0">
-          </div>
-
+        <div class="grid grid-cols-1 gap-4">
+          <img
+            src="assets/FIRST/FTC/2020-2021Robot.png"
+            alt="Image 1"
+            class="gallery-thumb h-auto rounded-lg shadow-md object-cover mx-auto mb-4"
+            data-mg-index="0"
+          >
         </div>
+      </div>
+ 
 
         <!--- Match Footage -->
         <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
@@ -106,139 +110,34 @@
         </div>
 
 
-        <!-- Modal -->
-        <div id="modal" class="modal fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden">
-          <div class="relative">
-            <span class="close absolute top-0 right-0 p-5 text-white text-3xl cursor-pointer">&times;</span>
-            <img class="modal-content w-full max-w-2xl max-h-screen rounded-lg" id="modalImage">
-            <div class="modal-navigation absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-between w-full px-5 py-3 bg-black bg-opacity-50 text-white">
-              <button id="prevBtn" class="text-lg">Prev</button>
-              <button id="nextBtn" class="text-lg">Next</button>
-            </div>
-          </div>
-        </div>
 
-        <script>
-          const imageSources = [
-            "assets/FIRST/FTC/2020-2021Robot.png",
-            "assets/FIRST/FTC/Assembly/1.jpg",
-            "assets/FIRST/FTC/Assembly/2.jpg",
-            "assets/FIRST/FTC/Assembly/3.jpg",
-            "assets/FIRST/FTC/Assembly/4.jpg",
-            "assets/FIRST/FTC/Assembly/5.jpg",
-            "assets/FIRST/FTC/Assembly/6.jpg",
-            "assets/FIRST/FTC/Assembly/7.jpg",
-            "assets/FIRST/FTC/Assembly/8.jpg",
-            "assets/FIRST/FTC/Assembly/9.jpg",
-            "assets/FIRST/FTC/Assembly/10.jpg"
-          ];
+      <script>
+        const galleryItems = [
+          { src: "assets/FIRST/FTC/2020-2021Robot.png", type: "image" },
+          { src: "assets/FIRST/FTC/Assembly/1.jpg", type: "image" },
+          { src: "assets/FIRST/FTC/Assembly/2.jpg", type: "image" },
+          { src: "assets/FIRST/FTC/Assembly/3.jpg", type: "image" },
+          { src: "assets/FIRST/FTC/Assembly/4.jpg", type: "image" },
+          { src: "assets/FIRST/FTC/Assembly/5.jpg", type: "image" },
+          { src: "assets/FIRST/FTC/Assembly/6.jpg", type: "image" },
+          { src: "assets/FIRST/FTC/Assembly/7.jpg", type: "image" },
+          { src: "assets/FIRST/FTC/Assembly/8.jpg", type: "image" },
+          { src: "assets/FIRST/FTC/Assembly/9.jpg", type: "image" },
+          { src: "assets/FIRST/FTC/Assembly/10.jpg", type: "image" },
+          // { src: "assets/FIRST/FRC/scoutingServer/Showcase.mov", type: "video", poster: "assets/FIRST/FTC/Assembly/clip1-poster.jpg" },
+        ];
 
-          const galleryItem = document.querySelector('.gallery-item'); // Only one
-          const modal = document.getElementById('modal');
-          const modalImage = document.getElementById('modalImage');
-          const closeBtn = document.querySelector('.close');
-          const prevBtn = document.getElementById('prevBtn');
-          const nextBtn = document.getElementById('nextBtn');
-
-          let currentIndex = 0;
-
-          galleryItem.addEventListener('click', () => {
-            openModal(currentIndex);
-          });
-
-          function openModal(index) {
-            currentIndex = index;
-            modalImage.src = imageSources[currentIndex];
-            modal.classList.remove('hidden');
-          }
-
-          closeBtn.addEventListener('click', () => {
-            modal.classList.add('hidden');
-          });
-
-          prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
-            modalImage.src = imageSources[currentIndex];
-          });
-
-          nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % imageSources.length;
-            modalImage.src = imageSources[currentIndex];
-          });
-
-          window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-              modal.classList.add('hidden');
-            }
-          });
-          // Arrow key navigation
-          document.addEventListener('keydown', (e) => {
-            if (!modal.classList.contains('hidden')) {
-              if (e.key === 'ArrowRight') {
-                nextBtn.click();
-              } else if (e.key === 'ArrowLeft') {
-                prevBtn.click();
-              } else if (e.key === 'Escape') {
-                modal.classList.add('hidden');
-              }
-            }
-          });
-
-          let touchStartX = 0;
-          let touchStartY = 0;
-          let touchEndX = 0;
-          let touchEndY = 0;
-
-          modalImage.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            touchStartY = e.changedTouches[0].screenY;
-          }, { passive: true });
-
-          modalImage.addEventListener('touchmove', (e) => {
-            const dx = Math.abs(e.changedTouches[0].screenX - touchStartX);
-            const dy = Math.abs(e.changedTouches[0].screenY - touchStartY);
-
-            if (dx > dy) {
-              // Horizontal swipe → prevent vertical scroll
-              e.preventDefault();
-            }
-          }, { passive: false });
-
-          modalImage.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            touchEndY = e.changedTouches[0].screenY;
-            handleSwipeGesture();
-          }, { passive: true });
-
-          // Clicking or tapping outside image to close modal
-          modal.addEventListener('click', (event) => {
-            // Close only if clicked outside the modal content
-            const isClickInside = modalImage.contains(event.target) || event.target === prevBtn || event.target === nextBtn;
-            if (!isClickInside) {
-              modal.classList.add('hidden');
-            }
-          });
-          function handleSwipeGesture() {
-            const swipeThreshold = 50; // minimum distance in px to qualify as a swipe
-            const deltaX = touchEndX - touchStartX;
-
-            if (Math.abs(deltaX) > swipeThreshold) {
-              if (deltaX < 0) {
-                // Swiped left
-                nextBtn.click();
-              } else {
-                // Swiped right
-                prevBtn.click();
-              }
-            }
-          }
-
-        </script>
+        // Target the exact gallery container (use an id or more specific selector)
+        const gallery = new MediaGallery(document.getElementById('gallery-2020'), {
+          items: galleryItems,
+          preload: 'buffer' // 'none'|'current'|'buffer'
+        });
+      </script>
 
       </div>
     </section>
       <!-- Back Button at the Bottom -->
-      <div class="text-center mt-8">
+      <div class="text-center mt-8" id="backButton">
         <a href="javascript:history.back()" class="inline-block px-6 py-3 bg-gray-600 text-white rounded hover:bg-gray-700 transition">Back</a>
       </div>
   </main>

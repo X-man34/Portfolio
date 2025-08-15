@@ -24,3 +24,25 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(html => navbar.innerHTML = html);
   }
 });
+
+
+// Function to detect Android platform
+function isAndroid() {
+  return /Android/i.test(navigator.userAgent);
+}
+
+// Function to things for androids
+function hideBackButtonOnAndroid() {
+  if (isAndroid()) {
+    const backButtons = document.querySelectorAll('.android-hidden');
+    backButtons.forEach(button => {
+      button.style.display = 'none';  // Hide the element
+    });
+  }
+}
+
+
+// Automatically hide the back button when the page loads
+window.addEventListener('load', hideBackButtonOnAndroid);
+
+
