@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FIRST Robotics Competition</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/src/stylesheets/output.css">
+  <script src="/src/scripts/media-gallery.js"></script>
+  <!--- Loads re-useable text, hides back button on android, and other things that need to happen on all webpages. -->
+  <script src="/src/scripts/common.js"></script>
+  <!--helps with browser compatibility-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <!--- Makrdown parser-->
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+  <!--renders latex-->
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+
+
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+  <div id="navbar-placeholder"></div><!--This is filled in by common.js at runtime with a common navbar.-->
+
+  <!-- Header -->
+  <header class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between">
+      <img src="/assets/FIRST/FRC/FIRSTRobotics_iconHorz_RGB.png" alt="FIRST Robotics Logo"
+        class="h-16 md:h-20 flex-shrink-0">
+      <a href="javascript:history.back()" class="text-blue-600 hover:underline text-sm flex-1 text-right md:text-xl">←
+        Back</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-0 md:px-4 py-10">
+    <section class="bg-white rounded-lg shadow-md py-6 px-2 md:px-6">
+      <h2 class="text-3xl font-semibold mb-4">FIRST Robotics Competition (FRC): The Real Deal</h2>
+      <p class="text-gray-700 mb-6 text-lg">The FIRST Robotics Competition (FRC) is a global sport where high school
+        teams build robots to compete in a yearly game. Unlike battlebots, FRC emphasizes Gracious Professionalism,
+        highlighting a competitive yet respectful spirit. I was part of team 2046 Bear Metal from Tahoma High School,
+        which had around 80 members divided into subteams focusing on various engineering aspects. I spent my first two
+        years on the design team and co-founded the General Programming Team (GPT) in my third year.</p>
+      <p class="text-gray-700 mb-6 text-lg">When the annual challenge is announced in January, an intense 8-week period
+        begins, during which we design, prototype, fabricate, and program the robot. As a design team member, I quickly
+        became immersed in CAD work for prototypes and the final robot. FRC's hands-on format promotes experiential
+        learning of core engineering principles in a fun, competitive environment. I learned to collaborate effectively
+        and consider practical design challenges, improving my problem-solving skills.</p>
+      <p class="text-gray-700 mb-6 text-lg">In my final year, I shifted focus to co-found GPT, which handled tasks
+        beyond robot code, such as managing our website, setting up a VR simulation, and creating our first electronic
+        scouting system. This system was crucial for making data-driven decisions during the drafting process after
+        qualification rounds. We scouted other teams, gathering data to inform our choices. My friend developed an
+        Android app for data collection, while I created a Java desktop application that wirelessly received, stored,
+        and exported the data for analysis in Excel and Tableau. This was my largest coding project and the first time I
+        applied my skills practically. Although the system was imperfect, it laid the groundwork for future electronic
+        scouting after my graduation</p>
+      <p class="text-gray-700 mb-6 text-lg">Below are pictures and documents related to my work in FRC.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Picture of 2022 robot -->
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">The 2021-2022 Robot</h3>
+          <p class="text-gray-600 mb-4">Picture of the 2021-2022 robot</p>
+          <img src="/assets/FIRST/FRC/2022Robot.jpeg" alt="FRC Robot"
+            class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4 cursor-pointer"
+            onclick="openEnlargeableImageModal(this.src)">
+          <a href="/src/AmeliaBearhart.html" target="_blank"
+            class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"> View in
+            3D<i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Enlargeable Image -->
+        <div id="enlargeableImageModal"
+          class="enlargeable-modal hidden fixed inset-0  backdrop-blur flex items-center justify-center">
+          <span class="close cursor-pointer text-black absolute top-4 right-4 text-2xl android-hidden">&times;</span>
+          <img class="enlargeable-modal-content rounded-lg max-w-full max-h-full" id="enlargeableModalImage">
+        </div>
+
+        <!-- Picture of 2023 robot -->
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">The 2022-2023 Robot</h3>
+          <p class="text-gray-600 mb-4">Picture of the 2022-2023 robot</p>
+          <img src="/assets/FIRST/FRC/2023Robot.jpeg" alt="FRC Robot"
+            class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4 cursor-pointer"
+            onclick="openEnlargeableImageModal(this.src)">
+          <a href="/src/Polarity.html" target="_blank"
+            class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"> View in
+            3D<i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Picture of 2024 robot -->
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">The 2022-2024 Robot</h3>
+          <p class="text-gray-600 mb-4">Picture of the 2023-2024 robot</p>
+          <img src="/assets/FIRST/FRC/2024Robot.jpeg" alt="FRC Robot"
+            class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4 cursor-pointer"
+            onclick="openEnlargeableImageModal(this.src)">
+        </div>
+
+        <!-- Team winning an event -->
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">Team 2046 Bear Metal</h3>
+          <p class="text-gray-600 mb-4">This picture was taken after winning the 2024 Sammamish district qualifier. </p>
+          <img src="/assets/FIRST/FRC/winningSammy24.jpg" alt="Nice Dub"
+            class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4 cursor-pointer"
+            onclick="openEnlargeableImageModal(this.src)">
+        </div>
+
+        <!-- Scouting System -->
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center" id="scouting-gallery">
+          <h3 class="text-xl font-medium mb-2">Scouting System</h3>
+          <p class="text-gray-600 mb-4">Click to view screenshots of the scouting system and a video demonstration.</p>
+
+          <div class="grid grid-cols-1 gap-4">
+            <img src="/assets/FIRST/FRC/scoutingServer/databaseManagement.png" alt="Image 1"
+              class="gallery-thumb h-auto rounded-lg shadow-md object-cover mx-auto mb-4" data-mg-index="0">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <script>
+      const galleryItems = [
+        { src: "/assets/FIRST/FRC/scoutingServer/databaseManagement.png", type: "image" },
+        { src: "/assets/FIRST/FRC/scoutingServer/dataCollection.png", type: "image" },
+        { src: "/assets/FIRST/FRC/scoutingServer/sampleChart.png", type: "image" },
+        { src: "/assets/FIRST/FRC/scoutingServer/severlyOutdatedTutorialPage.png", type: "image" },
+        { src: "/assets/FIRST/FRC/scoutingServer/Showcase.mov", type: "video", poster: "/assets/FIRST/FRC/scoutingServer/databaseManagement.png" },
+      ];
+
+      // Target the exact gallery container (use an id or more specific selector)
+      const gallery = new MediaGallery(document.getElementById('scouting-gallery'), {
+        items: galleryItems,
+        preload: 'buffer' // 'none'|'current'|'buffer'
+      });
+    </script>
+
+    <!-- Back Button at the Bottom -->
+    <div class="text-center mt-8 android-hidden">
+      <a href="javascript:history.back()"
+        class="inline-block px-6 py-3 bg-gray-600 text-white rounded hover:bg-gray-700 transition">Back</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
+    </div>
+  </footer>
+  <!--script for making images enlarge when tapped or clicked on. -->
+  <script src="/src/scripts/enlargeImage.js"></script>
+</body>
+
+</html>

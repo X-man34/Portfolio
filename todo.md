@@ -26,3 +26,15 @@ changes to make to each page
 - review what it actually says
 - make sure back button on bottom hides itself on android
 - audit media presentation and ensure reasonable loading time. 
+- make localization project video smaller. 
+
+
+Rose todo
+-  research dental hygienist
+-  wamap test
+-  make dinner 
+-  clean room
+-  monday through friday chores
+Boys
+- chores (after airsoft)
+

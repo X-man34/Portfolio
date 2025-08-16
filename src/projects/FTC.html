@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FIRST Tech Challenge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="/src/stylesheets/output.css">
+  <script src="/src/scripts/media-gallery.js"></script>
+  <script src="/src/scripts/common.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+  <div id="navbar-placeholder"></div>
+  <!-- Header -->
+  <header class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between">
+      <img src="/assets/FIRST/FIRSTTech_iconHorz_RGB.png" alt="FIRST Robotics Logo" class="h-20">
+      <a href="javascript:history.back()" class="text-blue-600 hover:underline text-sm flex-1 text-right md:text-xl">←
+        Back</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="bg-white rounded-lg shadow-md py-6 px-2 md:px-6">
+      <h2 class="text-3xl font-semibold mb-4">FIRST Tech Challenge (FTC): Getting my feet wet</h2>
+      <p class="text-gray-700 mb-6 text-lg">FIRST Tech Challenge (FTC) is the middle school division of the FIRST
+        robotics organization, where students design and build robots within an 18” x 18” x 18” footprint using extruded
+        aluminum beams and a variety of kit components. These robots require a high level of hands-on skill and are
+        ideally designed in CAD prior to fabrication.</p>
+      <p class="text-gray-700 mb-6 text-lg">Participating in FTC provided me with a strong foundation in essential
+        engineering principles, including effective brainstorming, translating ideas into functional designs through
+        CAD, and delegating tasks within a team to meet project goals. During my two years on Team 11109 Pirate Tekerz,
+        I received one-on-one mentorship and CAD training from a professional engineer and was responsible for the
+        majority of the team’s CAD work. In addition to design, I contributed to fabrication testing and served on the
+        drive team.</p>
+      <p class="text-gray-700 mb-6 text-lg">The second year on the team was greatly impacted by COVID-19, which required
+        us to adapt and find ways to build the robot remotely. To address this challenge, I designed the robot to be
+        modular and developed a detailed CAD model, accompanied by comprehensive drawings. These were distributed to
+        team members along with the necessary materials. Each subassembly was built individually before being assembled
+        by a designated member. Remarkably, nearly everything fit and functioned as intended from the start, exceeding
+        my expectations. After fine-tuning, the robot was competition-ready, and we advanced to state for the first time
+        in the team’s history.</p>
+      <p class="text-gray-700 mb-6 text-lg">Overall, this experience helped me build a solid grounding in engineering
+        fundamentals, while strengthening my skills in collaboration, design, and fabrication—skills that have served me
+        well and continue to support my growth throughout my college career.</p>
+      <p class="text-gray-700 mb-6 text-lg">Below, you’ll find various documents and photos from my time on the team,
+        along with the CAD models and drawings I created.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Picture of 2019 robot -->
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">The 2019-2020 Robot</h3>
+          <p class="text-gray-600 mb-4">Picture of the 2019-2020 robot</p>
+          <img src="/assets/FIRST/FTC/2019-2020Robot.png" alt="FTC Robot"
+            class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4">
+          <a href="/assets/FIRST/FTC/2019-2020Robot.png" target="_blank"
+            class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open 3D
+            Viewer</a>
+        </div>
+
+        <!-- Image Gallery 2020-2021 season-->
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center" id="gallery-2020">
+          <h3 class="text-xl font-medium mb-2">The 2020-2021 Robot</h3>
+          <p class="text-gray-600 mb-4">Picture of the 2020-2021 robot, click to see gallery of build montage</p>
+
+          <div class="grid grid-cols-1 gap-4">
+            <img src="/assets/FIRST/FTC/2020-2021Robot.png" alt="Image 1"
+              class="gallery-thumb h-auto rounded-lg shadow-md object-cover mx-auto mb-4" data-mg-index="0">
+          </div>
+        </div>
+
+
+        <!--- Match Footage -->
+        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
+          <h4 class="text-lg font-semibold mb-2">2020 QSize=QStyle.pixelMetric(self,
+            QStyle.PixelMetric.PM_IndicatorWidth) * 2State Match 3 </h4>
+          <p class="text-gray-600 mb-4">This is some match footage of our 2020-2021 robot competing at "state" however
+            due to COVID it was all remote</p>
+          <div class="relative w-full" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio -->
+            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/e6a2oCMm7NM"
+              title="TekerzStateM3" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <!-- CAD Model -->
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">CAD from 2019-2020 season</h3>
+          <p class="text-gray-600 mb-4">This was literally my first CAD model created in Autodesk Inventor. It was an
+            incomplete model, in picture above you can see the real robot.</p>
+          <img src="/assets/FIRST/FTC/robot CAD as of 12-1-19 1.PNG" alt="FLL Team"
+            class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4">
+          <a href="/assets/FIRST/FTC/The Robot 2019-2020.html" target="_blank"
+            class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open 3D
+            Viewer</a>
+        </div>
+
+        <!-- CAD Model 2-->
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">CAD from 2020-2021 season</h3>
+          <p class="text-gray-600 mb-4">This is the second robot I cadded, it was far more detailed and this CAD model
+            was used to drive our remote robot assembly. Special thanks to Mentor David Dammann for teaching me an
+            immense amount about engineering here.</p>
+          <img src="/assets/FIRST/FTC/The Robot 2020-2021.png" alt="FLL Team"
+            class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4">
+          <a href="/assets/FIRST/FTC/The Robot 2020-2021.html" target="_blank"
+            class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open 3D
+            Viewer</a>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">Portfolio</h3>
+          <p class="text-gray-600 mb-4">This is the portfolio, a document the team put together summarizing the
+            2020-2021 season and presenting many technical details</p>
+          <iframe class="w-full h-56 rounded border" src="/assets/FIRST/FTC/portfoliov2.2.pdf" title="Instructions"
+            allowfullscreen></iframe>
+          <a href="/assets/FIRST/FTC/portfoliov2.2.pdf" target="_blank"
+            class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open</a>
+        </div>
+        <!-- Drawing Package -->
+        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+          <h3 class="text-xl font-medium mb-2">Assembly Drawings</h3>
+          <p class="text-gray-600 mb-4">During our COVID year we had to assemble the robot remotely, so with the help of
+            Mentor David, I created a set of drawings which the rest of the team used to build the robot. When it was
+            all assembled, everything fit together!</p>
+          <iframe class="w-full h-56 rounded border" src="/assets/FIRST/FTC/DrawingPackage.pdf" title="Instructions"
+            allowfullscreen></iframe>
+          <a href="/assets/FIRST/FTC/DrawingPackage.pdf" target="_blank"
+            class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open (Much
+            easier to see)</a>
+        </div>
+
+
+
+        <script>
+          const galleryItems = [
+            { src: "/assets/FIRST/FTC/2020-2021Robot.png", type: "image" },
+            { src: "/assets/FIRST/FTC/Assembly/1.jpg", type: "image" },
+            { src: "/assets/FIRST/FTC/Assembly/2.jpg", type: "image" },
+            { src: "/assets/FIRST/FTC/Assembly/3.jpg", type: "image" },
+            { src: "/assets/FIRST/FTC/Assembly/4.jpg", type: "image" },
+            { src: "/assets/FIRST/FTC/Assembly/5.jpg", type: "image" },
+            { src: "/assets/FIRST/FTC/Assembly/6.jpg", type: "image" },
+            { src: "/assets/FIRST/FTC/Assembly/7.jpg", type: "image" },
+            { src: "/assets/FIRST/FTC/Assembly/8.jpg", type: "image" },
+            { src: "/assets/FIRST/FTC/Assembly/9.jpg", type: "image" },
+            { src: "/assets/FIRST/FTC/Assembly/10.jpg", type: "image" },
+            // { src: "assets/FIRST/FRC/scoutingServer/Showcase.mov", type: "video", poster: "assets/FIRST/FTC/Assembly/clip1-poster.jpg" },
+          ];
+
+          // Target the exact gallery container (use an id or more specific selector)
+          const gallery = new MediaGallery(document.getElementById('gallery-2020'), {
+            items: galleryItems,
+            preload: 'buffer' // 'none'|'current'|'buffer'
+          });
+        </script>
+
+      </div>
+    </section>
+    <!-- Back Button at the Bottom -->
+    <div class="text-center mt-8 android-hidden" id="backButton">
+      <a href="javascript:history.back()"
+        class="inline-block px-6 py-3 bg-gray-600 text-white rounded hover:bg-gray-700 transition">Back</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

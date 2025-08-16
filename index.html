@@ -9,14 +9,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts/common.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="/src/stylesheets/output.css">
+    <script src="/src/scripts/common.js"></script>
 </head>
 
-<body class="bg-gray-100 font-sans text-gray-800">
+<body class="body">
 
     <div id="navbar-placeholder"></div>
     <!-- Hero Section -->
@@ -105,7 +105,7 @@
             <div class="bg-white rounded-lg shadow-md p-6 mb-8">
                 <!--FIRST Logo-->
                 <div class="flex justify-end mb-2">
-                    <img src="assets/FIRST/FIRST_Horz_RGB.png" alt="FIRST Robotics Logo" class="h-8">
+                    <img src="/assets/FIRST/FIRST_Horz_RGB.png" alt="FIRST Robotics Logo" class="h-8">
                 </div>
                 <!--Heading-->
                 <h3 class="text-2xl font-bold">FIRST Robotics</h3>
@@ -122,35 +122,35 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!--FLL-->
                     <div class="project-media bg-gray-100 p-4 rounded-lg text-center"
-                        onclick="window.location.href='FLL.html';">
+                        onclick="window.location.href='/src/projects/FLL.html';">
                         <h4 class="text-lg font-semibold mb-2">FIRST LEGO League</h4>
                         <p class="text-gray-600 mb-4">From 4th to 8th grade I participated in FIRST LEGO League (FLL).
                             FLL introduced me to engineering through building autonomous LEGO robots and developing
                             teamwork, design, and presentation skills that have continued to support my growth in
                             higher-level robotics and beyond.</p>
-                        <img src="assets/FIRST/FLL/DSC_0002.jpg" alt="FLL Team"
+                        <img src="/assets/FIRST/FLL/DSC_0002.jpg" alt="FLL Team"
                             class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4">
-                        <a href="FLL.html"
+                        <a href="/src/projects/FLL.html"
                             class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more
                             details</a>
                     </div>
                     <!--FTC-->
                     <div class="project-media bg-gray-100 p-4 rounded-lg text-center"
-                        onclick="window.location.href='FTC.html';">
+                        onclick="window.location.href='src/projects/FTC.html';">
                         <h4 class="text-lg font-semibold mb-2">FIRST Tech Challenge</h4>
                         <p class="text-gray-600 mb-4">During my two years on Team 11109 Pirate Tekerz in the FIRST Tech
                             Challenge, I developed strong engineering skills in CAD design, collaboration, and
                             fabrication, successfully adapting to remote robot building during COVID-19 and helping get
                             the team to its first state competition.</p>
-                        <img src="assets/FIRST/FTC/2019-09-07 16.13.50.jpg" alt="FTC Team"
+                        <img src="/assets/FIRST/FTC/2019-09-07 16.13.50.jpg" alt="FTC Team"
                             class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4">
-                        <a href="FTC.html"
+                        <a href="/src/projects/FTC.html"
                             class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more
                             details</a>
                     </div>
                     <!--FRC, want it to center below the other two.-->
                     <div class="col-span-1 md:col-span-2 flex justify center"
-                        onclick="window.location.href='FRC.html';">
+                        onclick="window.location.href='src/projects/FRC.html';">
                         <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
                             <h4 class="text-lg font-semibold mb-2">FIRST Robotics Competition</h4>
                             <p class="text-gray-600 mb-4">During high school I competed in FRC for 3 years, gaining
@@ -158,9 +158,9 @@
                                 Aided Design, technical collaboration, integrating designs into the real world. During
                                 my third year I co-founded a new sub-team to develop the team's first electronic
                                 scouting system.</p>
-                            <img src="assets/FIRST/FRC/winningSammy24.jpg" alt="FRC Team"
+                            <img src="/assets/FIRST/FRC/winningSammy24.jpg" alt="FRC Team"
                                 class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4">
-                            <a href="FRC.html"
+                            <a href="/src/projects/FRC.html"
                                 class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more
                                 details</a>
                         </div>
@@ -180,15 +180,15 @@
                     details of this project.</p>
 
                 <div class="project-media bg-gray-100 p-4 rounded-lg text-center"
-                    onclick="window.location.href='AllTerrainTrailer.html';">
+                    onclick="window.location.href='/src/projects/AllTerrainTrailer.html';">
                     <h4 class="text-lg font-semibold mb-2">My Solution</h4>
                     <div class="grid md:flex gap-4 mb-6">
-                        <img src="assets/ME287/FinalDesignTop.jpg" alt="Top of Solution"
+                        <img src="/assets/ME287/FinalDesignTop.jpg" alt="Top of Solution"
                             class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
-                        <img src="assets/ME287/FinalDesignBottom.jpg" alt="Bottom of Solution"
+                        <img src="/assets/ME287/FinalDesignBottom.jpg" alt="Bottom of Solution"
                             class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
                     </div>
-                    <a href="AllTerrainTrailer.html"
+                    <a href="/src/projects/AllTerrainTrailer.html"
                         class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more
                         details</a>
                 </div>
@@ -204,14 +204,14 @@
                 <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
                     <h4 class="text-lg font-semibold mb-2">The Simulation</h4>
                     <div class="grid md:flex gap-4 mb-6">
-                        <img src="assets/ME467Project1/Simulation.png" alt="Image of the Simulation"
+                        <img src="/assets/ME467Project1/Simulation.png" alt="Image of the Simulation"
                             class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
-                            onclick="window.location.href='RoboticsProject1.html';" />
+                            onclick="window.location.href='/src/projects/RoboticsProject1.html';" />
                         <video class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" controls="" playsinline=""
-                            preload="metadata" src="assets/ME467Project1/VideoOfSim.mp4"
-                            poster="assets/ME467Project1/thumbnail.png" autoplay=""></video>
+                            preload="metadata" src="/assets/ME467Project1/VideoOfSim.mp4"
+                            poster="/assets/ME467Project1/thumbnail.png" autoplay=""></video>
                     </div>
-                    <a href="RoboticsProject1.html"
+                    <a href="/src/projects/RoboticsProject1.html"
                         class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more
                         details</a>
                 </div>
@@ -233,10 +233,10 @@
                         collected.</p>
                     <div class="relative w-full mb-4">
                         <video class="rounded-lg shadow-md object-cover mx-auto" controls="" playsinline=""
-                            preload="metadata" src="assets/ME467Project2/Fig_3-1.mp4"
-                            poster="assets/ME467Project2/thumbnail.png" autoplay="" muted=""></video>
+                            preload="metadata" src="/assets/ME467Project2/Fig_3-1.mp4"
+                            poster="/assets/ME467Project2/thumbnail.png" autoplay="" muted=""></video>
                     </div>
-                    <a href="RoboticsProject2.html"
+                    <a href="/src/projects/RoboticsProject2.html"
                         class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition mx-auto col-span-2 justify-self-center">See
                         more details</a>
                 </div>
@@ -253,15 +253,15 @@
 
 
                 <div class="project-media bg-gray-100 p-4 rounded-lg text-center"
-                    onclick="window.location.href='RoboticsProject3.html';">
+                    onclick="window.location.href='/src/projects/RoboticsProject3.html';">
                     <h4 class="text-lg font-semibold mb-2">Kinematics Simulation</h4>
                     <div class="grid md:flex gap-4 mb-6">
-                        <img src="assets/ME467Project3/mujoco_q1a.png" alt="Model of Robot Arm"
+                        <img src="/assets/ME467Project3/mujoco_q1a.png" alt="Model of Robot Arm"
                             class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
-                        <img src="assets/ME467Project3/Animation.gif" alt="Arm Control Simulation"
+                        <img src="/assets/ME467Project3/Animation.gif" alt="Arm Control Simulation"
                             class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
                     </div>
-                    <a href="RoboticsProject3.html"
+                    <a href="/src/projects/RoboticsProject3.html"
                         class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more
                         details</a>
                 </div>
