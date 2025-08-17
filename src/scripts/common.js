@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('.email-link').forEach(el => el.href = `mailto:${email}`);
   document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
 
-  // Optionally update the page title
-  document.title = "My Portfolio - " + myName;
 
   // Load shared navbar
   const navbar = document.getElementById("navbar-placeholder");

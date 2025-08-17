@@ -10,103 +10,107 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* Custom styles for specific elements */
-    .project-media {
-      transition: transform 0.3s ease;
-    }
-
-    .project-media:hover {
-      transform: scale(1.05);
-    }
-
-    .bg-gradient-primary {
-      background: linear-gradient(to right, #3b82f6, #60a5fa);
-    }
-  </style>
+  <link rel="stylesheet" href="/src/stylesheets/output.css">
+  <script src="/src/scripts/common.js"></script>
 </head>
-<script src="/src/scripts/common.js"></script>
 
-<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+<body class="body">
   <div id="navbar-placeholder"></div>
   <!-- Header -->
   <header class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
+    <div class="detail-page-header">
       <h1 class="text-xl md:text-2xl font-bold">All Terrain Trailer</h1>
-      <a href="/index.html" class="text-blue-600 hover:underline text-sm">← Back to Portfolio</a>
+      <a href="javascript:history.back()" class="detail-page-header-back">←
+        Back</a>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main class="max-w-5xl mx-auto px-4 py-10">
-    <section class="bg-white rounded-lg shadow-md p-6">
+  <main class="main-content">
+    <section class="detail-page-section">
       <h2 class="text-3xl font-semibold mb-4">Design Project I: All Terrain Trailer</h2>
-      <p class="text-gray-700 mb-6 text-lg">
+      <p class="detail-page-text">
         During my first design class, I worked on a project that involved creating a functional design from concept to
         prototype. The process included documentation, testing, iteration, and ultimately delivering a complete
-        prototype with supporting materials.
+        prototype with supporting materials. The goal of the class was to design a trailer that could traverse a set course
+        while balancing a 5lb weight on its uppermost surface. My design utilized compliant wheels and a spring suspension
+        system to successfully carry the payload all the way. My design was the only one which carried the payload all the way.
+        Part of the challenge was design communication: We were not allowed to build our own designs, but each student was
+        assigned a contractor and after creating a drawing package and work instructions, we sent the design off to the
+        contractor to have it built. This brought to a head, although in a low stakes environment, the dilemma of having to
+        design something that can actually be built. Below is a video of my solution, my final report and my cad and drawing
+        package.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <!-- Final Report -->
-        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media">
           <h3 class="text-xl font-medium mb-2">Final Design Report</h3>
-          <p class="text-gray-600 mb-4">A detailed overview of the entire design process, including sketches, analysis,
+          <p class="detail-page-text">A detailed overview of the entire design process, including sketches, analysis,
             and conclusions.</p>
-          <iframe src="/assets/ME287/ME287_Final_Design_Report_Hottes_Caleb.pdf" title="Final Report"
-            class="w-full h-56 rounded border"></iframe>
+          <img src="/assets/ME287/finalReportThumbnail.png" alt="Final Report" class="project-media-single-image"
+            onclick="openEnlargeableImageModal(this.src)">
           <a href="/assets/ME287/ME287_Final_Design_Report_Hottes_Caleb.pdf" target="_blank"
-            class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open
-            Fullscreen</a>
+            class="see-more-details-button">Open
+            full report<i class="fas fa-external-link-alt ml-2"></i></a>
         </div>
 
         <!-- Video -->
-        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media">
           <h3 class="text-xl font-medium mb-2">Video Demonstration</h3>
-          <p class="text-gray-600 mb-4">See the prototype in action during testing.</p>
-          <iframe class="w-full h-56 rounded border" src="https://www.youtube.com/embed/J1KkbxedkgE"
-            title="Project Video" allowfullscreen></iframe>
+          <p class="detail-page-text">See the prototype in action during testing.</p>
+          <!-- Portrait 9:16 container -->
+          <div class="relative w-full pb-[177.78%] overflow-hidden rounded border">
+            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/J1KkbxedkgE"
+              title="Project Video" allowfullscreen>
+            </iframe>
+          </div>
         </div>
 
         <!-- Drawing Package -->
-        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media">
           <h3 class="text-xl font-medium mb-2">Drawing Package</h3>
-          <p class="text-gray-600 mb-4">Technical schematics and mechanical drawings for manufacturing.</p>
-          <iframe src="/assets/ME287/ME287DrawingPackage.pdf" title="Drawing Package"
-            class="w-full h-56 rounded border"></iframe>
+          <p class="detail-page-text">Technical schematics and mechanical drawings for manufacturing.</p>
+          <img src="/assets/ME287/drawingsThumbnail.png" alt="Drawing Package" class="project-media-single-image"
+            onclick="openEnlargeableImageModal(this.src)">
           <a href="/assets/ME287/ME287DrawingPackage.pdf" target="_blank"
-            class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open
-            Fullscreen</a>
+            class="see-more-details-button">Open
+            full document<i class="fas fa-external-link-alt ml-2"></i></a>
         </div>
 
+        <!-- Enlargeable Image -->
+        <div id="enlargeableImageModal" class="enlargeable-modal">
+          <span class="close enlargeable-modal-close android-hidden">&times;</span>
+          <img class="enlargeable-modal-content" id="enlargeableModalImage">
+        </div>
         <!-- CAD Model -->
-        <div class="project-media bg-gray-50 p-5 rounded-lg shadow text-center">
+        <div class="project-media">
           <h3 class="text-xl font-medium mb-2">Interactive CAD Model</h3>
-          <p class="text-gray-600 mb-4">Explore the 3D CAD model interactively in your browser.</p>
+          <p class="detail-page-text">Explore the 3D CAD model interactively in your browser.</p>
           <iframe src="/assets/ME287/TrailerV2.html" title="Interactive CAD Model"
-            class="w-full h-56 rounded border"></iframe>
+            class="w-full h-96 rounded border"></iframe>
           <a href="/assets/ME287/TrailerV2.html" target="_blank"
-            class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Open
-            Fullscreen</a>
+            class="see-more-details-button">Open
+            <i class="fas fa-external-link-alt ml-2"></i></a>
         </div>
 
       </div>
     </section>
     <!-- Back Button at the Bottom -->
-    <div class="text-center mt-8" id="backButton">
+    <div class="text-center mt-8 android-hidden" id="backButton">
       <a href="javascript:history.back()"
-        class="inline-block px-6 py-3 bg-gray-600 text-white rounded hover:bg-gray-700 transition">Back</a>
+        class="back-button-link">Back</a>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto px-6 text-center">
+  <footer class="footer-main">
+    <div class="footer-container">
       <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
     </div>
   </footer>
-
+  <script src="/src/scripts/enlargeImage.js"></script>
 </body>
 
 </html>

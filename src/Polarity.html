@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>AmeliaBearhart Viewer </title>
+  <title>Polarity Viewer </title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-     <!-- Loading Screen -->
+  <!-- Loading Screen -->
   <div id="loading-screen">
     <div class="loader">Loading model... (May crash on mobile due to file size)</div>
     <p class="loader"> This CAD is scuffed and has no color, sorry, its the best I have.</p>
@@ -14,9 +16,9 @@
 
   <!-- Legacy scripts from same version -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.138.3/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/loaders/GLTFLoader.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/loaders/DRACOLoader.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/loaders/GLTFLoader.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/loaders/DRACOLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/controls/OrbitControls.js"></script>
 
   <!-- Link to the external JavaScript file -->
   <script src="viewer.js"></script>
@@ -26,4 +28,5 @@
     initializeViewer('PolarityCompressed.glb');
   </script>
 </body>
+
 </html>

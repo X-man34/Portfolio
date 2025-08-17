@@ -4,14 +4,20 @@
 
 .enlargeable-modal {
   display: none;
-  /* Hidden by default */
+  z-index: 9999;
+    /* keep always on top*/
+    @apply hidden fixed inset-0 backdrop-blur flex items-center justify-center
 }
 
 .enlargeable-modal-content {
   max-width: 90%;
   /* Responsive max width */
   max-height: 90%;
-  /* Responsive max height */
+  @apply rounded-lg max-w-full max-h-full
+  }
+  
+  .enlargeable-modal-close {
+    @apply cursor-pointer text-black absolute top-4 right-4 text-2xl
 }
 
 .blur {
@@ -70,12 +76,16 @@
 /* Custom styles for specific elements */
 .project-media {
   transition: transform 0.3s ease;
+  @apply bg-gray-100 p-4 rounded-lg text-center
 }
 
 .project-media:hover {
   transform: scale(1.05);
 }
 
+.project-media-single-image {
+  @apply w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4
+}
 .bg-gradient-primary {
   background: linear-gradient(to right, #3b82f6, #60a5fa);
 }
@@ -86,4 +96,59 @@
 
 .body {
   @apply bg-gray-100 font-sans leading-relaxed text-gray-800
+}
+.footer-main {
+  @apply bg-gray-800 text-white py-6
+}
+
+.footer-container {
+  @apply container mx-auto px-6 text-center
+}
+
+.skill-container {
+  @apply bg-white p-6 rounded-lg shadow-md text-center
+}
+
+.skill-logo {
+  @apply text-blue-600 text-4xl mb-4
+}
+
+.skill-heading {
+  @apply text-xl font-semibold mb-2
+}
+
+.skill-text {
+  @apply text-gray-600
+}
+
+.home-project-container {
+  @apply bg-white rounded-lg shadow-md p-6 mb-8
+}
+
+.home-project-text {
+  @apply text-gray-700 mb-6
+}
+
+.see-more-details-button {
+  @apply bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition
+}
+
+.detail-page-header {
+  @apply max-w-7xl mx-auto px-4 py-6 flex items-center justify-between
+}
+
+.detail-page-header-back {
+  @apply text-blue-600 hover:underline text-sm flex-1 text-right md:text-xl
+}
+
+.back-button-link {
+  @apply inline-block px-6 py-3 bg-gray-600 text-white rounded hover:bg-gray-700 transition
+}
+
+.detail-page-section {
+  @apply bg-white rounded-lg shadow-md py-6 px-2 md:px-6
+}
+
+.detail-page-text {
+  @apply text-gray-700 mb-6 text-lg
 }

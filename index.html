@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Placeholder</title>
+    <title>Caleb's Portfolio</title>
     <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for icons -->
@@ -51,45 +51,44 @@
         <div class="container mx-auto px-2 md:px-6">
             <h2 class="text-3xl font-bold text-center mb-12">My Skills</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 md:grid-rows-2 md:gap-8 gap-2 max-w-6xl mx-auto">
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-paint-brush text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Design</h3>
-                    <p class="text-gray-600">Experienced in creating detailed models, design reports, prototypes, and
+                <div class="skill-container">
+                    <i class="fas fa-paint-brush skill-logo"></i>
+                    <h3 class="skill-heading">Design</h3>
+                    <p class="skill-text">Experienced in creating detailed models, design reports, prototypes, and
                         drawing packages using tools like Solidworks, Autodesk Inventor, Bambu Studio etc. </p>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-tools text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Fabrication</h3>
-                    <p class="text-gray-600">Experience making things with broad range of shop and hand tools such as
+                <div class="skill-container">
+                    <i class="fas fa-tools skill-logo"></i>
+                    <h3 class="skill-heading">Fabrication</h3>
+                    <p class="skill-text">Experience making things with broad range of shop and hand tools such as
                         manual mill, manual lathe, MIG, TIG, and FCAW welders, bandsaws, drills, etc. </p>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-code text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Development</h3>
-                    <p class="text-gray-600">Proficient in Python and Java, HTML, CSS, and implementing machine learning
-                        algorithms
-                        and AI to play board games.</p>
+                <div class="skill-container">
+                    <i class="fas fa-code skill-logo"></i>
+                    <h3 class="skill-heading">Development</h3>
+                    <p class="skill-text">Proficient in Python and Java, HTML, CSS, and implementing machine learning
+                        algorithms and AI to play board games.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-lightbulb text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Problem Solving</h3>
-                    <p class="text-gray-600">Strong analytical and reasoning skills to tackle complex problems and
+                <div class="skill-container">
+                    <i class="fas fa-lightbulb skill-logo"></i>
+                    <h3 class="skill-heading">Problem Solving</h3>
+                    <p class="skill-text">Strong analytical and reasoning skills to tackle complex problems and
                         deliver effective solutions.</p>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-users text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Collaboration</h3>
-                    <p class="text-gray-600">Skilled in listening to and appreciating foreign ideas, effectively
+                <div class="skill-container">
+                    <i class="fas fa-users skill-logo"></i>
+                    <h3 class="skill-heading">Collaboration</h3>
+                    <p class="skill-text">Skilled in listening to and appreciating foreign ideas, effectively
                         communicating with co-workers, and working collaboratively to achieve common goals.</p>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-book-open text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Continuous Learning and Focus</h3>
-                    <p class="text-gray-600">Committed to developing new skills in a dynamic work environment while
+                <div class="skill-container">
+                    <i class="fas fa-book-open skill-logo"></i>
+                    <h3 class="skill-heading">Continuous Learning and Focus</h3>
+                    <p class="skill-text">Committed to developing new skills in a dynamic work environment while
                         maintaining sustained focus on tasks to ensure productivity and quality outcomes.</p>
                 </div>
             </div>
@@ -102,7 +101,7 @@
         <div class="max-w-6xl mx-auto container mx-auto md:px-6">
             <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
             <!--FIRST Robotics Project-->
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="home-project-container">
                 <!--FIRST Logo-->
                 <div class="flex justify-end mb-2">
                     <img src="/assets/FIRST/FIRST_Horz_RGB.png" alt="FIRST Robotics Logo" class="h-8">
@@ -110,7 +109,7 @@
                 <!--Heading-->
                 <h3 class="text-2xl font-bold">FIRST Robotics</h3>
                 <!--Text-->
-                <p class="text-gray-700 mb-6">I participated in FIRST Robotics for nine years, from 4th grade through
+                <p class="home-project-text">I participated in FIRST Robotics for nine years, from 4th grade through
                     high school, an experience that had a major impact on my development as an engineer. Through the
                     program, I learned how to brainstorm and refine design ideas, collaborate on engineering teams, and
                     use CAD to model mechanical systems. In high school, as part of the FRC league, I worked with over
@@ -121,47 +120,41 @@
                 <!--Content-->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!--FLL-->
-                    <div class="project-media bg-gray-100 p-4 rounded-lg text-center"
-                        onclick="window.location.href='/src/projects/FLL.html';">
+                    <div class="project-media" onclick="window.location.href='/src/projects/FLL.html';">
                         <h4 class="text-lg font-semibold mb-2">FIRST LEGO League</h4>
-                        <p class="text-gray-600 mb-4">From 4th to 8th grade I participated in FIRST LEGO League (FLL).
+                        <p class="home-project-text">From 4th to 8th grade I participated in FIRST LEGO League (FLL).
                             FLL introduced me to engineering through building autonomous LEGO robots and developing
                             teamwork, design, and presentation skills that have continued to support my growth in
                             higher-level robotics and beyond.</p>
-                        <img src="/assets/FIRST/FLL/DSC_0002.jpg" alt="FLL Team"
-                            class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4">
-                        <a href="/src/projects/FLL.html"
-                            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more
+                        <img src="/assets/FIRST/FLL/DSC_0002.jpg" alt="FLL Team" class="project-media-single-image">
+                        <a href="/src/projects/FLL.html" class="see-more-details-button">See more
                             details</a>
                     </div>
                     <!--FTC-->
-                    <div class="project-media bg-gray-100 p-4 rounded-lg text-center"
-                        onclick="window.location.href='src/projects/FTC.html';">
+                    <div class="project-media" onclick="window.location.href='src/projects/FTC.html';">
                         <h4 class="text-lg font-semibold mb-2">FIRST Tech Challenge</h4>
-                        <p class="text-gray-600 mb-4">During my two years on Team 11109 Pirate Tekerz in the FIRST Tech
+                        <p class="home-project-text">During my two years on Team 11109 Pirate Tekerz in the FIRST Tech
                             Challenge, I developed strong engineering skills in CAD design, collaboration, and
                             fabrication, successfully adapting to remote robot building during COVID-19 and helping get
                             the team to its first state competition.</p>
                         <img src="/assets/FIRST/FTC/2019-09-07 16.13.50.jpg" alt="FTC Team"
-                            class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4">
-                        <a href="/src/projects/FTC.html"
-                            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more
+                            class="project-media-single-image">
+                        <a href="/src/projects/FTC.html" class="see-more-details-button">See more
                             details</a>
                     </div>
                     <!--FRC, want it to center below the other two.-->
                     <div class="col-span-1 md:col-span-2 flex justify center"
                         onclick="window.location.href='src/projects/FRC.html';">
-                        <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
+                        <div class="project-media">
                             <h4 class="text-lg font-semibold mb-2">FIRST Robotics Competition</h4>
-                            <p class="text-gray-600 mb-4">During high school I competed in FRC for 3 years, gaining
+                            <p class="home-project-text">During high school I competed in FRC for 3 years, gaining
                                 experience with Computer
                                 Aided Design, technical collaboration, integrating designs into the real world. During
                                 my third year I co-founded a new sub-team to develop the team's first electronic
                                 scouting system.</p>
                             <img src="/assets/FIRST/FRC/winningSammy24.jpg" alt="FRC Team"
-                                class="w-full h-auto rounded-lg shadow-md object-cover mx-auto mb-4">
-                            <a href="/src/projects/FRC.html"
-                                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more
+                                class="project-media-single-image">
+                            <a href="/src/projects/FRC.html" class="see-more-details-button">See more
                                 details</a>
                         </div>
                     </div>
@@ -169,9 +162,9 @@
 
             </div>
             <!-- Project 1: Design Project -->
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="home-project-container">
                 <h3 class="text-2xl font-bold mb-4">Design Project I: All terrain trailer</h3>
-                <p class="text-gray-700 mb-6">During my first design class at Boise State I designed, fabricated,
+                <p class="home-project-text">During my first design class at Boise State I designed, fabricated,
                     tested, iterated, and documented a solution to the given challenge. The challenge was to design a
                     trailer that can
                     transport a 5.5lb payload across an uneven course. The key design constraint was that the payload
@@ -179,8 +172,7 @@
                     the
                     details of this project.</p>
 
-                <div class="project-media bg-gray-100 p-4 rounded-lg text-center"
-                    onclick="window.location.href='/src/projects/AllTerrainTrailer.html';">
+                <div class="project-media" onclick="window.location.href='/src/projects/AllTerrainTrailer.html';">
                     <h4 class="text-lg font-semibold mb-2">My Solution</h4>
                     <div class="grid md:flex gap-4 mb-6">
                         <img src="/assets/ME287/FinalDesignTop.jpg" alt="Top of Solution"
@@ -188,20 +180,19 @@
                         <img src="/assets/ME287/FinalDesignBottom.jpg" alt="Bottom of Solution"
                             class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
                     </div>
-                    <a href="/src/projects/AllTerrainTrailer.html"
-                        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more
+                    <a href="/src/projects/AllTerrainTrailer.html" class="see-more-details-button">See more
                         details</a>
                 </div>
             </div>
             <!-- Robotics Project 1-->
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="home-project-container">
                 <h3 class="text-2xl font-bold mb-4">Robotics: Furuta Pendulum Kinematics</h3>
-                <p class="text-gray-700 mb-6">In my first robotics project my partner and I worked together to analyze
+                <p class="home-project-text">In my first robotics project my partner and I worked together to analyze
                     and simulate the kinematics of a Futura Pendulum using analytical and software methods. We derived
                     and evaluated formulas with code, modeled the pendulum with MuJoCo, (A python library) and verified
                     analytical results using the model. Below is an image of our simulated pendulum and a video of the
                     simulation. Click the button to see reports, code, and more details. </p>
-                <div class="project-media bg-gray-100 p-4 rounded-lg text-center">
+                <div class="project-media">
                     <h4 class="text-lg font-semibold mb-2">The Simulation</h4>
                     <div class="grid md:flex gap-4 mb-6">
                         <img src="/assets/ME467Project1/Simulation.png" alt="Image of the Simulation"
@@ -211,23 +202,22 @@
                             preload="metadata" src="/assets/ME467Project1/VideoOfSim.mp4"
                             poster="/assets/ME467Project1/thumbnail.png" autoplay=""></video>
                     </div>
-                    <a href="/src/projects/RoboticsProject1.html"
-                        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more
+                    <a href="/src/projects/RoboticsProject1.html" class="see-more-details-button">See more
                         details</a>
                 </div>
 
             </div>
             <!-- Robotics Project 2-->
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="home-project-container">
                 <h3 class="text-2xl font-bold mb-4">Robotics: Localization</h3>
-                <p class="text-gray-700 mb-6">In my second robotics project, my partner and I implemented a Mahony
+                <p class="home-project-text">In my second robotics project, my partner and I implemented a Mahony
                     filter to estimate orientation using data from a phone's IMU. We treated gravity and the Earth's
                     magnetic field as noisy landmarks and used gyroscope data and bias correction to filter the signal.
                     We also explored the TRIAD algorithm, each developing our own variations, and visualized the results
                     using MuJoCo. Below is a video of the Mahony filter in action. Click the button to see the report,
                     code, and project instructions.</p>
                 <!-- Video  -->
-                <div class="project-media bg-gray-100 p-4 rounded-lg text-center ">
+                <div class="project-media">
                     <h4 class="text-lg font-semibold mb-2">Video Of Simulation</h4>
                     <p class="text-gray-600 mb-4">A video showcasing the results of the filter on some data we
                         collected.</p>
@@ -236,15 +226,14 @@
                             preload="metadata" src="/assets/ME467Project2/Fig_3-1.mp4"
                             poster="/assets/ME467Project2/thumbnail.png" autoplay="" muted=""></video>
                     </div>
-                    <a href="/src/projects/RoboticsProject2.html"
-                        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition mx-auto col-span-2 justify-self-center">See
+                    <a href="/src/projects/RoboticsProject2.html" class="see-more-details-button">See
                         more details</a>
                 </div>
             </div>
             <!-- Robotics Project 3-->
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="home-project-container">
                 <h3 class="text-2xl font-bold mb-4">Robotics: DH-Kinematics</h3>
-                <p class="text-gray-700 mb-6">In this project, I analyzed the forward and inverse kinematics—both
+                <p class="home-project-text">In this project, I analyzed the forward and inverse kinematics—both
                     position and velocity-level—for a 6-DOF robot arm, the NexCOM miniBoT. Using analytical methods and
                     the Denavit-Hartenberg convention, I developed closed-form solutions, including a fast inverse
                     kinematics function that returns multiple solutions. I also implemented an animation system that
@@ -252,8 +241,7 @@
                     the button to see the full report, code, and project details.</p>
 
 
-                <div class="project-media bg-gray-100 p-4 rounded-lg text-center"
-                    onclick="window.location.href='/src/projects/RoboticsProject3.html';">
+                <div class="project-media" onclick="window.location.href='/src/projects/RoboticsProject3.html';">
                     <h4 class="text-lg font-semibold mb-2">Kinematics Simulation</h4>
                     <div class="grid md:flex gap-4 mb-6">
                         <img src="/assets/ME467Project3/mujoco_q1a.png" alt="Model of Robot Arm"
@@ -261,8 +249,7 @@
                         <img src="/assets/ME467Project3/Animation.gif" alt="Arm Control Simulation"
                             class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
                     </div>
-                    <a href="/src/projects/RoboticsProject3.html"
-                        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">See more
+                    <a href="/src/projects/RoboticsProject3.html" class="see-more-details-button">See more
                         details</a>
                 </div>
             </div>
@@ -278,7 +265,7 @@
                 <a href="#" class="hover:underline email-link" class="text-blue-600 hover:text-blue-800 transition">
                     <i class="fas fa-envelope text-3xl"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank"
+                <a href="https://www.linkedin.com/in/caleb-hottes-777645333" target="_blank"
                     class="text-blue-600 hover:text-blue-800 transition">
                     <i class="fab fa-linkedin text-3xl"></i>
                 </a>
@@ -294,8 +281,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto px-6 text-center">
+    <footer class="footer-main">
+        <div class="footer-container">
             <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
         </div>
     </footer>
