@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Polarity Viewer </title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/src/stylesheets/output.css">
 </head>
 
 <body>
@@ -21,11 +21,11 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/controls/OrbitControls.js"></script>
 
   <!-- Link to the external JavaScript file -->
-  <script src="viewer.js"></script>
+  <script src="/src/scripts/CADRenderer.js"></script>
 
   <script>
     // Call the initializeViewer function with the model URL
-    initializeViewer('PolarityCompressed.glb');
+    initializeViewer('/assets/FIRST/FRC/PolarityCompressed.glb');
   </script>
 </body>
 
