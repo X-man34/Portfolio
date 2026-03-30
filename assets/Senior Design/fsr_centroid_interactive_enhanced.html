@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FSR Centroid Interactive Demo</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --line: #d8dde7;
+      --text: #1f2937;
+      --muted: #5f6b7a;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --warm: #d85a30;
+      --success: #15803d;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      --radius: 14px;
+      --radius-sm: 10px;
+      --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      padding: 24px;
+    }
+
+    .app {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      line-height: 1.3;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .top-note {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quick-help {
+      font-size: 14px;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .preset-row,
+    .sim-preset-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      border-color: #b6c0cf;
+      background: #fafbfd;
+    }
+
+    button.secondary {
+      color: var(--muted);
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: auto 220px;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .canvas-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .canvas-shell {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: #fcfdff;
+    }
+
+    canvas#grid {
+      display: block;
+      width: 320px;
+      height: 320px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f9fbff;
+      cursor: crosshair;
+    }
+
+    .simple-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .legend,
+    .stat-box,
+    .math-box {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      background: #fff;
+    }
+
+    .legend-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+      margin: 7px 0;
+    }
+
+    .swatch {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      flex: 0 0 auto;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      background: #fbfcfe;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .stat-sub {
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .weighted {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .weighted .accent {
+      color: var(--accent);
+    }
+
+    .weighted .success {
+      color: var(--success);
+    }
+
+    .formula-line {
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px solid var(--line);
+    }
+
+    .controls {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .control-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      background: #fff;
+    }
+
+    .control-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .control-head span {
+      font-family: var(--font-mono);
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin: 6px 0 2px;
+    }
+
+    .slider-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .axis-note {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .math {
+      font-size: 15px;
+      color: var(--text);
+      overflow-x: auto;
+    }
+
+    @media (max-width: 960px) {
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 540px) {
+      body {
+        padding: 14px;
+      }
+
+      canvas#grid {
+        width: 100%;
+        height: auto;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .canvas-caption {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+  <div class="app">
+    <section class="panel top-note">
+      <div>
+        <h1>FSR Seat Centroid Visualizer</h1>
+        <p class="quick-help">Click sensors to cycle pressure levels, or use the sliders to move a simulated load. The
+          orange marker shows the weighted center of pressure.</p>
+      </div>
+      <p class="quick-help">Directions: front of chair = top, rear = bottom, left/right follow the seat map. Presets and
+        sliders update the sensor pattern; the weighted sums and centroid update from the active sensor values.</p>
+    </section>
+
+    <div class="workspace">
+      <section class="panel">
+        <h2>Interactive Grid</h2>
+        <div class="preset-row">
+          <button onclick="applyPreset('even')">Even sit</button>
+          <button onclick="applyPreset('fwd')">Lean forward</button>
+          <button onclick="applyPreset('back')">Lean back</button>
+          <button onclick="applyPreset('right')">Lean right</button>
+          <button onclick="applyPreset('sprint')">Sprint lean</button>
+          <button class="secondary" onclick="clearAll()">Clear</button>
+        </div>
+
+        <div class="visual-grid">
+          <div class="canvas-shell">
+            <div class="canvas-caption">
+              <span>Front of chair is at the top</span>
+              <span>Orange marker = centroid</span>
+            </div>
+            <canvas id="grid" width="320" height="320"></canvas>
+            <div class="axis-note">X: left to right. Y: rear to front.</div>
+          </div>
+
+          <aside class="simple-stack">
+            <div class="legend">
+              <h3>Legend</h3>
+              <div class="legend-row">
+                <div class="swatch" style="background:#F1EFE8"></div>
+                <div>0 = no load</div>
+              </div>
+              <div class="legend-row">
+                <div class="swatch" style="background:#B5D4F4"></div>
+                <div>low</div>
+              </div>
+              <div class="legend-row">
+                <div class="swatch" style="background:#378ADD"></div>
+                <div>mid</div>
+              </div>
+              <div class="legend-row">
+                <div class="swatch" style="background:#0C447C"></div>
+                <div>high</div>
+              </div>
+            </div>
+
+            <div class="stat-box">
+              <div class="stats-grid">
+                <div class="stat">
+                  <div class="stat-label">centroid X</div>
+                  <div class="stat-value" id="cx">0.00</div>
+                  <div class="stat-sub">left ← → right</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">centroid Y</div>
+                  <div class="stat-value" id="cy">0.00</div>
+                  <div class="stat-sub">rear ← → front</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">total pressure</div>
+                  <div class="stat-value" id="tot">0</div>
+                  <div class="stat-sub">sum of counts</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">active sensors</div>
+                  <div class="stat-value" id="act">0</div>
+                  <div class="stat-sub">of 16</div>
+                </div>
+              </div>
+
+              <div class="weighted">
+                <div>sumX = <span id="sumx" class="accent">0</span></div>
+                <div>sumY = <span id="sumy" class="accent">0</span></div>
+                <div>total = <span id="tot2" class="accent">0</span></div>
+                <div class="formula-line">cx = sumX / total = <span id="cxfrac" class="success">—</span></div>
+                <div>cy = sumY / total = <span id="cyfrac" class="success">—</span></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Slider Simulator</h2>
+        <div class="controls">
+          <div class="control-card">
+            <div class="control-head">
+              <h3>Target X</h3><span id="simXValue">0.00</span>
+            </div>
+            <input id="simX" type="range" min="-0.75" max="0.75" step="0.01" value="0.00" />
+            <div class="slider-note">Move the simulated load left or right.</div>
+          </div>
+
+          <div class="control-card">
+            <div class="control-head">
+              <h3>Target Y</h3><span id="simYValue">0.00</span>
+            </div>
+            <input id="simY" type="range" min="-0.75" max="0.75" step="0.01" value="0.00" />
+            <div class="slider-note">Move the simulated load rearward or forward.</div>
+          </div>
+
+          <div class="control-card">
+            <div class="control-head">
+              <h3>Spread</h3><span id="spreadValue">0.38</span>
+            </div>
+            <input id="spread" type="range" min="0.18" max="0.90" step="0.01" value="0.38" />
+            <div class="slider-note">Smaller spread concentrates the load. Larger spread distributes it.</div>
+          </div>
+
+          <div class="control-card">
+            <div class="control-head">
+              <h3>Intensity</h3><span id="gainValue">1.00</span>
+            </div>
+            <input id="gain" type="range" min="0.20" max="1.00" step="0.01" value="1.00" />
+            <div class="slider-note">Scales the overall pressure level.</div>
+          </div>
+        </div>
+
+        <div class="sim-preset-row">
+          <button onclick="setSimPreset(0, 0, 0.42, 1)">Centered</button>
+          <button onclick="setSimPreset(0.32, 0.38, 0.33, 1)">Forward-right</button>
+          <button onclick="setSimPreset(-0.28, -0.36, 0.30, 1)">Rear-left</button>
+          <button onclick="setSimPreset(0.00, 0.58, 0.22, 0.95)">Aggressive forward</button>
+          <button class="secondary" onclick="applySimulatedPressure()">Reapply sliders</button>
+        </div>
+
+        <div class="math-box">
+          <h3>Centroid Equations</h3>
+          <div class="math">
+            \[
+            \mathrm{sumX} = \sum_{i=1}^{N} x_i p_i,
+            \qquad
+            \mathrm{sumY} = \sum_{i=1}^{N} y_i p_i,
+            \qquad
+            \mathrm{total} = \sum_{i=1}^{N} p_i
+            \]
+            \[
+            c_x = \frac{\mathrm{sumX}}{\mathrm{total}},
+            \qquad
+            c_y = \frac{\mathrm{sumY}}{\mathrm{total}}
+            \]
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+
+  <body>
+
+
+    <script>
+      const COLS = 4, ROWS = 4, N = 16;
+      const CELL = 72, PAD = 16;
+      const POS_X = [-0.75, -0.25, 0.25, 0.75, -0.75, -0.25, 0.25, 0.75,
+      -0.75, -0.25, 0.25, 0.75, -0.75, -0.25, 0.25, 0.75];
+      const POS_Y = [0.75, 0.75, 0.75, 0.75, 0.25, 0.25, 0.25, 0.25,
+        -0.25, -0.25, -0.25, -0.25, -0.75, -0.75, -0.75, -0.75];
+
+      const LEVELS = [0, 0.25, 0.55, 1.0];
+      const LEVEL_LABELS = ['0', 'low', 'mid', 'high'];
+      const LEVEL_COLORS_FILL = ['#F1EFE8', '#B5D4F4', '#378ADD', '#0C447C'];
+      const LEVEL_COLORS_TEXT = ['#888780', '#0C447C', '#E6F1FB', '#E6F1FB'];
+
+      let pressures = new Array(N).fill(0);
+      let levelIdx = new Array(N).fill(0);
+
+      const canvas = document.getElementById('grid');
+      const ctx = canvas.getContext('2d');
+
+      const simXInput = document.getElementById('simX');
+      const simYInput = document.getElementById('simY');
+      const spreadInput = document.getElementById('spread');
+      const gainInput = document.getElementById('gain');
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBackgroundAxes();
+        for (let i = 0; i < N; i++) {
+          const col = i % COLS;
+          const row = Math.floor(i / COLS);
+          const x = PAD + col * CELL;
+          const y = PAD + row * CELL;
+          const li = levelIdx[i];
+          ctx.fillStyle = LEVEL_COLORS_FILL[li];
+          roundRect(ctx, x, y, CELL - 8, CELL - 8, 10);
+          ctx.fill();
+          ctx.strokeStyle = li > 0 ? '#60A5FA' : 'rgba(148,163,184,0.28)';
+          ctx.lineWidth = li > 0 ? 1.2 : 1;
+          roundRect(ctx, x, y, CELL - 8, CELL - 8, 10);
+          ctx.stroke();
+
+          ctx.fillStyle = LEVEL_COLORS_TEXT[li];
+          ctx.font = '600 13px Inter, ui-sans-serif, system-ui, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(LEVEL_LABELS[li], x + (CELL - 8) / 2, y + (CELL - 8) / 2 - 7);
+          ctx.font = '11px Inter, ui-sans-serif, system-ui, sans-serif';
+          ctx.fillStyle = li > 0 ? '#BFE2FF' : '#8CA0BF';
+          ctx.fillText('s' + i, x + (CELL - 8) / 2, y + (CELL - 8) / 2 + 11);
+        }
+        drawCentroid();
+        drawTargetMarker();
+        updateStats();
+      }
+
+      function drawBackgroundAxes() {
+        ctx.save();
+        ctx.strokeStyle = 'rgba(148, 163, 184, 0.10)';
+        ctx.lineWidth = 1;
+        for (let r = 0; r <= ROWS; r++) {
+          const y = PAD + r * CELL - 4;
+          ctx.beginPath();
+          ctx.moveTo(PAD - 4, y);
+          ctx.lineTo(canvas.width - PAD + 4, y);
+          ctx.stroke();
+        }
+        for (let c = 0; c <= COLS; c++) {
+          const x = PAD + c * CELL - 4;
+          ctx.beginPath();
+          ctx.moveTo(x, PAD - 4);
+          ctx.lineTo(x, canvas.height - PAD + 4);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      function roundRect(ctx, x, y, w, h, r) {
+        ctx.beginPath();
+        ctx.moveTo(x + r, y);
+        ctx.lineTo(x + w - r, y);
+        ctx.arcTo(x + w, y, x + w, y + r, r);
+        ctx.lineTo(x + w, y + h - r);
+        ctx.arcTo(x + w, y + h, x + w - r, y + h, r);
+        ctx.lineTo(x + r, y + h);
+        ctx.arcTo(x, y + h, x, y + h - r, r);
+        ctx.lineTo(x, y + r);
+        ctx.arcTo(x, y, x + r, y, r);
+        ctx.closePath();
+      }
+
+      function drawCentroid() {
+        let sx = 0, sy = 0, tot = 0;
+        for (let i = 0; i < N; i++) { sx += POS_X[i] * pressures[i]; sy += POS_Y[i] * pressures[i]; tot += pressures[i]; }
+        if (tot < 0.01) return;
+        const cx = sx / tot, cy = sy / tot;
+        const gridW = canvas.width - PAD * 2, gridH = canvas.height - PAD * 2;
+        const px = PAD + (cx + 1) / 2 * gridW;
+        const py = PAD + (1 - cy) / 2 * gridH;
+        ctx.beginPath();
+        ctx.arc(px, py, 12, 0, Math.PI * 2);
+        ctx.fillStyle = '#D85A30';
+        ctx.fill();
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(px - 6, py); ctx.lineTo(px + 6, py);
+        ctx.moveTo(px, py - 6); ctx.lineTo(px, py + 6);
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 1.6;
+        ctx.stroke();
+      }
+
+      function drawTargetMarker() {
+        const tx = parseFloat(simXInput.value);
+        const ty = parseFloat(simYInput.value);
+        const gridW = canvas.width - PAD * 2, gridH = canvas.height - PAD * 2;
+        const px = PAD + (tx + 1) / 2 * gridW;
+        const py = PAD + (1 - ty) / 2 * gridH;
+
+        ctx.save();
+        ctx.setLineDash([5, 5]);
+        ctx.strokeStyle = 'rgba(125, 211, 252, 0.9)';
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.arc(px, py, 18, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+
+        ctx.beginPath();
+        ctx.arc(px, py, 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#7dd3fc';
+        ctx.fill();
+      }
+
+      function updateStats() {
+        let sx = 0, sy = 0, tot = 0, act = 0;
+        for (let i = 0; i < N; i++) {
+          sx += POS_X[i] * pressures[i];
+          sy += POS_Y[i] * pressures[i];
+          tot += pressures[i];
+          if (pressures[i] > 0) act++;
+        }
+        const cx = tot > 0 ? sx / tot : 0;
+        const cy = tot > 0 ? sy / tot : 0;
+        document.getElementById('cx').textContent = cx.toFixed(2);
+        document.getElementById('cy').textContent = cy.toFixed(2);
+        document.getElementById('tot').textContent = Math.round(tot * 10000);
+        document.getElementById('act').textContent = act;
+        document.getElementById('sumx').textContent = sx.toFixed(3);
+        document.getElementById('sumy').textContent = sy.toFixed(3);
+        document.getElementById('tot2').textContent = tot.toFixed(3);
+        document.getElementById('cxfrac').textContent = tot > 0 ? cx.toFixed(3) : '—';
+        document.getElementById('cyfrac').textContent = tot > 0 ? cy.toFixed(3) : '—';
+      }
+
+      function syncSliderLabels() {
+        document.getElementById('simXValue').textContent = parseFloat(simXInput.value).toFixed(2);
+        document.getElementById('simYValue').textContent = parseFloat(simYInput.value).toFixed(2);
+        document.getElementById('spreadValue').textContent = parseFloat(spreadInput.value).toFixed(2);
+        document.getElementById('gainValue').textContent = parseFloat(gainInput.value).toFixed(2);
+      }
+
+      function nearestLevelIndex(value) {
+        let bestIndex = 0;
+        let bestError = Infinity;
+        for (let i = 0; i < LEVELS.length; i++) {
+          const err = Math.abs(value - LEVELS[i]);
+          if (err < bestError) {
+            bestError = err;
+            bestIndex = i;
+          }
+        }
+        return bestIndex;
+      }
+
+      function applySimulatedPressure() {
+        const tx = parseFloat(simXInput.value);
+        const ty = parseFloat(simYInput.value);
+        const spread = parseFloat(spreadInput.value);
+        const gain = parseFloat(gainInput.value);
+
+        for (let i = 0; i < N; i++) {
+          const dx = POS_X[i] - tx;
+          const dy = POS_Y[i] - ty;
+          const dist2 = dx * dx + dy * dy;
+          const analog = gain * Math.exp(-dist2 / (2 * spread * spread));
+          const clipped = Math.max(0, Math.min(1, analog));
+          pressures[i] = clipped;
+          levelIdx[i] = nearestLevelIndex(clipped);
+        }
+        draw();
+      }
+
+      function setSimPreset(x, y, spread, gain) {
+        simXInput.value = x.toFixed(2);
+        simYInput.value = y.toFixed(2);
+        spreadInput.value = spread.toFixed(2);
+        gainInput.value = gain.toFixed(2);
+        syncSliderLabels();
+        applySimulatedPressure();
+      }
+
+      canvas.addEventListener('click', e => {
+        const rect = canvas.getBoundingClientRect();
+        const mx = (e.clientX - rect.left) * (canvas.width / rect.width);
+        const my = (e.clientY - rect.top) * (canvas.height / rect.height);
+        for (let i = 0; i < N; i++) {
+          const col = i % COLS, row = Math.floor(i / COLS);
+          const x = PAD + col * CELL, y = PAD + row * CELL;
+          if (mx >= x && mx <= x + CELL - 8 && my >= y && my <= y + CELL - 8) {
+            levelIdx[i] = (levelIdx[i] + 1) % LEVELS.length;
+            pressures[i] = LEVELS[levelIdx[i]];
+            draw();
+            break;
+          }
+        }
+      });
+
+      const PRESETS = {
+        even: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        fwd: [0.9, 0.9, 0.9, 0.9, 0.7, 0.7, 0.7, 0.7, 0.3, 0.3, 0.3, 0.3, 0.05, 0.05, 0.05, 0.05],
+        back: [0.05, 0.05, 0.05, 0.05, 0.3, 0.3, 0.3, 0.3, 0.7, 0.7, 0.7, 0.7, 0.9, 0.9, 0.9, 0.9],
+        right: [0.1, 0.3, 0.7, 0.9, 0.1, 0.3, 0.7, 0.9, 0.1, 0.3, 0.7, 0.9, 0.1, 0.3, 0.7, 0.9],
+        sprint: [0.9, 1, 1, 0.9, 0.6, 0.7, 0.7, 0.6, 0.2, 0.2, 0.2, 0.2, 0, 0, 0, 0],
+      };
+
+      function applyPreset(name) {
+        pressures = [...PRESETS[name]];
+        levelIdx = pressures.map(p => p === 0 ? 0 : p < 0.3 ? 1 : p < 0.7 ? 2 : 3);
+        draw();
+      }
+
+      function clearAll() {
+        pressures = new Array(N).fill(0);
+        levelIdx = new Array(N).fill(0);
+        draw();
+      }
+
+      [simXInput, simYInput, spreadInput, gainInput].forEach(input => {
+        input.addEventListener('input', () => {
+          syncSliderLabels();
+          applySimulatedPressure();
+        });
+      });
+
+      syncSliderLabels();
+      setSimPreset(0, 0, 0.38, 1.0);
+
+    </script>
+  </body>
+
+</html>
