@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Project II: Material Handling Dolly</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/src/stylesheets/output.css">
+  <script src="/src/scripts/common.js"></script>
+</head>
+
+<body class="body">
+  <div id="navbar-placeholder"></div>
+  <!-- Header -->
+  <header class="bg-white">
+    <div class="detail-page-header">
+      <h1 class="text-xl md:text-2xl font-bold">Design Project II: Material Handling Dolly</h1>
+      <a href="javascript:history.back()" class="detail-page-header-back">←
+        Back</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="detail-page-section">
+      <h2 class="text-3xl font-semibold mb-4">Design Project II: Material Handling Dolly</h2>
+      <p class="detail-page-text">The second design project was focused on creating a dolly which can lift a 35lb
+        cylinder from a cradle, move it across a room and deposit it on a similar cradle. During the project I
+        collaborated with my teammates in designing prototyping analyzing and testing our solution. During integration
+        we had to revise the design on the fly due to issues with massive amounts of friction in the gearbox.
+        Ultimately we pivoted from a 3D printed gearbox to a welded and machined metal gearbox allowing for tighter
+        tolerances and higher rigidity.</p>
+      <p class="detail-page-text">When fabricating the creation of detailed drawings allowed all four team members to
+        efficiently parallelize the fabrication process and reach the testing phase sooner, which proved to be critical
+        in meeting deadlines later on.</p>
+      <p class="detail-page-text">Overall from this project I learned and practiced the engineering process, identifying
+        and quantifying the problem, conceptualizing a solution, validating and iterating a design through technical
+        analysis, fabricating, testing and documenting. Below you can find various different docuements and photos from
+        the project as well as the CAD model.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Initial Design -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Initial Design</h3>
+          <p class="detail-page-text">The dolly with the first gearbox version on it</p>
+          <img src="https://files.calebhottes.com/ME387Design2/InitialDesign.png"
+            alt="The dolly with the first gearbox version on it" class="project-media-single-image"
+            onclick="openEnlargeableImageModal(this.src)" onerror="this.style.display='none'">
+        </div>
+
+        <!-- Final Design -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Final Design</h3>
+          <p class="detail-page-text">The final version of the design with the metal gearbox  and metal handle</p>
+          <img src="https://files.calebhottes.com/ME387Design2/FinalDesign.png"
+            alt="The final version of the design with the metal gearbox and metal handle"
+            class="project-media-single-image" onclick="openEnlargeableImageModal(this.src)"
+            onerror="this.style.display='none'">
+        </div>
+
+        <!-- Main Drawing Package -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Main Drawing Package</h3>
+          <p class="detail-page-text">Technical schematics and mechanical drawings for manufacturing.</p>
+          <img src="https://files.calebhottes.com/ME387Design2/DrawingPackageThumbnail.png" alt="Main Drawing Package"
+            class="project-media-single-image" onclick="openEnlargeableImageModal(this.src)"
+            onerror="this.style.display='none'">
+          <a href="https://files.calebhottes.com/ME387Design2/DrawingPackage.pdf" target="_blank"
+            class="see-more-details-button">Open
+            Full Document<i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Interactive CAD Model -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Interactive CAD Model</h3>
+          <p class="detail-page-text">Explore the 3D CAD model interactively in your browser.</p>
+          <iframe src="https://files.calebhottes.com/ME387Design2/Tilty%20Loader.html" title="Interactive CAD Model"
+            class="w-full h-96 rounded border"></iframe>
+          <a href="https://files.calebhottes.com/ME387Design2/Tilty%20Loader.html" target="_blank"
+            class="see-more-details-button">Open
+            3D Viewer<i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Final Design Report -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Final Design Report</h3>
+          <p class="detail-page-text">A detailed overview of the entire design process, including sketches, analysis,
+            and conclusions.</p>
+          <img src="https://files.calebhottes.com/ME387Design2/FinalReportThumbnail.png" alt="Final Design Report"
+            class="project-media-single-image" onclick="openEnlargeableImageModal(this.src)"
+            onerror="this.style.display='none'">
+          <a href="https://files.calebhottes.com/ME387Design2/Team%207%20Final%20Design%20Report.pdf" target="_blank"
+            class="see-more-details-button">Open
+            Full Report<i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Simulation Results -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Simulation Results</h3>
+          <p class="detail-page-text">These are the results of the simulations we performed on various parts of the
+            design. The results documents are autogenerated solidworks reports and are mostly fluff but have nice photos
+            at the bottom.</p>
+          <img src="https://files.calebhottes.com/ME387Design2/SimulationThumbnail.png" alt="Simulation Results"
+            class="project-media-single-image" onclick="openEnlargeableImageModal(this.src)"
+            onerror="this.style.display='none'">
+          <a href="https://files.calebhottes.com/ME387Design2/combinedReports.pdf" target="_blank"
+            class="see-more-details-button">Open
+            Simulation Results<i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Gearbox Drawing Package -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Gearbox Drawing Package</h3>
+          <p class="detail-page-text">Technical schematics and mechanical drawings of the gearbox for manufacturing.</p>
+          <img src="https://files.calebhottes.com/ME387Design2/GearboxDrawingThumbnail.png" alt="Gearbox Drawing Package"
+            class="project-media-single-image" onclick="openEnlargeableImageModal(this.src)"
+            onerror="this.style.display='none'">
+          <a href="https://files.calebhottes.com/ME387Design2/DrawingPackageCenterSupport.pdf" target="_blank"
+            class="see-more-details-button">Open
+            Full Document<i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Final Presentation -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Final Presentation</h3>
+          <p class="detail-page-text">Our Team's Final Presentation</p>
+          <img src="https://files.calebhottes.com/ME387Design2/PresentationThumbnail.png" alt="Final Presentation"
+            class="project-media-single-image" onclick="openEnlargeableImageModal(this.src)"
+            onerror="this.style.display='none'">
+          <a href="https://files.calebhottes.com/ME387Design2/Final%20Presentation.pdf" target="_blank"
+            class="see-more-details-button">Open
+            <i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Enlargeable Image -->
+        <div id="enlargeableImageModal" class="enlargeable-modal">
+          <span class="close enlargeable-modal-close android-hidden">&times;</span>
+          <img class="enlargeable-modal-content" id="enlargeableModalImage">
+        </div>
+
+      </div>
+    </section>
+    <!-- Back Button at the Bottom -->
+    <div class="text-center mt-8 android-hidden" id="backButton">
+      <a href="javascript:history.back()" class="back-button-link">Back</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-main">
+    <div class="footer-container">
+      <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="/src/scripts/enlargeImage.js"></script>
+</body>
+
+</html>

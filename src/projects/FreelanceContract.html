@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freelance Engineering Contract</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/src/stylesheets/output.css">
+  <script src="/src/scripts/common.js"></script>
+</head>
+
+<body class="body">
+  <div id="navbar-placeholder"></div>
+  <!-- Header -->
+  <header class="bg-white">
+    <div class="detail-page-header">
+      <h1 class="text-xl md:text-2xl font-bold">Freelance Engineering Contract</h1>
+      <a href="javascript:history.back()" class="detail-page-header-back">←
+        Back</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="detail-page-section">
+      <h2 class="text-3xl font-semibold mb-4">Freelance Engineering Contract</h2>
+      <p class="detail-page-text">A man reached out to Boise State University asking for a student to help him with a
+        engineering problem for pay, I got the job. He needed a 4-bar lift to hold his motorcycles on his custom
+        campervan.</p>
+      <p class="detail-page-text">He provided me with a image he found online of something similar to what he wanted,
+        high level CAD of the campervan, and we met and sketched some things out. I then modeled a lift, with a couple
+        check-ins to get feedback and performed simulations on the resulting design.</p>
+      <p class="detail-page-text">The final design included two 4-bar linkages with cylinders rated for the expected
+        loads that I found online. The mounting plates also include a spot for a safety pin to stop hydraulic leakage.
+        The simulations resulted in a min safety factor of 3.4, meaning the weakest point of the lift can handle 3.4x
+        the expected load. I also gave him detailed drawings to facilitate fabrication. Overall, while not the most
+        complicated design, I gained immense real-world engineering experience through this process.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Final CAD Model -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Final CAD Model</h3>
+          <p class="detail-page-text">The final CAD model I created.</p>
+          <img src="https://files.calebhottes.com/ENGR%20Contract%20Lift/3DViewOfDesign.png" alt="Final CAD model of the lift" />
+          <a href="https://files.calebhottes.com/ENGR%20Contract%20Lift/LiftFinal.html" target="_blank"
+            class="see-more-details-button">Open
+            <i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Simulation Results -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Simulation Results</h3>
+          <p class="detail-page-text">Figure 14: Safety factor results of simulation.(Min:3.4)  Safety factor measures
+            how much more load the structure can bear than is being imposed on it. In this case, the weakest part of
+            structure is 3.4x stronger than it needs to be.</p>
+          <img src="https://files.calebhottes.com/ENGR%20Contract%20Lift/SafteyFactorSimulation.png"
+            alt="Safety factor simulation results" class="project-media-single-image"
+            onclick="openEnlargeableImageModal(this.src)">
+        </div>
+
+        <!-- Drawing Package -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Drawing Package</h3>
+          <img src="https://files.calebhottes.com/ENGR%20Contract%20Lift/mainDrawing.png" alt="Drawing Package"
+            class="project-media-single-image" onclick="openEnlargeableImageModal(this.src)">
+          <a href="https://files.calebhottes.com/ENGR%20Contract%20Lift/DrawingPackage.pdf" target="_blank"
+            class="see-more-details-button">Open
+            full document<i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Enlargeable Image -->
+        <div id="enlargeableImageModal" class="enlargeable-modal">
+          <span class="close enlargeable-modal-close android-hidden">&times;</span>
+          <img class="enlargeable-modal-content" id="enlargeableModalImage">
+        </div>
+
+      </div>
+    </section>
+    <!-- Back Button at the Bottom -->
+    <div class="text-center mt-8 android-hidden" id="backButton">
+      <a href="javascript:history.back()" class="back-button-link">Back</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-main">
+    <div class="footer-container">
+      <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="/src/scripts/enlargeImage.js"></script>
+</body>
+
+</html>
