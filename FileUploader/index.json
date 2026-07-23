@@ -1,0 +1,24 @@
+{
+    "models":  [
+                   {
+                       "name":  "sd-outdated",
+                       "file":  "cad-models/ModifiedWheelchair4-28-26.glb"
+                   },
+                   {
+                       "name":  "senior-design",
+                       "file":  "cad-models/ModifiedWheelchairCDRVersion.glb"
+                   },
+                   {
+                       "name":  "CDRReport",
+                       "file":  "Critical Design Review.pdf"
+                   },
+                   {
+                       "name":  "amelia-bearhart",
+                       "file":  "cad-models/AmeliaBearhartCompressed.glb"
+                   },
+                   {
+                       "name":  "polarity",
+                       "file":  "cad-models/PolarityCompressed.glb"
+                   }
+               ]
+}
