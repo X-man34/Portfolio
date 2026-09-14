@@ -3,12 +3,12 @@
         {
             "name": "sd-outdated",
             "displayName": "Senior Design (Outdated)",
-            "file": "cad-models/ModifiedWheelchair4-28-26.glb"
+            "file": "cad-models/ModifiedWheelchairCDRVersion.glb"
         },
         {
             "name": "senior-design",
             "displayName": "Senior Design",
-            "file": "cad-models/ModifiedWheelchairCDRVersion.glb"
+            "file": "cad-models/ModifiedWheelchair.glb"
         },
         {
             "name": "CDRReport",
