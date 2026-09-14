@@ -55,11 +55,12 @@
             <p><br> </p>
             <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
             <div class="max-w-3xl mx-auto text-lg text-gray-700 text-center">
-                <p class="mb-4">I'm a 19-year-old student from Boise State university. I have a strong background in
+                <p class="mb-4">I'm a 20-year-old student from Boise State university with a strong background in
                     design and software development, with a particular interest in creating practical and mechanical
                     systems. I don't shy away from integrating software into whatever i'm making.</p>
-                <p class="mb-4">I recently completed a design class where I honed my skills in conceptualizing and
-                    executing projects, culminating in a final design report and working prototype. I'm excited to apply
+                <p class="mb-4">I am currently collaborating with 6 other students on our senior design project. It is a
+                    intensive engineering project that is testing my engineering and teamwork skills. I'm excited to
+                    apply
                     my skills in real-world applications.</p>
                 <p>Outside of work, I enjoy coding, engineering, hiking, and exploring new technologies.</p>
             </div>
@@ -309,6 +310,55 @@
                             alt="Motorcycle lift CAD model" class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto">
                     </div>
                     <a href="/src/projects/FreelanceContract.html" class="see-more-details-button">See more
+                        details</a>
+                </div>
+            </div>
+            <!-- Research Lab -->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-4">Robotics Control Research Lab</h3>
+                <p class="home-project-text">I worked as a research assistant for Dr. Aykut Satici in his robotics
+                    control lab at Boise State, on a project teaching a neural network to control the forces and torques
+                    of a robot arm well enough to push a box up onto a step. I hunted bugs in the training pipeline,
+                    including a loss function bug that was collapsing an entire batch of evaluation runs into one
+                    number, and built the pipeline that exports a trained controller out of Python so it can run on real
+                    hardware from C++.</p>
+                <div class="project-media" onclick="window.location.href='/src/projects/ResearchLab.html';">
+                    <h4 class="text-lg font-semibold mb-2">Dynamic Manipulation</h4>
+                    <div class="grid md:flex gap-4 mb-6">
+                        <video class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" controls playsinline
+                            preload="metadata" src="https://files.calebhottes.com/ResearchLab/PerfectRun.mp4"
+                            poster="https://files.calebhottes.com/ResearchLab/Thumbnail.png"></video>
+                        <img src="https://files.calebhottes.com/ResearchLab/GapFunctionDiagram.png"
+                            alt="Diagram of the gap function geometry"
+                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <a href="/src/projects/ResearchLab.html" class="see-more-details-button">See more
+                        details</a>
+                </div>
+            </div>
+            <!-- Ultimate Tic Tac Toe -->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-4">Ultimate Tic Tac Toe</h3>
+                <p class="home-project-text">A Java and JavaFX desktop game with a Monte Carlo Tree Search opponent that
+                    can be guided by a value network and a policy network I trained myself. It is one of the biggest
+                    software
+                    projects I have built: a full game engine, a multithreaded search running many workers against one
+                    shared tree, a neural network training pipeline, and self-contained installers for Windows and
+                    Linux. Watch the demo, read about how the search works, or download it and play it yourself.</p>
+                <div class="project-media" onclick="window.location.href='/src/projects/UltimateTicTacToe.html';">
+                    <h4 class="text-lg font-semibold mb-2">The Game</h4>
+                    <div class="grid md:flex gap-4 mb-6">
+                        <img src="https://img.youtube.com/vi/xkTAqNK4U34/maxresdefault.jpg"
+                            alt="Ultimate Tic Tac Toe gameplay"
+                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
+                            onerror="this.style.display='none'">
+                        <img src="https://files.calebhottes.com/UTTT/UTTT_MCTSDiagram.png"
+                            alt="Diagram of the Monte Carlo Tree Search engine"
+                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <a href="/src/projects/UltimateTicTacToe.html" class="see-more-details-button">See more
                         details</a>
                 </div>
             </div>

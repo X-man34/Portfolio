@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robotics Control Research Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/src/stylesheets/output.css">
+  <script src="/src/scripts/common.js"></script>
+</head>
+
+<body class="body">
+  <div id="navbar-placeholder"></div>
+  <!-- Header -->
+  <header class="bg-white">
+    <div class="detail-page-header">
+      <h1 class="text-xl md:text-2xl font-bold">Robotics Control Research Lab</h1>
+      <a href="javascript:history.back()" class="detail-page-header-back">←
+        Back</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="detail-page-section">
+      <h2 class="text-3xl font-semibold mb-4">Robotics Control Research Lab</h2>
+      <p class="detail-page-text">I worked as a research assistant for <a
+          href="https://symplectomorphism.github.io/about.html" target="_blank"
+          class="text-blue-600 hover:underline">Dr. Aykut Satici</a> in his robotics control lab at Boise State. The lab
+        is teaching a neural network
+        to do dynamic, contact-rich manipulation: an actor-critic controller written in Python commands the forces and
+        torques that drive a robot arm, and it has to learn to push a box up onto a step and park it at a target pose
+        without any of the contact behaviour being hand-scripted.</p>
+      <p class="detail-page-text">My own work centered on two things: hunting down bugs in the training pipeline, and
+        building the export path that takes a trained controller out of Python so it can run on real hardware.</p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-2">Finding the loss function bug</h3>
+      <p class="detail-page-text">When evaluating a controller, the loss was being computed for every trial in a batch
+        and then summed into a single
+        scalar, so an entire batch of runs collapsed into one number. The symptom that gave it away was that evaluation
+        runs from a given starting pose kept producing suspiciously similar losses no matter what the controller
+        actually did. Once that was fixed we could finally see per-run behaviour, which is what let the team start
+        genuinely debugging the controller instead of guessing at aggregate numbers.</p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-2">The gap function</h3>
+      <p class="detail-page-text">The gap function returns the perpendicular distance from the manipulator to each of
+        the box's four faces, and the loss uses those distances to encourage the controller to stay in contact with the
+        correct face. It is central to the whole reward structure, and it was subtly wrong, so another student and I sat
+        down and mapped out the geometry from scratch — building the outward face normals from the box's rotation
+        matrix and taking dot products against the vector from the face to the manipulator. The diagram below is the
+        one we drew to reason about it. Working it out on paper first is what made the bug findable in the code.</p>
+      <p class="detail-page-text">From there I worked with him on trying different loss functions and training new
+        controllers to see what the changes actually bought us.</p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-2">Exporting controllers to real hardware</h3>
+      <p class="detail-page-text">A trained controller lived as an Equinox <code>.eqx</code> file, which is only useful
+        inside Python and JAX. To run one on a real robot it needs to be callable from C++, so I built a pipeline that
+        exports a trained controller to ONNX, verifies it, and benchmarks it.</p>
+      <p class="detail-page-text">This took a lot of trial and tribulation, but eventually, the thing that worked was
+        using the <code>jax2onnx</code> library, which converts straight from the Equinox module. It pins
+        a JAX version incompatible with the rest of the project, so the exporter runs inside its own throwaway virtual
+        environment that the shell wrapper builds from a pinned requirements list. In other words, I spend weeks
+        fighting dependencies until I was able to get the thing to work.</p>
+      <p class="detail-page-text">After conversion it runs random state vectors through both the ONNX model and the
+        original Equinox controller and
+        asserts they agree to within 1e-6, then benchmarks inference in Python and again in C++. If any check fails it
+        deletes the partial output and exits nonzero, so a subtly broken controller can never end up sitting on disk
+        looking valid. Inference came out around 40 kHz in Python and 60 kHz in C++, far more than robot control needs.
+        A useful side effect is reproducibility: an ONNX file freezes the traced computation graph, so a controller
+        stays runnable even after the training code has moved on underneath it.</p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-2">What I took away from it</h3>
+      <p class="detail-page-text">This was my first experience of real research, and of working in a large, genuinely
+        technical codebase that I did not write and could not hold entirely in my head. It was also cross-team: our lab
+        at Boise State worked alongside a different group at the University of Kentucky that focused on the real
+        hardware aspect of things.</p>
+      <p class="detail-page-text">A friend and fellow student worked in the lab alongside me, and the thing that made us
+        productive was being honest about what each of us was better at and splitting the work along those lines instead
+        of both half-doing everything. He built the evaluation dashboard, which I then used constantly to judge whether
+        a controller I had trained was actually an improvement; I took the export pipeline and a lot of the bug hunting.
+        Where the work genuinely needed both of us, like untangling the gap function, we sat down and did it together.
+        Delegating to our respective strengths made us meaningfully faster than working in parallel on the same things
+        would have.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+
+        <!-- Perfect Run -->
+        <div class="project-media md:col-span-2">
+          <h3 class="text-xl font-medium mb-2">A Perfect Run</h3>
+          <p class="detail-page-text">A controller I trained, solving the task from the hardest starting position: the
+            manipulator pushes the box up onto the step and settles it on top. This is a cherry picked success, but it
+            demonstrates what the models are capable of.</p>
+          <video class="w-full max-w-2xl rounded-lg shadow-md mx-auto" controls playsinline preload="metadata"
+            src="https://files.calebhottes.com/ResearchLab/PerfectRun.mp4"
+            poster="https://files.calebhottes.com/ResearchLab/Thumbnail.png"></video>
+        </div>
+
+        <!-- Gap Function Diagram -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Gap Function Diagram</h3>
+          <p class="detail-page-text">The diagram another student and I drew to work out how the gap function computes
+            the distance from the manipulator to a face of the box: the face normal dotted with the vector from the face
+            to the manipulator. Mapping it out this way is what let us debug it.</p>
+          <img src="https://files.calebhottes.com/ResearchLab/GapFunctionDiagram.png"
+            alt="Diagram of the gap function geometry" class="project-media-single-image"
+            onclick="openEnlargeableImageModal(this.src)" onerror="this.style.display='none'">
+        </div>
+
+        <!-- Simulated Environment -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">The Simulated Environment</h3>
+          <p class="detail-page-text">The MuJoCo scene the controller is trained in: the manipulator, the box it has to
+            move, and the step it has to get the box onto.</p>
+          <img src="https://files.calebhottes.com/ResearchLab/Thumbnail.png" alt="The simulated MuJoCo environment"
+            class="project-media-single-image" onclick="openEnlargeableImageModal(this.src)"
+            onerror="this.style.display='none'">
+        </div>
+
+        <!-- Evaluation Dashboard -->
+        <div class="project-media md:col-span-2">
+          <h3 class="text-xl font-medium mb-2">Evaluation Dashboard</h3>
+          <p class="detail-page-text">The dashboard my fellow student built over our batch evaluation results, which I
+            used to compare controllers. Each model is run through many episodes across several starting-condition
+            regimes, and the dashboard summarizes success rate, mean loss and control effort, then lets you drill into
+            individual trajectories and rendered videos.</p>
+          <img src="https://files.calebhottes.com/ResearchLab/DashboardPhoto.jpg"
+            alt="The evaluation dashboard showing model success rates" class="project-media-single-image"
+            onclick="openEnlargeableImageModal(this.src)" onerror="this.style.display='none'">
+        </div>
+
+        <!-- Enlargeable Image -->
+        <div id="enlargeableImageModal" class="enlargeable-modal">
+          <span class="close enlargeable-modal-close android-hidden">&times;</span>
+          <img class="enlargeable-modal-content" id="enlargeableModalImage">
+        </div>
+
+      </div>
+    </section>
+    <!-- Back Button at the Bottom -->
+    <div class="text-center mt-8 android-hidden" id="backButton">
+      <a href="javascript:history.back()" class="back-button-link">Back</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-main">
+    <div class="footer-container">
+      <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="/src/scripts/enlargeImage.js"></script>
+</body>
+
+</html>

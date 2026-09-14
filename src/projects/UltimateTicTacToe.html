@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate Tic Tac Toe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/src/stylesheets/output.css">
+  <script src="/src/scripts/common.js"></script>
+</head>
+
+<body class="body">
+  <div id="navbar-placeholder"></div>
+  <!-- Header -->
+  <header class="bg-white">
+    <div class="detail-page-header">
+      <h1 class="text-xl md:text-2xl font-bold">Ultimate Tic Tac Toe</h1>
+      <a href="javascript:history.back()" class="detail-page-header-back">←
+        Back</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="detail-page-section">
+      <h2 class="text-3xl font-semibold mb-4">Ultimate Tic Tac Toe</h2>
+      <div class="mb-6">
+        <a href="https://github.com/X-man34/UltimateTickTacToe" target="_blank"
+          class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.28 3.438 9.75 8.205 11.325.6.112.82-.262.82-.582 0-.287-.01-1.05-.015-2.06-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.832 2.805 1.303 3.49.997.108-.775.418-1.303.76-1.603-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.465-2.382 1.235-3.222-.123-.303-.535-1.523.117-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 013.003-.403c1.02.005 2.045.138 3.003.403 2.28-1.552 3.285-1.23 3.285-1.23.657 1.653.245 2.873.12 3.176.77.84 1.23 1.912 1.23 3.222 0 4.61-2.807 5.625-5.48 5.92.43.37.823 1.103.823 2.222 0 1.604-.015 2.896-.015 3.29 0 .322.217.698.825.58C20.565 22.247 24 17.778 24 12.5 24 5.87 18.63.5 12 .5z" />
+          </svg>
+          View on GitHub
+        </a>
+      </div>
+      <p class="detail-page-text">Ultimate Tic Tac Toe is a desktop game I wrote in Java and JavaFX, and the game AI
+        behind it is a Monte Carlo Tree Search engine that can optionally be steered by neural networks I trained
+        myself. It started as a way to play a game I like against something better than a random opponent, and turned
+        into the biggest software project I have built: a full game engine, a multithreaded search, a training pipeline
+        for two networks, and installers for Windows and Linux.</p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-2">The game</h3>
+      <p class="detail-page-text">Ultimate Tic Tac Toe is played on a 3x3 grid of 3x3 boards. Winning a small board
+        claims that cell of the big board, and the cell you play in dictates which small board your opponent has to play
+        in next. Win three small boards in a row and you win the game. That one rule, that your move chooses your
+        opponent's board, is what turns a solved children's game into something with real strategy: every move is a
+        trade between the square you want and the board you are handing over.</p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-2">How the computer opponent works</h3>
+      <p class="detail-page-text">The engine is a Monte Carlo Tree Search. Rather than evaluating every position via
+        brute force, MCTS repeats a cheap four-step loop as many times as possible, letting the
+        statistics it collects decide the move. Each iteration <strong>selects</strong> a promising path down the tree,
+        <strong>expands</strong> a new node at the bottom of it, <strong>evaluates</strong> that position, and
+        <strong>backpropagates</strong> the result up to the root. When time runs out, the engine plays the move
+        leading to the most-visited child of the root.
+      </p>
+      <p class="detail-page-text">The algorithmic selection uses the UCB1 formula to balance exploring new moves
+        with further exploring good ones, and evaluation is a random playout to the end of the game. However, mimicing
+        Google's Alpha Go, neural networks can be substituted into those two specific phases. A policy network replaces
+        UCB1 selection: it produces a probability
+        distribution over all 81 cells, and a move is sampled from the result. A value network replaces the random
+        playout with a single forward pass estimating who is
+        winning. Both networks are independently optional and both fall back to the classical behaviour if a
+        network is missing or fails, which is what lets one engine class cover two genuinely different search
+        strategies. The AI part of this is certainly a work in progress and there are bugs to work out, but it is a
+        functioning prototype.</p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-2">Optimization</h3>
+      <p class="detail-page-text">Search quality comes down to how many iterations fit in the budget, so a lot of the
+        work went into throughput. The search runs many worker threads against a single shared tree, so every thread's
+        work contributes to the same statistics instead of averaging several weaker independent searches. Work is
+        handed out in batches while an
+        interrupt check after every single iteration keeps the stop button instant. </p>
+      <p class="detail-page-text">Locking is graded by how deep in the hot path it sits: per-node locks where threads
+        actually collide structurally, and completely lock-free accumulation on the walk back up to the root, on the
+        reasoning that MCTS statistics are already noisy estimates and locking every ancestor on every iteration would
+        serialize the threads exactly where they overlap most. </p>
+      <p class="detail-page-text">The other thing that made deep search possible was memory. Storing a full board object
+        graph at every node made this thing suck up sooo much memory that i had to implement a compact BitSet encoding
+        and decode it on demand. It is a deliberate memory-for-CPU trade, and it is
+        the difference between a tree that fits in RAM at millions of nodes and one that does not.</p>
+
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+
+        <!-- Demo Video -->
+        <div class="project-media md:col-span-2">
+          <h3 class="text-xl font-medium mb-2">Demo Video</h3>
+          <p class="detail-page-text">A walkthrough of the app: playing a game, configuring the two player slots, and
+            watching the engine think.</p>
+          <div class="w-full aspect-video">
+            <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/xkTAqNK4U34"
+              title="Ultimate Tic Tac Toe demo" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- MCTS Diagram -->
+        <div class="project-media md:col-span-2">
+          <h3 class="text-xl font-medium mb-2">How the Search Engine Works</h3>
+          <p class="detail-page-text">A diagram of the engine: the four phases of one iteration on the left, the
+            asymmetric search tree in the middle with the current selection path highlighted, the classical and
+            neural-guided modes on the right with arrows landing on the two phases they substitute into, and the worker
+            threads feeding the one shared tree along the bottom.</p>
+          <img src="https://files.calebhottes.com/UTTT/UTTT_MCTSDiagram.png"
+            alt="Diagram of the Monte Carlo Tree Search engine" class="project-media-single-image"
+            onclick="openEnlargeableImageModal(this.src)" onerror="this.style.display='none'">
+        </div>
+
+        <!-- Downloads -->
+        <div class="project-media md:col-span-2">
+          <h3 class="text-xl font-medium mb-2">Try It Yourself</h3>
+          <p class="detail-page-text">Installers for version 1.0.0. Each one is self-contained and bundles a Java
+            runtime, so you do not need to install Java first.</p>
+          <div class="flex flex-col md:flex-row flex-wrap gap-4 justify-center items-center">
+            <a href="https://files.calebhottes.com/UTTT/UltimateTickTackToe-1.0.0.exe"
+              class="see-more-details-button inline-flex items-center justify-center">Windows installer (.exe, 342
+              MB)<i class="fas fa-download ml-2"></i></a>
+            <a href="https://files.calebhottes.com/UTTT/UltimateTickTackToe-1.0.0.msi"
+              class="see-more-details-button inline-flex items-center justify-center">Windows installer (.msi, 341
+              MB)<i class="fas fa-download ml-2"></i></a>
+            <a href="https://files.calebhottes.com/UTTT/ultimateticktacktoe_1.0.0_amd64.deb"
+              class="see-more-details-button inline-flex items-center justify-center">Linux installer (.deb, 296
+              MB)<i class="fas fa-download ml-2"></i></a>
+          </div>
+        </div>
+
+        <!-- Enlargeable Image -->
+        <div id="enlargeableImageModal" class="enlargeable-modal">
+          <span class="close enlargeable-modal-close android-hidden">&times;</span>
+          <img class="enlargeable-modal-content" id="enlargeableModalImage">
+        </div>
+
+      </div>
+    </section>
+    <!-- Back Button at the Bottom -->
+    <div class="text-center mt-8 android-hidden" id="backButton">
+      <a href="javascript:history.back()" class="back-button-link">Back</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-main">
+    <div class="footer-container">
+      <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="/src/scripts/enlargeImage.js"></script>
+</body>
+
+</html>
