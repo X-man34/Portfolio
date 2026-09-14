@@ -903,3 +903,110 @@ video {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
+
+/* ---- Home page: collapsible panels ---- */
+
+.collapse-panel {
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* hide the native disclosure triangle so the chevron is the only marker */
+
+.collapse-summary {
+  list-style: none;
+  display: flex;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity))
+}
+
+.collapse-summary::-webkit-details-marker {
+  display: none;
+}
+
+.collapse-panel .collapse-summary {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.collapse-arrow {
+  transition: transform 0.2s ease;
+  margin-left: 0.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity))
+}
+
+details[open] > .collapse-summary .collapse-arrow {
+  transform: rotate(180deg);
+}
+
+.collapse-body {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+/* the per-project disclosure sits inside an already-padded card */
+
+.home-project-details > .collapse-summary {
+  margin-top: 0.5rem;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  padding-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.home-project-details > .collapse-body {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-top: 1rem;
+}
+
+/* ---- Shared navbar: hamburger dropdown ---- */
+
+.site-menu-heading {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.site-menu-link {
+  display: block;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.site-menu-link:hover {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}

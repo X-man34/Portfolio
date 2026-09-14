@@ -2,12 +2,55 @@
 <nav class="bg-white shadow sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
         <h1 class="text-2xl font-bold text-blue-600"> <span class="my-name"></span></h1>
-        <div class="space-x-6">
-            <a href="../../index.html#about" class="hover:text-blue-600 transition">About</a>
-            <a href="../../index.html#cad" class="hover:text-blue-600 transition">CAD</a>
-            <a href="../../index.html#skills" class="hover:text-blue-600 transition">Skills</a>
-            <a href="../../index.html#projects" class="hover:text-blue-600 transition">Projects</a>
-            <a href="../../index.html#contact" class="hover:text-blue-600 transition">Contact</a>
+        <div class="flex items-center space-x-6">
+            <div class="hidden md:flex space-x-6">
+                <a href="/index.html#about" class="hover:text-blue-600 transition">About</a>
+                <a href="/index.html#skills" class="hover:text-blue-600 transition">Skills</a>
+                <a href="/index.html#projects" class="hover:text-blue-600 transition">Projects</a>
+                <a href="/index.html#contact" class="hover:text-blue-600 transition">Contact</a>
+            </div>
+            <button type="button" id="site-menu-button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="site-menu"
+                onclick="var m=document.getElementById('site-menu');var hidden=m.classList.toggle('hidden');this.setAttribute('aria-expanded',String(!hidden));"
+                class="text-2xl text-gray-700 hover:text-blue-600 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hamburger dropdown: every page on the site, one click away -->
+    <div id="site-menu" class="hidden border-t border-gray-200 bg-white shadow-lg max-h-[80vh] overflow-y-auto"
+        onclick="this.classList.add('hidden');document.getElementById('site-menu-button').setAttribute('aria-expanded','false');">
+        <div class="container mx-auto px-6 py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
+            <div>
+                <p class="site-menu-heading">Projects</p>
+                <a href="/src/projects/SeniorDesign.html" class="site-menu-link">Senior Design</a>
+                <a href="/src/projects/ResearchLab.html" class="site-menu-link">Robotics Research Lab</a>
+                <a href="/src/projects/UltimateTicTacToe.html" class="site-menu-link">Ultimate Tic Tac Toe</a>
+                <a href="/src/projects/StrapBreaker.html" class="site-menu-link">Strap Breaker</a>
+                <a href="/src/projects/FreelanceContract.html" class="site-menu-link">Freelance Contract</a>
+            </div>
+            <div>
+                <p class="site-menu-heading">Coursework</p>
+                <a href="/src/projects/RoboticsProject1.html" class="site-menu-link">Robotics: Furuta Pendulum</a>
+                <a href="/src/projects/RoboticsProject2.html" class="site-menu-link">Robotics: Localization</a>
+                <a href="/src/projects/RoboticsProject3.html" class="site-menu-link">Robotics: DH-Kinematics</a>
+                <a href="/src/projects/DesignProject2.html" class="site-menu-link">Design Project II</a>
+                <a href="/src/projects/AllTerrainTrailer.html" class="site-menu-link">Design Project I</a>
+            </div>
+            <div>
+                <p class="site-menu-heading">FIRST Robotics</p>
+                <a href="/src/projects/FRC.html" class="site-menu-link">FIRST Robotics Competition</a>
+                <a href="/src/projects/FTC.html" class="site-menu-link">FIRST Tech Challenge</a>
+                <a href="/src/projects/FLL.html" class="site-menu-link">FIRST LEGO League</a>
+                <p class="site-menu-heading mt-5">This Site</p>
+                <a href="/index.html" class="site-menu-link">Home</a>
+                <a href="/index.html#about" class="site-menu-link">About Me</a>
+                <a href="/index.html#skills" class="site-menu-link">My Skills</a>
+                <a href="/index.html#contact" class="site-menu-link">Contact</a>
+                <a href="https://cad.calebhottes.com/website/" target="_blank" class="site-menu-link">Online CAD Viewer
+                    <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+            </div>
         </div>
     </div>
 </nav>

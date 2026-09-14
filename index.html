@@ -20,101 +20,416 @@
 
     <div id="navbar-placeholder"></div>
     <!-- Hero Section -->
-    <header class="bg-gradient-primary text-white py-20">
+    <header class="bg-gradient-primary text-white py-10">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl font-bold mb-4">Hello, I'm <span class="my-name"></span></h1>
-            <p class="text-xl mb-6">A passionate engineer and developer with a focus on innovative solutions.</p>
-            <a href="#projects"
-                class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">View My
-                Work</a>
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Hello, I'm <span class="my-name"></span></h1>
+            <p class="text-lg mb-4">A mechanical engineering student who builds things, and writes the software that
+                runs them.</p>
+            <div class="flex flex-wrap gap-3 justify-center">
+                <a href="#projects"
+                    class="bg-white text-blue-600 px-5 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">View
+                    My Work</a>
+                <a href="https://cad.calebhottes.com/website/" target="_blank"
+                    class="inline-flex items-center border border-white px-5 py-2 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">
+                    <i class="fas fa-cube mr-2"></i>CAD Viewer</a>
+            </div>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="py-16">
+    <!-- About + Skills, collapsed by default to keep the projects near the top -->
+    <section id="about" class="py-8">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
-            <div class="max-w-3xl mx-auto text-lg text-gray-700 text-center">
-                <p class="mb-4">I'm a 20-year-old student from Boise State university with a strong background in
-                    design and software development, with a particular interest in creating practical and mechanical
-                    systems. I don't shy away from integrating software into whatever i'm making.</p>
-                <p class="mb-4">I am currently collaborating with 6 other students on our senior design project. It is a
-                    intensive engineering project that is testing my engineering and teamwork skills. I'm excited to
-                    apply
-                    my skills in real-world applications.</p>
-                <p>Outside of work, I enjoy coding, engineering, hiking, and exploring new technologies.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+                <details class="collapse-panel">
+                    <summary class="collapse-summary">
+                        <span>About Me</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body text-gray-700">
+                        <p class="mb-4">I'm a 20-year-old student from Boise State university with a strong background
+                            in design and software development, with a particular interest in creating practical and
+                            mechanical systems. I don't shy away from integrating software into whatever i'm making.</p>
+                        <p class="mb-4">I am currently collaborating with 6 other students on our senior design project.
+                            It is a intensive engineering project that is testing my engineering and teamwork skills.
+                            I'm excited to apply my skills in real-world applications.</p>
+                        <p>Outside of work, I enjoy coding, engineering, hiking, and exploring new technologies.</p>
+                    </div>
+                </details>
+                <details id="skills" class="collapse-panel">
+                    <summary class="collapse-summary">
+                        <span>My Skills</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="skill-container">
+                                <i class="fas fa-paint-brush skill-logo"></i>
+                                <h3 class="skill-heading">Design</h3>
+                                <p class="skill-text">Experienced in creating detailed models, design reports,
+                                    prototypes, and drawing packages using tools like Solidworks, Autodesk Inventor,
+                                    Bambu Studio etc. </p>
+                            </div>
+                            <div class="skill-container">
+                                <i class="fas fa-tools skill-logo"></i>
+                                <h3 class="skill-heading">Fabrication</h3>
+                                <p class="skill-text">Experience making things with broad range of shop and hand tools
+                                    such as manual mill, manual lathe, MIG, TIG, and FCAW welders, bandsaws, drills,
+                                    etc. </p>
+                            </div>
+                            <div class="skill-container">
+                                <i class="fas fa-code skill-logo"></i>
+                                <h3 class="skill-heading">Development</h3>
+                                <p class="skill-text">Proficient in Python and Java, HTML, CSS, and implementing machine
+                                    learning algorithms and AI to play board games.</p>
+                            </div>
+                            <div class="skill-container">
+                                <i class="fas fa-lightbulb skill-logo"></i>
+                                <h3 class="skill-heading">Problem Solving</h3>
+                                <p class="skill-text">Strong analytical and reasoning skills to tackle complex problems
+                                    and deliver effective solutions.</p>
+                            </div>
+                            <div class="skill-container">
+                                <i class="fas fa-users skill-logo"></i>
+                                <h3 class="skill-heading">Collaboration</h3>
+                                <p class="skill-text">Skilled in listening to and appreciating foreign ideas,
+                                    effectively communicating with co-workers, and working collaboratively to achieve
+                                    common goals.</p>
+                            </div>
+                            <div class="skill-container">
+                                <i class="fas fa-book-open skill-logo"></i>
+                                <h3 class="skill-heading">Continuous Learning and Focus</h3>
+                                <p class="skill-text">Committed to developing new skills in a dynamic work environment
+                                    while maintaining sustained focus on tasks to ensure productivity and quality
+                                    outcomes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
             </div>
         </div>
     </section>
 
-    <!-- CAD Viewer Section -->
-    <section id="cad" class="py-16 bg-gradient-primary text-white">
-        <div class="container mx-auto px-6 text-center">
-            <i class="fas fa-cube text-4xl mb-4"></i>
-            <h2 class="text-3xl font-bold mb-4">Online CAD Viewer</h2>
-            <p class="max-w-3xl mx-auto text-lg mb-8">I have a cad viewer where you can view publicly available models
-                and use to view your own models.</p>
-            <a href="https://cad.calebhottes.com/website/" target="_blank"
-                class="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-                Browse all CAD models<i class="fas fa-external-link-alt ml-2"></i>
-            </a>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-gray-200">
-        <div class="container mx-auto px-2 md:px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">My Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 md:grid-rows-2 md:gap-8 gap-2 max-w-6xl mx-auto">
-                <div class="skill-container">
-                    <i class="fas fa-paint-brush skill-logo"></i>
-                    <h3 class="skill-heading">Design</h3>
-                    <p class="skill-text">Experienced in creating detailed models, design reports, prototypes, and
-                        drawing packages using tools like Solidworks, Autodesk Inventor, Bambu Studio etc. </p>
-                </div>
-
-                <div class="skill-container">
-                    <i class="fas fa-tools skill-logo"></i>
-                    <h3 class="skill-heading">Fabrication</h3>
-                    <p class="skill-text">Experience making things with broad range of shop and hand tools such as
-                        manual mill, manual lathe, MIG, TIG, and FCAW welders, bandsaws, drills, etc. </p>
-                </div>
-
-                <div class="skill-container">
-                    <i class="fas fa-code skill-logo"></i>
-                    <h3 class="skill-heading">Development</h3>
-                    <p class="skill-text">Proficient in Python and Java, HTML, CSS, and implementing machine learning
-                        algorithms and AI to play board games.</p>
-                </div>
-                <div class="skill-container">
-                    <i class="fas fa-lightbulb skill-logo"></i>
-                    <h3 class="skill-heading">Problem Solving</h3>
-                    <p class="skill-text">Strong analytical and reasoning skills to tackle complex problems and
-                        deliver effective solutions.</p>
-                </div>
-
-                <div class="skill-container">
-                    <i class="fas fa-users skill-logo"></i>
-                    <h3 class="skill-heading">Collaboration</h3>
-                    <p class="skill-text">Skilled in listening to and appreciating foreign ideas, effectively
-                        communicating with co-workers, and working collaboratively to achieve common goals.</p>
-                </div>
-
-                <div class="skill-container">
-                    <i class="fas fa-book-open skill-logo"></i>
-                    <h3 class="skill-heading">Continuous Learning and Focus</h3>
-                    <p class="skill-text">Committed to developing new skills in a dynamic work environment while
-                        maintaining sustained focus on tasks to ensure productivity and quality outcomes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 ">
+    <section id="projects" class="py-10 ">
         <!--Projects Container-->
         <div class="max-w-6xl mx-auto container mx-auto md:px-6">
-            <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
+            <h2 class="text-4xl font-bold text-center mb-8">My Projects</h2>
+
+            <!-- Senior Design -->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-2">Senior Design: Lean Controlled Wheelchair</h3>
+                <p class="home-project-text">My university senior design project. I am working with six other students
+                    to design a custom lean-controlled sports wheelchair for a half paralyzed kid. Removing the need to
+                    push with your hands improves performance in wheelchair basketball, so we are putting motors and a
+                    control system on an existing sports chair, targeting around 13mph and a two hour runtime.</p>
+                <details class="home-project-details">
+                    <summary class="collapse-summary">
+                        <span>Show more</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body">
+                        <div class="project-media" onclick="window.location.href='/src/projects/SeniorDesign.html';">
+                            <h4 class="text-lg font-semibold mb-2">Our Design</h4>
+                            <div class="grid md:flex gap-4 mb-6">
+                                <img src="https://files.calebhottes.com/Senior%20Design/modifiedThumbnail.png"
+                                    alt="CAD model of the modified wheelchair"
+                                    class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
+                                    onerror="this.style.display='none'">
+                            </div>
+                            <a href="/src/projects/SeniorDesign.html" class="see-more-details-button">See more
+                                details</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Research Lab -->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-2">Robotics Control Research Lab</h3>
+                <p class="home-project-text">I worked as a research assistant for Dr. Aykut Satici in his robotics
+                    control lab at Boise State, on a project teaching a neural network to control the forces and torques
+                    of a robot arm well enough to push a box up onto a step. I hunted bugs in the training pipeline,
+                    including a loss function bug that was collapsing an entire batch of evaluation runs into one
+                    number, and built the pipeline that exports a trained controller out of Python so it can run on real
+                    hardware from C++.</p>
+                <details class="home-project-details">
+                    <summary class="collapse-summary">
+                        <span>Show more</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body">
+                        <div class="project-media" onclick="window.location.href='/src/projects/ResearchLab.html';">
+                            <h4 class="text-lg font-semibold mb-2">Dynamic Manipulation</h4>
+                            <div class="grid md:flex gap-4 mb-6">
+                                <video class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" controls playsinline
+                                    preload="metadata" src="https://files.calebhottes.com/ResearchLab/PerfectRun.mp4"
+                                    poster="https://files.calebhottes.com/ResearchLab/Thumbnail.png"></video>
+                                <img src="https://files.calebhottes.com/ResearchLab/GapFunctionDiagram.png"
+                                    alt="Diagram of the gap function geometry"
+                                    class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
+                                    onerror="this.style.display='none'">
+                            </div>
+                            <a href="/src/projects/ResearchLab.html" class="see-more-details-button">See more
+                                details</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Ultimate Tic Tac Toe -->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-2">Ultimate Tic Tac Toe</h3>
+                <p class="home-project-text">A Java and JavaFX desktop game with a Monte Carlo Tree Search opponent that
+                    can be guided by a value network and a policy network I trained myself. It is one of the biggest
+                    software
+                    projects I have built: a full game engine, a multithreaded search running many workers against one
+                    shared tree, a neural network training pipeline, and self-contained installers for Windows and
+                    Linux. Watch the demo, read about how the search works, or download it and play it yourself.</p>
+                <details class="home-project-details">
+                    <summary class="collapse-summary">
+                        <span>Show more</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body">
+                        <div class="project-media"
+                            onclick="window.location.href='/src/projects/UltimateTicTacToe.html';">
+                            <h4 class="text-lg font-semibold mb-2">The Game</h4>
+                            <div class="grid md:flex gap-4 mb-6">
+                                <img src="https://img.youtube.com/vi/xkTAqNK4U34/maxresdefault.jpg"
+                                    alt="Ultimate Tic Tac Toe gameplay"
+                                    class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
+                                    onerror="this.style.display='none'">
+                                <img src="https://files.calebhottes.com/UTTT/UTTT_MCTSDiagram.png"
+                                    alt="Diagram of the Monte Carlo Tree Search engine"
+                                    class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
+                                    onerror="this.style.display='none'">
+                            </div>
+                            <a href="/src/projects/UltimateTicTacToe.html" class="see-more-details-button">See more
+                                details</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Strap Breaker -->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-2">Strap Breaker</h3>
+                <p class="home-project-text">For my Experimental Methods class I designed and built tooling to
+                    destructively test an OSHA-certified tow strap and find its real factor of safety. The strap failed
+                    at 10717lbf against a 4000lbf rating, giving an experimental factor of safety of 2.68, roughly half
+                    the manufacturer's claimed value of five. The tooling came out of the test undamaged.</p>
+                <details class="home-project-details">
+                    <summary class="collapse-summary">
+                        <span>Show more</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body">
+                        <div class="project-media" onclick="window.location.href='/src/projects/StrapBreaker.html';">
+                            <h4 class="text-lg font-semibold mb-2">The Tooling</h4>
+                            <div class="grid md:flex gap-4 mb-6">
+                                <img src="https://files.calebhottes.com/StrapBreaker/StrapBreakerThumbnail.png"
+                                    alt="The strap breaker tooling, CAD model beside the finished part"
+                                    class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
+                                    onerror="this.style.display='none'">
+                            </div>
+                            <a href="/src/projects/StrapBreaker.html" class="see-more-details-button">See more
+                                details</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Freelance Engineering Contract -->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-2">Freelance Engineering Contract</h3>
+                <p class="home-project-text">A man reached out to Boise State University asking for a student to help
+                    him with a engineering problem for pay, I got the job. He needed a 4-bar lift to hold his
+                    motorcycles on his custom campervan.</p>
+                <details class="home-project-details">
+                    <summary class="collapse-summary">
+                        <span>Show more</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body">
+                        <div class="project-media"
+                            onclick="window.location.href='/src/projects/FreelanceContract.html';">
+                            <h4 class="text-lg font-semibold mb-2">Final CAD Model</h4>
+                            <div class="grid md:flex gap-4 mb-6">
+                                <img src="https://files.calebhottes.com/ENGR%20Contract%20Lift/3DViewOfDesign.png"
+                                    alt="Motorcycle lift CAD model"
+                                    class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto">
+                            </div>
+                            <a href="/src/projects/FreelanceContract.html" class="see-more-details-button">See more
+                                details</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Robotics Project 1-->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-2">Robotics: Furuta Pendulum Kinematics</h3>
+                <p class="home-project-text">In my first robotics project my partner and I worked together to analyze
+                    and simulate the kinematics of a Futura Pendulum using analytical and software methods. We derived
+                    and evaluated formulas with code, modeled the pendulum with MuJoCo, (A python library) and verified
+                    analytical results using the model. Below is an image of our simulated pendulum and a video of the
+                    simulation. Click the button to see reports, code, and more details. </p>
+                <details class="home-project-details">
+                    <summary class="collapse-summary">
+                        <span>Show more</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body">
+                        <div class="project-media">
+                            <h4 class="text-lg font-semibold mb-2">The Simulation</h4>
+                            <div class="grid md:flex gap-4 mb-6">
+                                <img src="https://files.calebhottes.com/ME467Project1/Simulation.png"
+                                    alt="Image of the Simulation"
+                                    class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
+                                    onclick="window.location.href='/src/projects/RoboticsProject1.html';" />
+                                <video class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" controls=""
+                                    playsinline="" preload="metadata"
+                                    src="https://files.calebhottes.com/ME467Project1/VideoOfSim.mp4"
+                                    poster="https://files.calebhottes.com/ME467Project1/thumbnail.png"></video>
+                            </div>
+                            <a href="/src/projects/RoboticsProject1.html" class="see-more-details-button">See more
+                                details</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Robotics Project 2-->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-2">Robotics: Localization</h3>
+                <p class="home-project-text">In my second robotics project, my partner and I implemented a Mahony
+                    filter to estimate orientation using data from a phone's IMU. We treated gravity and the Earth's
+                    magnetic field as noisy landmarks and used gyroscope data and bias correction to filter the signal.
+                    We also explored the TRIAD algorithm, each developing our own variations, and visualized the results
+                    using MuJoCo. Below is a video of the Mahony filter in action. Click the button to see the report,
+                    code, and project instructions.</p>
+                <details class="home-project-details">
+                    <summary class="collapse-summary">
+                        <span>Show more</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body">
+                        <!-- Video  -->
+                        <div class="project-media">
+                            <h4 class="text-lg font-semibold mb-2">Video Of Simulation</h4>
+                            <p class="text-gray-600 mb-4">A video showcasing the results of the filter on some data we
+                                collected.</p>
+                            <div class="grid md:flex gap-4 mb-4">
+                                <video class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" controls=""
+                                    playsinline="" preload="metadata"
+                                    src="https://files.calebhottes.com/ME467Project2/Fig_3-1.mp4"
+                                    poster="https://files.calebhottes.com/ME467Project2/thumbnail.png" muted=""></video>
+                            </div>
+                            <a href="/src/projects/RoboticsProject2.html" class="see-more-details-button">See
+                                more details</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Robotics Project 3-->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-2">Robotics: DH-Kinematics</h3>
+                <p class="home-project-text">In this project, I analyzed the forward and inverse kinematics—both
+                    position and velocity-level—for a 6-DOF robot arm, the NexCOM miniBoT. Using analytical methods and
+                    the Denavit-Hartenberg convention, I developed closed-form solutions, including a fast inverse
+                    kinematics function that returns multiple solutions. I also implemented an animation system that
+                    uses inverse kinematics to follow a path. Below is a visual of the robot arm, the animation, click
+                    the button to see the full report, code, and project details.</p>
+                <details class="home-project-details">
+                    <summary class="collapse-summary">
+                        <span>Show more</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body">
+                        <div class="project-media"
+                            onclick="window.location.href='/src/projects/RoboticsProject3.html';">
+                            <h4 class="text-lg font-semibold mb-2">Kinematics Simulation</h4>
+                            <div class="grid md:flex gap-4 mb-6">
+                                <img src="https://files.calebhottes.com/ME467Project3/mujoco_q1a.png"
+                                    alt="Model of Robot Arm"
+                                    class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
+                                <img src="https://files.calebhottes.com/ME467Project3/Animation.gif"
+                                    alt="Arm Control Simulation"
+                                    class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
+                            </div>
+                            <a href="/src/projects/RoboticsProject3.html" class="see-more-details-button">See more
+                                details</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Design Project 2 -->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-2">Design Project II: Material Handling Dolly</h3>
+                <p class="home-project-text">The second design project was focused on creating a dolly which can lift a
+                    35lb cylinder from a cradle, move it across a room and deposit it on a similar cradle. During the
+                    project I collaborated with my teammates in designing prototyping analyzing and testing our
+                    solution. During integration we had to revise the design on the fly due to issues with massive
+                    amounts of friction in the gearbox. Ultimately we pivoted from a 3D printed gearbox to a welded and
+                    machined metal gearbox allowing for tighter tolerances and higher rigidity.</p>
+                <details class="home-project-details">
+                    <summary class="collapse-summary">
+                        <span>Show more</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body">
+                        <div class="project-media" onclick="window.location.href='/src/projects/DesignProject2.html';">
+                            <h4 class="text-lg font-semibold mb-2">Material Handling Dolly</h4>
+                            <div class="grid md:flex gap-4 mb-6">
+                                <img src="https://files.calebhottes.com/ME387Design2/FinalDesign.png"
+                                    alt="Material Handling Dolly"
+                                    class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
+                                    onerror="this.style.display='none'">
+                            </div>
+                            <a href="/src/projects/DesignProject2.html" class="see-more-details-button">See more
+                                details</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Project 1: Design Project -->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-2">Design Project I: All terrain trailer</h3>
+                <p class="home-project-text">During my first design class at Boise State I designed, fabricated,
+                    tested, iterated, and documented a solution to the given challenge. The challenge was to design a
+                    trailer that can
+                    transport a 5.5lb payload across an uneven course. The key design constraint was that the payload
+                    must be balanced on the top of the solution. Below you can see my final design and explore more of
+                    the
+                    details of this project.</p>
+                <details class="home-project-details">
+                    <summary class="collapse-summary">
+                        <span>Show more</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body">
+                        <div class="project-media"
+                            onclick="window.location.href='/src/projects/AllTerrainTrailer.html';">
+                            <h4 class="text-lg font-semibold mb-2">My Solution</h4>
+                            <div class="grid md:flex gap-4 mb-6">
+                                <img src="https://files.calebhottes.com/ME287/FinalDesignTop.jpg" alt="Top of Solution"
+                                    class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
+                                <img src="https://files.calebhottes.com/ME287/FinalDesignBottom.jpg"
+                                    alt="Bottom of Solution"
+                                    class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
+                            </div>
+                            <a href="/src/projects/AllTerrainTrailer.html" class="see-more-details-button">See more
+                                details</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
             <!--FIRST Robotics Project-->
             <div class="home-project-container">
                 <!--FIRST Logo-->
@@ -123,7 +438,7 @@
                         class="h-8">
                 </div>
                 <!--Heading-->
-                <h3 class="text-2xl font-bold">FIRST Robotics</h3>
+                <h3 class="text-2xl font-bold mb-2">FIRST Robotics</h3>
                 <!--Text-->
                 <p class="home-project-text">I participated in FIRST Robotics for nine years, from 4th grade through
                     high school, an experience that had a major impact on my development as an engineer. Through the
@@ -133,267 +448,59 @@
                     sub-team called General Programming and led the development of our first electronic scouting system,
                     which introduced automation into our data collection process and improved our competition strategy.
                     Below is more information about each of the programs I participated in. </p>
-                <!--Content-->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!--FLL-->
-                    <div class="project-media" onclick="window.location.href='/src/projects/FLL.html';">
-                        <h4 class="text-lg font-semibold mb-2">FIRST LEGO League</h4>
-                        <p class="home-project-text">From 4th to 8th grade I participated in FIRST LEGO League (FLL).
-                            FLL introduced me to engineering through building autonomous LEGO robots and developing
-                            teamwork, design, and presentation skills that have continued to support my growth in
-                            higher-level robotics and beyond.</p>
-                        <img src="https://files.calebhottes.com/FIRST/FLL/DSC_0002.JPG" alt="FLL Team"
-                            class="project-media-single-image">
-                        <a href="/src/projects/FLL.html" class="see-more-details-button">See more
-                            details</a>
-                    </div>
-                    <!--FTC-->
-                    <div class="project-media" onclick="window.location.href='src/projects/FTC.html';">
-                        <h4 class="text-lg font-semibold mb-2">FIRST Tech Challenge</h4>
-                        <p class="home-project-text">During my two years on Team 11109 Pirate Tekerz in the FIRST Tech
-                            Challenge, I developed strong engineering skills in CAD design, collaboration, and
-                            fabrication, successfully adapting to remote robot building during COVID-19 and helping get
-                            the team to its first state competition.</p>
-                        <img src="https://files.calebhottes.com/FIRST/FTC/2019-09-07%2016.13.50.jpg" alt="FTC Team"
-                            class="project-media-single-image">
-                        <a href="/src/projects/FTC.html" class="see-more-details-button">See more
-                            details</a>
-                    </div>
-                    <!--FRC, want it to center below the other two.-->
-                    <div class="col-span-1 md:col-span-2 flex justify center"
-                        onclick="window.location.href='src/projects/FRC.html';">
-                        <div class="project-media">
-                            <h4 class="text-lg font-semibold mb-2">FIRST Robotics Competition</h4>
-                            <p class="home-project-text">During high school I competed in FRC for 3 years, gaining
-                                experience with Computer
-                                Aided Design, technical collaboration, integrating designs into the real world. During
-                                my third year I co-founded a new sub-team to develop the team's first electronic
-                                scouting system.</p>
-                            <img src="https://files.calebhottes.com/FIRST/FRC/winningSammy24.jpg" alt="FRC Team"
-                                class="project-media-single-image">
-                            <a href="/src/projects/FRC.html" class="see-more-details-button">See more
-                                details</a>
+                <details class="home-project-details">
+                    <summary class="collapse-summary">
+                        <span>Show more</span>
+                        <i class="fas fa-chevron-down collapse-arrow"></i>
+                    </summary>
+                    <div class="collapse-body">
+                        <!--Content-->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!--FLL-->
+                            <div class="project-media" onclick="window.location.href='/src/projects/FLL.html';">
+                                <h4 class="text-lg font-semibold mb-2">FIRST LEGO League</h4>
+                                <p class="home-project-text">From 4th to 8th grade I participated in FIRST LEGO League
+                                    (FLL). FLL introduced me to engineering through building autonomous LEGO robots and
+                                    developing teamwork, design, and presentation skills that have continued to support
+                                    my growth in higher-level robotics and beyond.</p>
+                                <img src="https://files.calebhottes.com/FIRST/FLL/DSC_0002.JPG" alt="FLL Team"
+                                    class="project-media-single-image">
+                                <a href="/src/projects/FLL.html" class="see-more-details-button">See more
+                                    details</a>
+                            </div>
+                            <!--FTC-->
+                            <div class="project-media" onclick="window.location.href='src/projects/FTC.html';">
+                                <h4 class="text-lg font-semibold mb-2">FIRST Tech Challenge</h4>
+                                <p class="home-project-text">During my two years on Team 11109 Pirate Tekerz in the
+                                    FIRST Tech Challenge, I developed strong engineering skills in CAD design,
+                                    collaboration, and fabrication, successfully adapting to remote robot building
+                                    during COVID-19 and helping get the team to its first state competition.</p>
+                                <img src="https://files.calebhottes.com/FIRST/FTC/2019-09-07%2016.13.50.jpg"
+                                    alt="FTC Team" class="project-media-single-image">
+                                <a href="/src/projects/FTC.html" class="see-more-details-button">See more
+                                    details</a>
+                            </div>
+                            <!--FRC, want it to center below the other two.-->
+                            <div class="col-span-1 md:col-span-2 flex justify center"
+                                onclick="window.location.href='src/projects/FRC.html';">
+                                <div class="project-media">
+                                    <h4 class="text-lg font-semibold mb-2">FIRST Robotics Competition</h4>
+                                    <p class="home-project-text">During high school I competed in FRC for 3 years,
+                                        gaining experience with Computer
+                                        Aided Design, technical collaboration, integrating designs into the real world.
+                                        During my third year I co-founded a new sub-team to develop the team's first
+                                        electronic scouting system.</p>
+                                    <img src="https://files.calebhottes.com/FIRST/FRC/winningSammy24.jpg" alt="FRC Team"
+                                        class="project-media-single-image">
+                                    <a href="/src/projects/FRC.html" class="see-more-details-button">See more
+                                        details</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                </details>
             </div>
-            <!-- Project 1: Design Project -->
-            <div class="home-project-container">
-                <h3 class="text-2xl font-bold mb-4">Design Project I: All terrain trailer</h3>
-                <p class="home-project-text">During my first design class at Boise State I designed, fabricated,
-                    tested, iterated, and documented a solution to the given challenge. The challenge was to design a
-                    trailer that can
-                    transport a 5.5lb payload across an uneven course. The key design constraint was that the payload
-                    must be balanced on the top of the solution. Below you can see my final design and explore more of
-                    the
-                    details of this project.</p>
-
-                <div class="project-media" onclick="window.location.href='/src/projects/AllTerrainTrailer.html';">
-                    <h4 class="text-lg font-semibold mb-2">My Solution</h4>
-                    <div class="grid md:flex gap-4 mb-6">
-                        <img src="https://files.calebhottes.com/ME287/FinalDesignTop.jpg" alt="Top of Solution"
-                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
-                        <img src="https://files.calebhottes.com/ME287/FinalDesignBottom.jpg" alt="Bottom of Solution"
-                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
-                    </div>
-                    <a href="/src/projects/AllTerrainTrailer.html" class="see-more-details-button">See more
-                        details</a>
-                </div>
-            </div>
-            <!-- Design Project 2 -->
-            <div class="home-project-container">
-                <h3 class="text-2xl font-bold mb-4">Design Project II: Material Handling Dolly</h3>
-                <p class="home-project-text">The second design project was focused on creating a dolly which can lift a
-                    35lb cylinder from a cradle, move it across a room and deposit it on a similar cradle. During the
-                    project I collaborated with my teammates in designing prototyping analyzing and testing our
-                    solution. During integration we had to revise the design on the fly due to issues with massive
-                    amounts of friction in the gearbox. Ultimately we pivoted from a 3D printed gearbox to a welded and
-                    machined metal gearbox allowing for tighter tolerances and higher rigidity.</p>
-                <div class="project-media" onclick="window.location.href='/src/projects/DesignProject2.html';">
-                    <h4 class="text-lg font-semibold mb-2">Material Handling Dolly</h4>
-                    <div class="grid md:flex gap-4 mb-6">
-                        <img src="https://files.calebhottes.com/ME387Design2/FinalDesign.png"
-                            alt="Material Handling Dolly" class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
-                            onerror="this.style.display='none'">
-                    </div>
-                    <a href="/src/projects/DesignProject2.html" class="see-more-details-button">See more
-                        details</a>
-                </div>
-            </div>
-            <!-- Robotics Project 1-->
-            <div class="home-project-container">
-                <h3 class="text-2xl font-bold mb-4">Robotics: Furuta Pendulum Kinematics</h3>
-                <p class="home-project-text">In my first robotics project my partner and I worked together to analyze
-                    and simulate the kinematics of a Futura Pendulum using analytical and software methods. We derived
-                    and evaluated formulas with code, modeled the pendulum with MuJoCo, (A python library) and verified
-                    analytical results using the model. Below is an image of our simulated pendulum and a video of the
-                    simulation. Click the button to see reports, code, and more details. </p>
-                <div class="project-media">
-                    <h4 class="text-lg font-semibold mb-2">The Simulation</h4>
-                    <div class="grid md:flex gap-4 mb-6">
-                        <img src="https://files.calebhottes.com/ME467Project1/Simulation.png"
-                            alt="Image of the Simulation" class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
-                            onclick="window.location.href='/src/projects/RoboticsProject1.html';" />
-                        <video class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" controls="" playsinline=""
-                            preload="metadata" src="https://files.calebhottes.com/ME467Project1/VideoOfSim.mp4"
-                            poster="https://files.calebhottes.com/ME467Project1/thumbnail.png" autoplay=""></video>
-                    </div>
-                    <a href="/src/projects/RoboticsProject1.html" class="see-more-details-button">See more
-                        details</a>
-                </div>
-
-            </div>
-            <!-- Robotics Project 2-->
-            <div class="home-project-container">
-                <h3 class="text-2xl font-bold mb-4">Robotics: Localization</h3>
-                <p class="home-project-text">In my second robotics project, my partner and I implemented a Mahony
-                    filter to estimate orientation using data from a phone's IMU. We treated gravity and the Earth's
-                    magnetic field as noisy landmarks and used gyroscope data and bias correction to filter the signal.
-                    We also explored the TRIAD algorithm, each developing our own variations, and visualized the results
-                    using MuJoCo. Below is a video of the Mahony filter in action. Click the button to see the report,
-                    code, and project instructions.</p>
-                <!-- Video  -->
-                <div class="project-media">
-                    <h4 class="text-lg font-semibold mb-2">Video Of Simulation</h4>
-                    <p class="text-gray-600 mb-4">A video showcasing the results of the filter on some data we
-                        collected.</p>
-                    <div class="grid md:flex gap-4 mb-4">
-                        <video class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" controls="" playsinline=""
-                            preload="metadata" src="https://files.calebhottes.com/ME467Project2/Fig_3-1.mp4"
-                            poster="https://files.calebhottes.com/ME467Project2/thumbnail.png" autoplay=""
-                            muted=""></video>
-                    </div>
-                    <a href="/src/projects/RoboticsProject2.html" class="see-more-details-button">See
-                        more details</a>
-                </div>
-            </div>
-            <!-- Robotics Project 3-->
-            <div class="home-project-container">
-                <h3 class="text-2xl font-bold mb-4">Robotics: DH-Kinematics</h3>
-                <p class="home-project-text">In this project, I analyzed the forward and inverse kinematics—both
-                    position and velocity-level—for a 6-DOF robot arm, the NexCOM miniBoT. Using analytical methods and
-                    the Denavit-Hartenberg convention, I developed closed-form solutions, including a fast inverse
-                    kinematics function that returns multiple solutions. I also implemented an animation system that
-                    uses inverse kinematics to follow a path. Below is a visual of the robot arm, the animation, click
-                    the button to see the full report, code, and project details.</p>
-
-
-                <div class="project-media" onclick="window.location.href='/src/projects/RoboticsProject3.html';">
-                    <h4 class="text-lg font-semibold mb-2">Kinematics Simulation</h4>
-                    <div class="grid md:flex gap-4 mb-6">
-                        <img src="https://files.calebhottes.com/ME467Project3/mujoco_q1a.png" alt="Model of Robot Arm"
-                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
-                        <img src="https://files.calebhottes.com/ME467Project3/Animation.gif"
-                            alt="Arm Control Simulation" class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" />
-                    </div>
-                    <a href="/src/projects/RoboticsProject3.html" class="see-more-details-button">See more
-                        details</a>
-                </div>
-            </div>
-            <!-- Freelance Engineering Contract -->
-            <div class="home-project-container">
-                <h3 class="text-2xl font-bold mb-4">Freelance Engineering Contract</h3>
-                <p class="home-project-text">A man reached out to Boise State University asking for a student to help
-                    him with a engineering problem for pay, I got the job. He needed a 4-bar lift to hold his
-                    motorcycles on his custom campervan.</p>
-                <div class="project-media" onclick="window.location.href='/src/projects/FreelanceContract.html';">
-                    <h4 class="text-lg font-semibold mb-2">Final CAD Model</h4>
-                    <div class="grid md:flex gap-4 mb-6">
-                        <img src="https://files.calebhottes.com/ENGR%20Contract%20Lift/3DViewOfDesign.png"
-                            alt="Motorcycle lift CAD model" class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto">
-                    </div>
-                    <a href="/src/projects/FreelanceContract.html" class="see-more-details-button">See more
-                        details</a>
-                </div>
-            </div>
-            <!-- Senior Design -->
-            <div class="home-project-container">
-                <h3 class="text-2xl font-bold mb-4">Senior Design: Lean Controlled Wheelchair</h3>
-                <p class="home-project-text">My university senior design project. I am working with six other students
-                    to design a custom lean-controlled sports wheelchair for a half paralyzed kid. Removing the need to
-                    push with your hands improves performance in wheelchair basketball, so we are putting motors and a
-                    control system on an existing sports chair, targeting around 13mph and a two hour runtime.</p>
-                <div class="project-media" onclick="window.location.href='/src/projects/SeniorDesign.html';">
-                    <h4 class="text-lg font-semibold mb-2">Our Design</h4>
-                    <div class="grid md:flex gap-4 mb-6">
-                        <img src="https://files.calebhottes.com/Senior%20Design/modifiedThumbnail.png"
-                            alt="CAD model of the modified wheelchair"
-                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
-                            onerror="this.style.display='none'">
-                    </div>
-                    <a href="/src/projects/SeniorDesign.html" class="see-more-details-button">See more
-                        details</a>
-                </div>
-            </div>
-            <!-- Strap Breaker -->
-            <div class="home-project-container">
-                <h3 class="text-2xl font-bold mb-4">Strap Breaker</h3>
-                <p class="home-project-text">For my Experimental Methods class I designed and built tooling to
-                    destructively test an OSHA-certified tow strap and find its real factor of safety. The strap failed
-                    at 10717lbf against a 4000lbf rating, giving an experimental factor of safety of 2.68, roughly half
-                    the manufacturer's claimed value of five. The tooling came out of the test undamaged.</p>
-                <div class="project-media" onclick="window.location.href='/src/projects/StrapBreaker.html';">
-                    <h4 class="text-lg font-semibold mb-2">The Tooling</h4>
-                    <div class="grid md:flex gap-4 mb-6">
-                        <img src="https://files.calebhottes.com/StrapBreaker/StrapBreakerThumbnail.png"
-                            alt="The strap breaker tooling, CAD model beside the finished part"
-                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
-                            onerror="this.style.display='none'">
-                    </div>
-                    <a href="/src/projects/StrapBreaker.html" class="see-more-details-button">See more
-                        details</a>
-                </div>
-            </div>
-            <!-- Research Lab -->
-            <div class="home-project-container">
-                <h3 class="text-2xl font-bold mb-4">Robotics Control Research Lab</h3>
-                <p class="home-project-text">I worked as a research assistant for Dr. Aykut Satici in his robotics
-                    control lab at Boise State, on a project teaching a neural network to control the forces and torques
-                    of a robot arm well enough to push a box up onto a step. I hunted bugs in the training pipeline,
-                    including a loss function bug that was collapsing an entire batch of evaluation runs into one
-                    number, and built the pipeline that exports a trained controller out of Python so it can run on real
-                    hardware from C++.</p>
-                <div class="project-media" onclick="window.location.href='/src/projects/ResearchLab.html';">
-                    <h4 class="text-lg font-semibold mb-2">Dynamic Manipulation</h4>
-                    <div class="grid md:flex gap-4 mb-6">
-                        <video class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto" controls playsinline
-                            preload="metadata" src="https://files.calebhottes.com/ResearchLab/PerfectRun.mp4"
-                            poster="https://files.calebhottes.com/ResearchLab/Thumbnail.png"></video>
-                        <img src="https://files.calebhottes.com/ResearchLab/GapFunctionDiagram.png"
-                            alt="Diagram of the gap function geometry"
-                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
-                            onerror="this.style.display='none'">
-                    </div>
-                    <a href="/src/projects/ResearchLab.html" class="see-more-details-button">See more
-                        details</a>
-                </div>
-            </div>
-            <!-- Ultimate Tic Tac Toe -->
-            <div class="home-project-container">
-                <h3 class="text-2xl font-bold mb-4">Ultimate Tic Tac Toe</h3>
-                <p class="home-project-text">A Java and JavaFX desktop game with a Monte Carlo Tree Search opponent that
-                    can be guided by a value network and a policy network I trained myself. It is one of the biggest
-                    software
-                    projects I have built: a full game engine, a multithreaded search running many workers against one
-                    shared tree, a neural network training pipeline, and self-contained installers for Windows and
-                    Linux. Watch the demo, read about how the search works, or download it and play it yourself.</p>
-                <div class="project-media" onclick="window.location.href='/src/projects/UltimateTicTacToe.html';">
-                    <h4 class="text-lg font-semibold mb-2">The Game</h4>
-                    <div class="grid md:flex gap-4 mb-6">
-                        <img src="https://img.youtube.com/vi/xkTAqNK4U34/maxresdefault.jpg"
-                            alt="Ultimate Tic Tac Toe gameplay"
-                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
-                            onerror="this.style.display='none'">
-                        <img src="https://files.calebhottes.com/UTTT/UTTT_MCTSDiagram.png"
-                            alt="Diagram of the Monte Carlo Tree Search engine"
-                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
-                            onerror="this.style.display='none'">
-                    </div>
-                    <a href="/src/projects/UltimateTicTacToe.html" class="see-more-details-button">See more
-                        details</a>
-                </div>
-            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
@@ -427,6 +534,16 @@
             <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Open a collapsed panel when it is linked to directly (e.g. the navbar's #skills link)
+        function openTargetPanel() {
+            const el = document.getElementById(location.hash.slice(1));
+            if (el && el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView(); }
+        }
+        window.addEventListener('hashchange', openTargetPanel);
+        document.addEventListener('DOMContentLoaded', openTargetPanel);
+    </script>
 
 </body>
 
