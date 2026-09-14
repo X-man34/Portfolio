@@ -33,26 +33,6 @@
     <!-- About Section -->
     <section id="about" class="py-16">
         <div class="container mx-auto px-6">
-            <a href="https://sites.google.com/view/calebhottesportfolio/"
-                class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Alternative
-                portfolio site</a>
-            <p><br> </p>
-            <a href="https://cad.calebhottes.com/website/"
-                class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Online
-                Cad Viewer</a>
-            <p><br> </p>
-            <a href="/src/projects/SeniorDesign.html"
-                class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Senior
-                Design Stuff</a>
-
-            <a href="https://files.calebhottes.com/StrapBreaker/StrapBreakerv1.html"
-                class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Strap
-                Breaker CAD Experimental methods</a>
-            <p><br> </p>
-            <a href="https://files.calebhottes.com/StrapBreaker/StrapBreakerDrawingPackage.pdf"
-                class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Strap
-                Breaker Drawing Package Experimental methods</a>
-            <p><br> </p>
             <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
             <div class="max-w-3xl mx-auto text-lg text-gray-700 text-center">
                 <p class="mb-4">I'm a 20-year-old student from Boise State university with a strong background in
@@ -64,6 +44,20 @@
                     my skills in real-world applications.</p>
                 <p>Outside of work, I enjoy coding, engineering, hiking, and exploring new technologies.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- CAD Viewer Section -->
+    <section id="cad" class="py-16 bg-gradient-primary text-white">
+        <div class="container mx-auto px-6 text-center">
+            <i class="fas fa-cube text-4xl mb-4"></i>
+            <h2 class="text-3xl font-bold mb-4">Online CAD Viewer</h2>
+            <p class="max-w-3xl mx-auto text-lg mb-8">I have a cad viewer where you can view publicly available models
+                and use to view your own models.</p>
+            <a href="https://cad.calebhottes.com/website/" target="_blank"
+                class="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                Browse all CAD models<i class="fas fa-external-link-alt ml-2"></i>
+            </a>
         </div>
     </section>
 
@@ -310,6 +304,44 @@
                             alt="Motorcycle lift CAD model" class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto">
                     </div>
                     <a href="/src/projects/FreelanceContract.html" class="see-more-details-button">See more
+                        details</a>
+                </div>
+            </div>
+            <!-- Senior Design -->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-4">Senior Design: Lean Controlled Wheelchair</h3>
+                <p class="home-project-text">My university senior design project. I am working with six other students
+                    to design a custom lean-controlled sports wheelchair for a half paralyzed kid. Removing the need to
+                    push with your hands improves performance in wheelchair basketball, so we are putting motors and a
+                    control system on an existing sports chair, targeting around 13mph and a two hour runtime.</p>
+                <div class="project-media" onclick="window.location.href='/src/projects/SeniorDesign.html';">
+                    <h4 class="text-lg font-semibold mb-2">Our Design</h4>
+                    <div class="grid md:flex gap-4 mb-6">
+                        <img src="https://files.calebhottes.com/Senior%20Design/modifiedThumbnail.png"
+                            alt="CAD model of the modified wheelchair"
+                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <a href="/src/projects/SeniorDesign.html" class="see-more-details-button">See more
+                        details</a>
+                </div>
+            </div>
+            <!-- Strap Breaker -->
+            <div class="home-project-container">
+                <h3 class="text-2xl font-bold mb-4">Strap Breaker</h3>
+                <p class="home-project-text">For my Experimental Methods class I designed and built tooling to
+                    destructively test an OSHA-certified tow strap and find its real factor of safety. The strap failed
+                    at 10717lbf against a 4000lbf rating, giving an experimental factor of safety of 2.68, roughly half
+                    the manufacturer's claimed value of five. The tooling came out of the test undamaged.</p>
+                <div class="project-media" onclick="window.location.href='/src/projects/StrapBreaker.html';">
+                    <h4 class="text-lg font-semibold mb-2">The Tooling</h4>
+                    <div class="grid md:flex gap-4 mb-6">
+                        <img src="https://files.calebhottes.com/StrapBreaker/StrapBreakerThumbnail.png"
+                            alt="The strap breaker tooling, CAD model beside the finished part"
+                            class="md:w-5/12 rounded-lg shadow-md object-cover mx-auto"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <a href="/src/projects/StrapBreaker.html" class="see-more-details-button">See more
                         details</a>
                 </div>
             </div>

@@ -1,24 +1,39 @@
 {
-    "models":  [
-                   {
-                       "name":  "sd-outdated",
-                       "file":  "cad-models/ModifiedWheelchair4-28-26.glb"
-                   },
-                   {
-                       "name":  "senior-design",
-                       "file":  "cad-models/ModifiedWheelchairCDRVersion.glb"
-                   },
-                   {
-                       "name":  "CDRReport",
-                       "file":  "Critical Design Review.pdf"
-                   },
-                   {
-                       "name":  "amelia-bearhart",
-                       "file":  "cad-models/AmeliaBearhartCompressed.glb"
-                   },
-                   {
-                       "name":  "polarity",
-                       "file":  "cad-models/PolarityCompressed.glb"
-                   }
-               ]
+    "models": [
+        {
+            "name": "sd-outdated",
+            "displayName": "Senior Design (Outdated)",
+            "file": "cad-models/ModifiedWheelchair4-28-26.glb"
+        },
+        {
+            "name": "senior-design",
+            "displayName": "Senior Design",
+            "file": "cad-models/ModifiedWheelchairCDRVersion.glb"
+        },
+        {
+            "name": "CDRReport",
+            "displayName": "Critical Design Review Report",
+            "file": "Critical Design Review.pdf"
+        },
+        {
+            "name": "amelia-bearhart",
+            "displayName": "Amelia Earhart",
+            "file": "cad-models/AmeliaBearhartCompressed.glb"
+        },
+        {
+            "name": "polarity",
+            "displayName": "Polarity",
+            "file": "cad-models/PolarityCompressed.glb"
+        },
+        {
+            "name": "me-club",
+            "displayName": "ME Club Trike",
+            "file": "cad-models/MEClubTrike_v1_10-25-25.glb"
+        },
+        {
+            "name": "strap-breaker",
+            "displayName": "Strap Breaker",
+            "file": "cad-models/StrapBreaker.glb"
+        }
+    ]
 }

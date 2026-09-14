@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strap Breaker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/src/stylesheets/output.css">
+  <script src="/src/scripts/common.js"></script>
+</head>
+
+<body class="body">
+  <div id="navbar-placeholder"></div>
+  <!-- Header -->
+  <header class="bg-white">
+    <div class="detail-page-header">
+      <h1 class="text-xl md:text-2xl font-bold">Strap Breaker</h1>
+      <a href="javascript:history.back()" class="detail-page-header-back">←
+        Back</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="detail-page-section">
+      <h2 class="text-3xl font-semibold mb-4">Strap Breaker</h2>
+      <p class="detail-page-text">For my Experimental Methods class I designed and built a piece of tooling to
+        destructively test an OSHA-certified tow strap, so we could find out what its real factor of safety is. The
+        straps are rated for 2000 lbf in pure tension and 4000 lbf in double tension, with a manufacturer's claimed
+        factor of safety of five. The tooling had to fit in the jaws of the lab's press, cost under $150, be able to
+        break a strap in single tension, and survive to be used again.</p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-2">The design</h3>
+      <p class="detail-page-text">The strap wraps around a round bar, feeds through a hole and is pinned in place.
+        Wrapping it around the bar means friction carries most of the load, which drastically reduces what the pin
+        actually has to hold. From there the load transfers through the round bar into two large steel bars, then into
+        bolts loaded in shear, and finally into an aluminum plate that the press grips.</p>
+      <p class="detail-page-text">Using two different materials there was deliberate. The press jaws are knurled, and
+        the lower hardness of the aluminum lets them dig in and get a genuinely strong grip, which steel would not
+        allow. The rest of the tooling is five steel parts, welded together and bolted onto the aluminum plate.</p>
+      <p class="detail-page-text">An FEA study of the steel bars at 2000 lbf per bolt hole showed a peak stress of
+        65.8 MPa, a factor of safety of 5.3 on the tooling itself. The bolts were nowhere near their limit. The design
+        was intended to fail nowhere: the strap was supposed to be the only thing that broke.</p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-2">Testing it</h3>
+      <p class="detail-page-text">The test did not go exactly as designed. The strap we had was too long to fit in the
+        press in single tension, so we pinned both ends and loaded it doubled up, in double tension, which halves the
+        length and doubles the breaking load.</p>
+      <p class="detail-page-text">The first run ended early: the tooling slipped out of the jaws at 7634 lbf. That
+        turned out not to be a grip failure at all. The wrapped strap tightens under load, and it tightened enough to
+        momentarily drop the force to near zero, at which point the lower jaws simply loosened and fell away. The two
+        large force drops visible in the data are that same tightening happening.</p>
+      <p class="detail-page-text">We reset and ran it again, and the second run went cleanly up until the strap failed
+        at <strong>10717 lbf</strong>. It broke where it was predicted to break, at the top where it makes a 180° turn
+        around the round bar, with the tooling completely undamaged.</p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-2">The result</h3>
+      <p class="detail-page-text">Against the 4000 lbf double-tension rating, that gives an experimental factor of
+        safety of 10717 / 4000 = <strong>2.68</strong>, roughly half the manufacturer's claimed value of five. The
+        tooling itself came through the test with nothing worse than jaw marks in the aluminum plate, which is exactly
+        what that plate is there for, and it is still usable for breaking more and larger straps.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+
+        <!-- CAD Model -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Interactive CAD Model</h3>
+          <p class="detail-page-text">Explore the 3D model of the tooling in your browser.</p>
+          <img src="https://files.calebhottes.com/StrapBreaker/StrapBreakerThumbnail.png"
+            alt="The strap breaker tooling, CAD model beside the finished part" class="project-media-single-image"
+            onclick="openEnlargeableImageModal(this.src)" onerror="this.style.display='none'">
+          <a href="https://cad.calebhottes.com/website/?model=strap-breaker" target="_blank"
+            class="see-more-details-button">Open 3D Viewer<i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Drawing Package -->
+        <div class="project-media">
+          <h3 class="text-xl font-medium mb-2">Drawing Package</h3>
+          <p class="detail-page-text">The manufacturing drawings for every part of the tooling.</p>
+          <img src="https://files.calebhottes.com/StrapBreaker/DrawingPackageThumbnail.png" alt="Drawing Package"
+            class="project-media-single-image" onclick="openEnlargeableImageModal(this.src)"
+            onerror="this.style.display='none'">
+          <a href="https://files.calebhottes.com/StrapBreaker/StrapBreakerDrawingPackage.pdf" target="_blank"
+            class="see-more-details-button">Open Full Document<i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Final Report -->
+        <div class="project-media md:col-span-2">
+          <h3 class="text-xl font-medium mb-2">Factor of Safety Lab Report</h3>
+          <p class="detail-page-text">The full write-up: design rationale, the FEA study, both sets of test data, the
+            failure description and the factor of safety calculation.</p>
+          <img src="https://files.calebhottes.com/StrapBreaker/FinalReportThumbnail.png"
+            alt="Factor of Safety Lab Report" class="project-media-single-image"
+            onclick="openEnlargeableImageModal(this.src)" onerror="this.style.display='none'">
+          <a href="https://files.calebhottes.com/StrapBreaker/StrapBreakerFinalReport.pdf" target="_blank"
+            class="see-more-details-button">Open Full Report<i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
+
+        <!-- Enlargeable Image -->
+        <div id="enlargeableImageModal" class="enlargeable-modal">
+          <span class="close enlargeable-modal-close android-hidden">&times;</span>
+          <img class="enlargeable-modal-content" id="enlargeableModalImage">
+        </div>
+
+      </div>
+    </section>
+    <!-- Back Button at the Bottom -->
+    <div class="text-center mt-8 android-hidden" id="backButton">
+      <a href="javascript:history.back()" class="back-button-link">Back</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-main">
+    <div class="footer-container">
+      <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="/src/scripts/enlargeImage.js"></script>
+</body>
+
+</html>
