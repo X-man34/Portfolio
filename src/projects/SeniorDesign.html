@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Senior Design</title>
+  <title>Lean-Controlled Sports Wheelchair</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -31,49 +31,181 @@
   <!-- Main Content -->
   <main class="main-content">
     <section class="detail-page-section">
-      <h2 class="text-3xl font-semibold mb-4">Boise State Senior Design</h2>
-      <p class="detail-page-text">This is my university senior design project. We are designing a custom lean controlled
-        wheelchair for a half paralyzed kid. The premise of the project is that by removing the need to move your
-        wheelchair with your hands you can improve performance in wheelchair basketball. We are accomplishing this by
-        putting motors and a control system on an existing sports wheelchair. It should hit around 13mph in a couple
-        seconds and have a 2hr runtime. Below you can view the cad model and read our in-depth report. </p>
+      <div class="sm:flex sm:items-start sm:justify-between sm:gap-6 mb-6">
+        <div>
+          <h2 class="text-3xl font-semibold mb-2">Lean-Controlled Sports Wheelchair</h2>
+          <p class="text-gray-500">Boise State University &mdash; Senior Design &middot; 2026 &middot; Prototype
+            development and integration</p>
+        </div>
+        <img src="https://files.calebhottes.com/Senior%20Design/leanTeamLogo.png"
+          alt="Team LEAN logo: the word LEAN beside a hand-drawn figure leaning in a wheelchair"
+          class="h-12 w-auto mt-4 sm:mt-0 shrink-0">
+      </div>
 
+      <!-- Hero image -->
+      <img src="https://files.calebhottes.com/Senior%20Design/photos/seniorDesign1-1600.jpg"
+        alt="Sports wheelchair prototype on a shop floor with custom-fabricated aluminium drivetrain mounts and an electric motor installed on the green frame"
+        class="w-full md:w-2/3 lg:w-1/2 h-auto rounded-lg shadow-md mx-auto mb-2" loading="eager">
+      <p class="text-sm text-gray-500 mb-8">Partially complete wheelchair prototype with custom-fabricated drivetrain
+        and mounting
+        assemblies installed.</p>
 
+      <!-- Overview -->
+      <h3 class="text-2xl font-semibold mb-3">Project Overview</h3>
+      <p class="detail-page-text">Our senior design team is developing a motorized sports wheelchair controlled by the
+        athlete's body movements rather than traditional hand propulsion. The goal is to let a wheelchair athlete
+        maneuver during basketball and other court sports without giving up the use of their hands for shooting,
+        passing, and ball handling.</p>
+      <p class="detail-page-text">We are modifying an existing sports wheelchair with a custom drivetrain, motors,
+        batteries, and a pressure-sensing control system. The project requires balancing performance, durability,
+        manufacturability, safety, and the constraints of the wheelchair frame we started from.</p>
+      <div class="mb-6">
+        <a href="https://cad.calebhottes.com/website/?model=senior-design" target="_blank"
+          class="see-more-details-button inline-flex items-center">
+          <i class="fas fa-cube mr-2"></i>Open the interactive CAD model
+          <i class="fas fa-external-link-alt ml-2 text-sm"></i></a>
+      </div>
+
+      <!-- Engineering challenge -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">The Engineering Challenge</h3>
+      <p class="detail-page-text">The hard part is not the idea &mdash; it is fitting a complete electromechanical
+        drive system onto a frame that was never designed to carry one, without compromising the handling that makes a
+        sports chair worth using. Every custom component has to share space with an existing tube geometry, survive
+        court-sport loads and impacts, remain serviceable, and be something our team can actually manufacture with the
+        tools available to us.</p>
+
+      <!-- My role -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">My Role: Mechanical Design and Fabrication</h3>
+      <p class="detail-page-text">I have taken a leading role in the mechanical design and fabrication of the
+        wheelchair, particularly the custom drivetrain and motor mounting systems.</p>
+      <p class="detail-page-text">The project has given me extensive hands-on machining experience, including:</p>
+      <ul class="list-disc list-inside detail-page-text space-y-1">
+        <li>Operating a manual lathe and 2-axis CNC mill.</li>
+        <li>Machining components that require close dimensional tolerances.</li>
+        <li>Producing press-fit connections and precision mechanical interfaces.</li>
+        <li>Fabricating and assembling custom drivetrain components.</li>
+        <li>Translating SolidWorks models into physical components.</li>
+        <li>Troubleshooting manufacturing and assembly problems.</li>
+        <li>Making design decisions based on the tools, materials, and realistic fabrication constraints we have.</li>
+      </ul>
+      <p class="detail-page-text mt-4">One of the most valuable lessons has been understanding the difference between a
+        design that works in CAD and one that can be manufactured, assembled, serviced, and operated reliably.</p>
+
+      <!-- Mechanical design -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">Mechanical Design</h3>
+      <div class="md:flex md:gap-6 md:items-start">
+        <div class="md:w-1/2">
+          <p class="detail-page-text">The wheelchair uses a custom drivetrain built around dual electric motors and a
+            quick-disconnect dog-coupling system.</p>
+          <p class="detail-page-text">Design considerations include shaft alignment, bearings, press fits, mounting
+            geometry, drivetrain durability, assembly access, and integrating custom components with an existing sports
+            wheelchair. The work also requires understanding the relationship between motor performance, gear
+            reduction, available packaging space, and wheelchair dynamics.</p>
+          <p class="detail-page-text">SolidWorks has been used extensively for part design, assemblies, and advanced
+            surface modeling where conventional modeling tools were not sufficient.</p>
+        </div>
+        <div class="md:w-1/2 mt-4 md:mt-0" id="integration-gallery" data-mg-auto data-mg-modal-id="mg-integration">
+          <img src="https://files.calebhottes.com/Senior%20Design/photos/seniorDesign2-1600.jpg"
+            data-mg-src="https://files.calebhottes.com/Senior%20Design/photos/seniorDesign2.jpg" data-mg-type="image"
+            alt="The green sports wheelchair frame on a workbench in the shop, partially disassembled with one wheel removed and hand tools and clamps laid out around it"
+            class="w-full h-auto rounded-lg shadow-md" loading="lazy">
+          <p class="text-sm text-gray-500 mt-2">Mechanical integration in progress: adapting the existing sports
+            wheelchair frame to accommodate the motorized drivetrain and custom mounting components. Click to enlarge.
+          </p>
+        </div>
+      </div>
+
+      <!-- Teamwork -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">Teamwork and Leadership</h3>
+      <p class="detail-page-text">This is a multidisciplinary project involving mechanical, electrical, and computer
+        systems engineering. I have helped lead the mechanical fabrication effort, coordinate responsibilities, and
+        keep us moving toward project milestones.</p>
+      <p class="detail-page-text">That has meant assigning work based on individual strengths, managing differences in
+        experience and working styles, communicating across engineering disciplines, and dealing with coordination and
+        accountability problems as they come up. It has been an important practical experience in technical leadership
+        &mdash; specifically, learning how to keep a diverse engineering team productive while working toward a common
+        technical objective.</p>
+
+      <!-- Electronics -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">Electronics and Controls</h3>
+      <p class="detail-page-text">Although my primary contribution is mechanical, I have also independently explored
+        embedded electronics and built an ESP32-based controller prototype to support project development. That work
+        has broadened my understanding of microelectronics and hardware integration, and it helps me collaborate more
+        effectively with the electrical and computer systems engineers on the team.</p>
+
+      <!-- Prototype development -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">Prototype Development</h3>
+      <p class="detail-page-text">The project has progressed from conceptual design and engineering analysis into
+        machining, assembly, and prototype integration. The photographs below show the transformation from an existing
+        wheelchair into a modified system with custom structural components, motor mounts, and drivetrain assemblies.
+      </p>
+      <p class="detail-page-text">The chair is still in active development. Full-system performance, durability, and
+        on-court testing have not yet been completed, and the targets we are designing to are design goals rather than
+        measured results.</p>
+
+      <!-- Gallery -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">Gallery</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8" id="main-gallery" data-mg-auto data-mg-modal-id="mg-main">
+        <figure>
+          <img src="https://files.calebhottes.com/Senior%20Design/photos/seniorDesign1-800.jpg"
+            data-mg-src="https://files.calebhottes.com/Senior%20Design/photos/seniorDesign1.jpg" data-mg-type="image"
+            alt="Sports wheelchair prototype with custom aluminium drivetrain mounts and an electric motor fitted to the frame"
+            class="w-full h-auto rounded-lg shadow-md" loading="lazy">
+          <figcaption class="text-sm text-gray-500 mt-2">Wheelchair prototype with custom-fabricated drivetrain and
+            mounting assemblies installed.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://files.calebhottes.com/Senior%20Design/photos/seniorDesign2-800.jpg"
+            data-mg-src="https://files.calebhottes.com/Senior%20Design/photos/seniorDesign2.jpg" data-mg-type="image"
+            alt="The wheelchair frame on a shop workbench mid-modification, with a wheel removed and tools laid out"
+            class="w-full h-auto rounded-lg shadow-md" loading="lazy">
+          <figcaption class="text-sm text-gray-500 mt-2">Mechanical integration in progress: adapting the existing
+            sports wheelchair frame to accommodate the motorized drivetrain and custom mounting components.
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Technical documentation -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">Technical Documentation</h3>
+      <p class="detail-page-text">The team's CAD model, design report, and control-system demonstration.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- modified wheelchair CAD Model -->
         <div class="project-media">
-          <h3 class="text-xl font-medium mb-2">Our Design</h3>
+          <h4 class="text-xl font-medium mb-2">Interactive CAD Model</h4>
           <p class="detail-page-text">Explore the 3D CAD model of our design.</p>
-          <img src="https://files.calebhottes.com/Senior%20Design/modifiedThumbnail.png" alt="" />
+          <img src="https://files.calebhottes.com/Senior%20Design/modifiedThumbnail.png"
+            alt="CAD model of the modified sports wheelchair" class="project-media-single-image" />
           <a href="https://cad.calebhottes.com/website/?model=senior-design" target="_blank"
             class="see-more-details-button">Open
             <i class="fas fa-external-link-alt ml-2"></i></a>
         </div>
 
-
         <!-- CDR Report -->
         <div class="project-media">
-          <h3 class="text-xl font-medium mb-2">Final Design Report</h3>
-          <p class="detail-page-text">My teams (very long) critical design review report. It is a comprehensive listing
-            of all the stuff we did.</p>
-          <img src="https://files.calebhottes.com/Senior%20Design/CDRReportThumbnail.png" alt="CDRReport"
-            class="project-media-single-image" onclick="openEnlargeableImageModal(this.src)">
+          <h4 class="text-xl font-medium mb-2">Critical Design Review</h4>
+          <p class="detail-page-text">My team's (very long) critical design review report. It is a comprehensive
+            listing of all the stuff we did.</p>
+          <img src="https://files.calebhottes.com/Senior%20Design/CDRReportThumbnail.png"
+            alt="First page of the critical design review report" class="project-media-single-image"
+            onclick="openEnlargeableImageModal(this.src)">
           <a href="https://files.calebhottes.com/Critical%20Design%20Review.pdf" target="_blank"
             class="see-more-details-button">Open
             full report<i class="fas fa-external-link-alt ml-2"></i></a>
         </div>
 
         <!-- interactive control demo.  -->
-        <div class="project-media">
-          <h3 class="text-xl font-medium mb-2">Pressure Sensor Array Demo</h3>
-          <p class="detail-page-text">Play with the pressure sensing algorithm in a interactive demo (AI generated)</p>
-          <img src="https://files.calebhottes.com/Senior%20Design/ControlDemoThumbnail.png" alt="" />
+        <div class="project-media md:col-span-2">
+          <h4 class="text-xl font-medium mb-2">Pressure Sensor Array Demo</h4>
+          <p class="detail-page-text">Play with the pressure sensing algorithm in an interactive demo (AI generated)
+          </p>
+          <img src="https://files.calebhottes.com/Senior%20Design/ControlDemoThumbnail.png"
+            alt="Screenshot of the interactive pressure sensor array demonstration"
+            class="project-media-single-image" />
           <a href="https://files.calebhottes.com/Senior%20Design/fsr_centroid_interactive_enhanced.html" target="_blank"
             class="see-more-details-button">Open
             <i class="fas fa-external-link-alt ml-2"></i></a>
         </div>
-
 
         <!-- Enlargeable Image -->
         <div id="enlargeableImageModal" class="enlargeable-modal">

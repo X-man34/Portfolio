@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D-Printed Pneumatic Rocket Launcher</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="/src/stylesheets/output.css">
+  <script src="/src/scripts/common.js"></script>
+  <script src="/src/scripts/media-gallery.js"></script>
+</head>
+
+<body class="body">
+  <div id="navbar-placeholder"></div>
+  <!-- Header -->
+  <header class="bg-white">
+    <div class="detail-page-header">
+      <a href="javascript:history.back()" class="detail-page-header-back">← Back</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="detail-page-section">
+      <h2 class="text-3xl font-semibold mb-2">3D-Printed Pneumatic Rocket Launcher</h2>
+      <p class="text-gray-500 mb-6">Independent design and development &middot; 2025&ndash;2026 &middot; Iterative
+        prototyping and testing</p>
+
+      <!-- Hero image -->
+      <img src="https://files.calebhottes.com/RocketLauncher/rocketLauncher123jpg-1600.jpg"
+        alt="Assembled 3D-printed pneumatic launcher with a two-litre bottle loaded into the bell, shown from the side"
+        class="w-full h-auto rounded-lg shadow-md mb-2" loading="eager">
+      <p class="text-sm text-gray-500 mb-8">Assembled pneumatic launcher with a bottle attached, illustrating the
+        complete mechanical system and its major functional components.</p>
+
+      <!-- Overview -->
+      <h3 class="text-2xl font-semibold mb-3">Project Overview</h3>
+      <p class="detail-page-text">This independent engineering project began with the challenge of designing a
+        practical, reusable pneumatic bottle-rocket launcher built primarily from 3D-printed components. I designed the
+        complete mechanical system, manufactured and assembled successive prototypes, and developed an experimental
+        testing process to find weaknesses and improve the design.</p>
+      <p class="detail-page-text">The work has given me extensive experience in mechanical design, additive
+        manufacturing, dimensional tolerances, fluid pressure systems, materials selection, and iterative engineering.
+        The launcher remains an active project &mdash; the current revision is a working prototype, not a finished
+        product.</p>
+
+      <!-- Engineering challenge -->
+      <h3 class="text-2xl font-semibold mb-3">The Engineering Challenge</h3>
+      <p class="detail-page-text">A pressurised bottle is a deceptively demanding thing to build a machine around. The
+        launcher has to hold a sealed air charge against a consumer soda bottle, release it on command through a
+        mechanical trigger, survive the recoil of that release, and do it all repeatedly &mdash; using parts made on a
+        desktop 3D printer, where layer adhesion, print tolerances, and material behaviour all work against you.</p>
+      <p class="detail-page-text">The design problems that drove most of the development work were:</p>
+      <ul class="list-disc list-inside detail-page-text space-y-1">
+        <li>Creating reliable seals in 3D-printed assemblies.</li>
+        <li>Designing accurately fitting threaded connections.</li>
+        <li>Developing mechanical triggering and release components.</li>
+        <li>Managing dimensional tolerances between printed parts.</li>
+        <li>Improving durability and structural rigidity.</li>
+        <li>Balancing component strength against printability, assembly complexity, and material consumption.</li>
+        <li>Incorporating feedback from repeated physical testing.</li>
+      </ul>
+
+      <!-- Design and iteration -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">Design and Iteration</h3>
+      <div class="md:flex md:gap-6 md:items-start">
+        <div class="md:w-1/2">
+          <p class="detail-page-text">The launcher has gone through multiple major revisions, each one informed by what
+            physically broke or leaked on the previous prototype. Rather than treating a completed CAD model as the
+            final product, I kept returning to the design after finding weaknesses in hardware.</p>
+          <p class="detail-page-text">Changes across generations have included adjustments to thread dimensions,
+            trigger geometry, component reinforcement, mounting interfaces, material selection, and assembly hardware.
+            Several of those changes came directly out of failures: enlarging the charging-handle clearance after
+            repeated premature fires, tightening the Schrader thread after an immersion test showed it was finger-loose,
+            and moving away from PLA after a prototype softened and warped in a hot car.</p>
+        </div>
+        <div class="md:w-1/2 mt-4 md:mt-0" id="iteration-gallery" data-mg-auto data-mg-modal-id="mg-iteration">
+          <img src="https://files.calebhottes.com/RocketLauncher/rocketLauncher1-1600.jpg"
+            data-mg-src="https://files.calebhottes.com/RocketLauncher/rocketLauncher1.jpg" data-mg-type="image"
+            alt="Three printed launcher prototypes laid out side by side, showing changes to the controls, housing and stock between revisions"
+            class="w-full h-auto rounded-lg shadow-md" loading="lazy">
+          <p class="text-sm text-gray-500 mt-2">Multiple printed prototypes illustrating successive design revisions and
+            changes to the controls, housing, and assembly. Click to enlarge.</p>
+        </div>
+      </div>
+
+      <!-- Pressurised components -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">Engineering Pressurised Components</h3>
+      <p class="detail-page-text">The central challenge was designing a mechanical assembly that could reliably retain
+        pneumatic pressure while being made from additively manufactured parts. That meant paying close attention to
+        component geometry, threaded interfaces, O-ring sealing, material behaviour, and structural loading.</p>
+      <p class="detail-page-text">Early leak testing pointed at the threaded connections and worn seals rather than the
+        printed parts themselves, which led to dimensional refinements and revised components. Separately, thermal
+        deformation of a PLA prototype during testing demonstrated the limits of that material for this application and
+        motivated a move to more temperature-resistant printing materials.</p>
+
+      <!-- Testing -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">Experimental Testing and Validation</h3>
+      <p class="detail-page-text">I ran and documented several distinct testing programs to evaluate the design. These
+        were shop-built experiments with the instrumentation I had on hand, so their conclusions are indicative rather
+        than certified &mdash; but they produced concrete evidence that drove subsequent design changes.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="project-media text-left">
+          <h4 class="text-lg font-semibold mb-2">Fatigue and repeated operation</h4>
+          <p class="text-gray-700">Prototype V3.1 was fired repeatedly at different pressures, with and without water,
+            to observe mechanical behaviour, release reliability, and the effect of repeated loading on the mechanism.
+            Of eleven runs the only failure was a premature fire, which I traced to the charging handle being knocked
+            while the launcher sat on the ground.</p>
+        </div>
+        <div class="project-media text-left">
+          <h4 class="text-lg font-semibold mb-2">Leak testing</h4>
+          <p class="text-gray-700">Pressure-retention measurements and water-immersion testing were used to locate
+            leakage. The immersion test was what separated losses inside the launcher from losses in the external
+            inflation equipment &mdash; most of the measured pressure drop turned out to be the bike pump, not the
+            launcher.</p>
+        </div>
+        <div class="project-media text-left">
+          <h4 class="text-lg font-semibold mb-2">Destructive pressure testing</h4>
+          <p class="text-gray-700">A destructive test on the high-pressure components investigated failure behaviour.
+            The test bottle failed somewhere between roughly 140 and 150 psi, and the wreckage gave evidence about
+            deformation, fracture location, and secondary damage to the mechanical parts. It characterises one failure
+            event on one setup; it is not a safety certification.</p>
+        </div>
+        <div class="project-media text-left">
+          <h4 class="text-lg font-semibold mb-2">Component redundancy testing</h4>
+          <p class="text-gray-700">Prototype V3.3 was pressurised under eight different clamp configurations to see what
+            happens when clamps are missing. The results showed that clamp <em>distribution</em> matters more than
+            count: configurations with clamps on both sides of the centreline held high pressures, while clamps grouped
+            on one side failed at a fraction of that.</p>
+        </div>
+      </div>
+
+      <!-- Test documentation -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">Test Documentation</h3>
+      <p class="detail-page-text">The detail behind each test, including the raw results and photographs, is collapsed
+        below.</p>
+
+      <details class="collapse-panel mb-4">
+        <summary class="collapse-summary">
+          <span>V3.1 &mdash; Fatigue and repeated-operation test</span>
+          <i class="fas fa-chevron-down collapse-arrow"></i>
+        </summary>
+        <div class="collapse-body">
+          <p class="text-gray-700 mb-4">Eleven launches of prototype V3.1 at varying pressures, with and without water
+            in the bottle.</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm text-gray-700 mb-4">
+              <caption class="sr-only">V3.1 fatigue test results</caption>
+              <thead class="border-b border-gray-300 font-semibold">
+                <tr>
+                  <th scope="col" class="py-2 pr-4">Test</th>
+                  <th scope="col" class="py-2 pr-4">Pressure (psi)</th>
+                  <th scope="col" class="py-2 pr-4">Water</th>
+                  <th scope="col" class="py-2">Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">1&ndash;6</td>
+                  <td class="py-1 pr-4">80</td>
+                  <td class="py-1 pr-4">Yes</td>
+                  <td class="py-1">Success</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">7&ndash;9</td>
+                  <td class="py-1 pr-4">80</td>
+                  <td class="py-1 pr-4">No</td>
+                  <td class="py-1">Success</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">10</td>
+                  <td class="py-1 pr-4">70</td>
+                  <td class="py-1 pr-4">No</td>
+                  <td class="py-1">Failure &mdash; premature fire</td>
+                </tr>
+                <tr>
+                  <td class="py-1 pr-4">11</td>
+                  <td class="py-1 pr-4">110</td>
+                  <td class="py-1 pr-4">No</td>
+                  <td class="py-1">Success</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-700 mb-2"><strong>Discussion.</strong> The single failure was a premature fire, most
+            likely caused by the charging handle being bumped while the launcher was on the ground, loosening the
+            trigger enough to release. Flight behaviour was a separate problem: with water in a horizontally mounted
+            bottle the rocket was unbalanced and nosed down hard, and air could escape past the water rather than
+            expelling it. Air-only launches flew better, and adding a launch rail with zip-tie loops improved flight
+            path further.</p>
+          <p class="text-gray-700">After this test the PLA launcher was left in a hot car and softened and warped,
+            rendering the bell body, charging handle, and side plates unusable. That result drove the switch to a more
+            heat-resistant printing material.</p>
+        </div>
+      </details>
+
+      <details class="collapse-panel mb-4">
+        <summary class="collapse-summary">
+          <span>V3.2 &mdash; Destructive pressure test</span>
+          <i class="fas fa-chevron-down collapse-arrow"></i>
+        </summary>
+        <div class="collapse-body">
+          <p class="text-gray-700 mb-4"><strong>Method.</strong> Only the high-pressure components were tested: the
+            launch tube, clamps, O-rings, trigger, Schrader valve, and a two-litre soda bottle. The bottle was filled
+            roughly 95% with water to reduce the stored energy of an explosion, then pressurised from an air compressor
+            in stages. As pressures rose I moved behind a cooler and placed a kiddie pool over the bottle.</p>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4" id="burst-gallery" data-mg-auto
+            data-mg-modal-id="mg-burst">
+            <figure>
+              <img src="https://files.calebhottes.com/RocketLauncher/tests/V3.2/setup-800.jpg"
+                data-mg-src="https://files.calebhottes.com/RocketLauncher/tests/V3.2/setup-1600.jpg" data-mg-type="image"
+                alt="Unpressurised destructive test setup laid out on the ground" class="w-full h-auto rounded shadow"
+                loading="lazy">
+              <figcaption class="text-xs text-gray-500 mt-1">Initial unpressurised test setup.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://files.calebhottes.com/RocketLauncher/tests/V3.2/130psiCracks-800.jpg"
+                data-mg-src="https://files.calebhottes.com/RocketLauncher/tests/V3.2/130psiCracks-1600.jpg"
+                data-mg-type="image" alt="Stress cracks visible near the neck of the pressurised bottle"
+                class="w-full h-auto rounded shadow" loading="lazy">
+              <figcaption class="text-xs text-gray-500 mt-1">Stress cracking at the bottle neck.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://files.calebhottes.com/RocketLauncher/tests/V3.2/140psiSwelling-800.jpg"
+                data-mg-src="https://files.calebhottes.com/RocketLauncher/tests/V3.2/140psiSwelling-1600.jpg"
+                data-mg-type="image" alt="Pronounced swelling of the bottle at approximately 140 psi, seen from above"
+                class="w-full h-auto rounded shadow" loading="lazy">
+              <figcaption class="text-xs text-gray-500 mt-1">Swelling at roughly 140 psi.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://files.calebhottes.com/RocketLauncher/tests/V3.2/wreckageAfterBurst-800.jpg"
+                data-mg-src="https://files.calebhottes.com/RocketLauncher/tests/V3.2/wreckageAfterBurst-1600.jpg"
+                data-mg-type="image" alt="Wreckage of the test assembly where it came to rest after the bottle burst"
+                class="w-full h-auto rounded shadow" loading="lazy">
+              <figcaption class="text-xs text-gray-500 mt-1">Wreckage after the burst.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://files.calebhottes.com/RocketLauncher/tests/V3.2/bottleFailureCloseup-800.jpg"
+                data-mg-src="https://files.calebhottes.com/RocketLauncher/tests/V3.2/bottleFailureCloseup-1600.jpg"
+                data-mg-type="image" alt="Close-up of the split side wall of the failed bottle"
+                class="w-full h-auto rounded shadow" loading="lazy">
+              <figcaption class="text-xs text-gray-500 mt-1">The split bottle.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://files.calebhottes.com/RocketLauncher/tests/V3.2/launchRingFailureCloseup-800.jpg"
+                data-mg-src="https://files.calebhottes.com/RocketLauncher/tests/V3.2/launchRingFailureCloseup-1600.jpg"
+                data-mg-type="image" alt="Close-up of the broken launch tube and failed clamp"
+                class="w-full h-auto rounded shadow" loading="lazy">
+              <figcaption class="text-xs text-gray-500 mt-1">Broken launch tube and clamp.</figcaption>
+            </figure>
+          </div>
+          <p class="text-gray-700 mb-2"><strong>Results.</strong> Pressure was raised in roughly 10 psi increments from
+            100 psi. Nothing notable happened until 120 psi, where the bottle began to swell slightly. At 133 psi the
+            swelling was more pronounced, filling took noticeably longer, and stress cracks appeared near the neck. At
+            140 psi the bottle swelled considerably and airflow never fully stopped. The system failed while filling
+            from 140 to 150 psi: the bottle split and the internal mechanism broke.</p>
+          <p class="text-gray-700 mb-2"><strong>Discussion.</strong> Without a dedicated pressure or strain gauge this
+            is an ad-hoc test, and I've tried to be careful about what it does and does not show. The bottle split at
+            the side wall rather than at the neck cracks I expected, which matches high-speed footage of similar tests
+            published online. The printed-part failures were all one-sided, with only one clamp broken, pointing to an
+            asymmetric burst in the air bubble above the water line &mdash; so my assessment is that the bottle is the
+            failure mode, and the launch tube and clamp damage are artefacts of the test setup that could likely have
+            withstood more pressure.</p>
+          <p class="text-gray-700"><strong>Conclusion.</strong> The bottle split at somewhere between 140 and 150 psi
+            and the blast broke the launch tube and a clamp. This informs the pressure rating and safety-factor choices
+            for the design. It is a single destructive data point on one bottle and one assembly, not a demonstration
+            that any particular operating pressure is safe.</p>
+        </div>
+      </details>
+
+      <details class="collapse-panel mb-4">
+        <summary class="collapse-summary">
+          <span>V3.2 &mdash; Leak test</span>
+          <i class="fas fa-chevron-down collapse-arrow"></i>
+        </summary>
+        <div class="collapse-body">
+          <p class="text-gray-700 mb-2"><strong>Method.</strong> The first test pumped the system to 100 psi and watched
+            the bike-pump gauge. The immersion tests submerged the launch tube, trigger, clamps, and a pressurised
+            bottle in a cooler full of water.</p>
+          <p class="text-gray-700 mb-2"><strong>Results.</strong> Pressure fell from 100 psi to 80 psi in 1 minute 19
+            seconds as measured at the pump &mdash; but the immersion test showed almost all of that loss was through
+            the pump itself. With the pump detached, most leakage stopped: no leaks in the threads, very little through
+            the part, and small leaks through the O-rings when the assembly was impacted. The O-rings in use were old
+            and damaged. A second immersion test did find leakage at the Schrader valve threads, which were
+            finger-loose.</p>
+          <p class="text-gray-700"><strong>Conclusion.</strong> Encouraging overall, with two clear actions: decrease
+            the thread size and replace the O-rings.</p>
+        </div>
+      </details>
+
+      <details class="collapse-panel mb-4">
+        <summary class="collapse-summary">
+          <span>V3.2 &mdash; Playtesting</span>
+          <i class="fas fa-chevron-down collapse-arrow"></i>
+        </summary>
+        <div class="collapse-body">
+          <p class="text-gray-700 mb-2"><strong>Results.</strong> The launcher fired prematurely a few times, caused by
+            the charging handle not travelling far enough forward. I fixed it by enlarging the holes by hand and then
+            carried the change back into CAD.</p>
+          <p class="text-gray-700 mb-2">Stress testing at 130 psi caused the bottle to swell and jam in the bell; we
+            bled air out through the Schrader valve until it came free and fired. The press-fit ring of the bell failed
+            during this, though the lower bolt held it in place &mdash; the bell body was never designed to take the
+            load of a swelling bottle. A later firing with only the front bolt installed, at a reasonable pressure,
+            forced the main body apart and cracked the Picatinny rail, body, and stock.</p>
+          <p class="text-gray-700 mb-1"><strong>Failures and fixes identified:</strong></p>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
+            <li>Over-pressured bottle jamming in the bell &rarr; introduce a pressure rating and consider a reinforcing
+              sleeve to limit bottle swelling.</li>
+            <li>Bell body coming off &rarr; use the production press-fit tolerance; don't over-pressurise.</li>
+            <li>Main body cracking &rarr; install all bolts.</li>
+            <li>Picatinny rail cracking &rarr; stronger slicer settings; don't over-pressurise.</li>
+            <li>Premature firing &rarr; enlarge the charging-handle hole.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="collapse-panel mb-4">
+        <summary class="collapse-summary">
+          <span>V3.3 &mdash; Clamp redundancy test</span>
+          <i class="fas fa-chevron-down collapse-arrow"></i>
+        </summary>
+        <div class="collapse-body">
+          <p class="text-gray-700 mb-4"><strong>Method.</strong> With a water-filled bottle and the launch tube, clamps,
+            and trigger attached, I opened the compressor valve at 0 psi and gradually raised the regulator, recording
+            the result for each clamp configuration. Only one O-ring was available, and the clamps were a mix of
+            original and reverse-engineered versions.</p>
+          <img src="https://files.calebhottes.com/RocketLauncher/tests/V3.3/RedundancyTestSetup-800.jpg"
+            alt="Redundancy test setup with the launch tube and clamps attached to a water-filled bottle"
+            class="w-full md:w-1/2 h-auto rounded shadow mb-4 mx-auto"
+            onclick="openEnlargeableImageModal('https://files.calebhottes.com/RocketLauncher/tests/V3.3/RedundancyTestSetup-1600.jpg')"
+            loading="lazy">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm text-gray-700 mb-4">
+              <caption class="sr-only">V3.3 clamp redundancy test results</caption>
+              <thead class="border-b border-gray-300 font-semibold">
+                <tr>
+                  <th scope="col" class="py-2 pr-4">Test</th>
+                  <th scope="col" class="py-2 pr-4">Max pressure reached (psi)</th>
+                  <th scope="col" class="py-2">Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">1</td>
+                  <td class="py-1 pr-4">120</td>
+                  <td class="py-1">Success</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">2</td>
+                  <td class="py-1 pr-4">120</td>
+                  <td class="py-1">Success</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">3</td>
+                  <td class="py-1 pr-4">110 &plusmn; 5</td>
+                  <td class="py-1">Failure (no damage to setup or bottle)</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">4</td>
+                  <td class="py-1 pr-4">20 &plusmn; 5</td>
+                  <td class="py-1">Failure &mdash; launch ring would not engage</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">5</td>
+                  <td class="py-1 pr-4">15 &plusmn; 2</td>
+                  <td class="py-1">Failure</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">6</td>
+                  <td class="py-1 pr-4">125 &plusmn; 2</td>
+                  <td class="py-1">Failure</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">7</td>
+                  <td class="py-1 pr-4">135</td>
+                  <td class="py-1">Success &mdash; compressor hit its maximum</td>
+                </tr>
+                <tr>
+                  <td class="py-1 pr-4">8</td>
+                  <td class="py-1 pr-4">135</td>
+                  <td class="py-1">Success &mdash; compressor hit its maximum</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-700 mb-2"><strong>Discussion.</strong> The pattern is about geometry, not quantity. Three
+            evenly spaced clamps reached 110 psi, but three clamps grouped on one side of the centreline managed only
+            15 psi. With four or more clamps it becomes inevitable that some sit on each side, and those configurations
+            reached 125 and 135 psi.</p>
+          <p class="text-gray-700">Tests 7 and 8 never actually failed &mdash; the compressor topped out at 135 psi
+            &mdash; so their true limit is unknown. Taken with the destructive test, where six clamps survived past the
+            compressor's maximum, it seems likely that five clamps, or four in the test 7 arrangement, can hold more
+            pressure than an unreinforced bottle will.</p>
+        </div>
+      </details>
+
+      <details class="collapse-panel mb-6">
+        <summary class="collapse-summary">
+          <span>High-pressure-air shot capacity analysis</span>
+          <i class="fas fa-chevron-down collapse-arrow"></i>
+        </summary>
+        <div class="collapse-body">
+          <p class="text-gray-700 mb-2">A first-order analysis of how many launches a compressed-air (HPA) tank could
+            realistically supply. Treating temperature and the gas constant as equal between the tank and the bottle,
+            the ideal gas law makes the mass of air proportional to <em>pV</em>, so the number of shots is simply the
+            ratio of available air to air consumed per shot:</p>
+          <p class="text-center text-gray-800 font-medium mb-4">n = (p<sub>tank</sub> V<sub>tank</sub>) /
+            (p<sub>bottle</sub> V<sub>bottle</sub>)</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm text-gray-700 mb-4">
+              <caption class="sr-only">Theoretical shot capacity for a 48 cubic inch HPA tank</caption>
+              <thead class="border-b border-gray-300 font-semibold">
+                <tr>
+                  <th scope="col" class="py-2 pr-4">Tank</th>
+                  <th scope="col" class="py-2 pr-4">Bottle volume</th>
+                  <th scope="col" class="py-2 pr-4">80 psi</th>
+                  <th scope="col" class="py-2 pr-4">100 psi</th>
+                  <th scope="col" class="py-2">110 psi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">48 ci, 3000 psi</td>
+                  <td class="py-1 pr-4">1.1 L air</td>
+                  <td class="py-1 pr-4">26.8</td>
+                  <td class="py-1 pr-4">21.5</td>
+                  <td class="py-1">19.5</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">48 ci, 3000 psi</td>
+                  <td class="py-1 pr-4">0.75 L water/air</td>
+                  <td class="py-1 pr-4">39.3</td>
+                  <td class="py-1 pr-4">31.5</td>
+                  <td class="py-1">28.6</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-1 pr-4">48 ci, 4500 psi</td>
+                  <td class="py-1 pr-4">1.1 L air</td>
+                  <td class="py-1 pr-4">40.2</td>
+                  <td class="py-1 pr-4">32.2</td>
+                  <td class="py-1">29.3</td>
+                </tr>
+                <tr>
+                  <td class="py-1 pr-4">48 ci, 4500 psi</td>
+                  <td class="py-1 pr-4">0.75 L water/air</td>
+                  <td class="py-1 pr-4">59.0</td>
+                  <td class="py-1 pr-4">47.2</td>
+                  <td class="py-1">42.9</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-700">These are theoretical figures assuming no losses and constant temperature. A 4500 psi
+            tank gives about 50% more shots than a 3000 psi tank at the same bottle pressure and volume, and dropping
+            the bottle volume from 1.1 L to 0.75 L adds roughly 47%. Even the worst case &mdash; a cheap 48 ci, 3000 psi
+            tank at 110 psi air-only &mdash; gives about 20 shots.</p>
+        </div>
+      </details>
+
+      <!-- Lessons -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">Engineering Lessons</h3>
+      <ul class="list-disc list-inside detail-page-text space-y-1">
+        <li>Functional prototypes reveal problems that are difficult to anticipate in CAD.</li>
+        <li>Additive manufacturing demands careful attention to material properties and geometric tolerances.</li>
+        <li>Repeatable experiments are what separate assumptions from observed performance.</li>
+        <li>A failure analysis is often more valuable than a successful test when deciding what to improve.</li>
+        <li>Good product development means repeatedly revisiting earlier design decisions.</li>
+      </ul>
+      <p class="detail-page-text mt-4">Taken together, the project is an independent progression through mechanical
+        design, fabrication, assembly, experimentation, and redesign &mdash; and it is still going.</p>
+
+      <!-- Gallery -->
+      <h3 class="text-2xl font-semibold mt-8 mb-3">Gallery</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="main-gallery" data-mg-auto data-mg-modal-id="mg-main">
+        <figure>
+          <img src="https://files.calebhottes.com/RocketLauncher/rocketLauncher123jpg-800.jpg"
+            data-mg-src="https://files.calebhottes.com/RocketLauncher/rocketLauncher123jpg.jpg" data-mg-type="image"
+            alt="Side view of the assembled pneumatic launcher with a bottle attached"
+            class="w-full h-auto rounded-lg shadow-md" loading="lazy">
+          <figcaption class="text-sm text-gray-500 mt-2">Assembled pneumatic launcher with a bottle attached,
+            illustrating the complete mechanical system and its major functional components.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://files.calebhottes.com/RocketLauncher/rocketLauncher12jpg-800.jpg"
+            data-mg-src="https://files.calebhottes.com/RocketLauncher/rocketLauncher12jpg.jpg" data-mg-type="image"
+            alt="Rear view down the length of the launcher showing the charging connection and assembled housing"
+            class="w-full h-auto rounded-lg shadow-md" loading="lazy">
+          <figcaption class="text-sm text-gray-500 mt-2">Rear view showing the charging connection, mechanical
+            alignment, and assembled housing.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://files.calebhottes.com/RocketLauncher/rocketLauncher1-800.jpg"
+            data-mg-src="https://files.calebhottes.com/RocketLauncher/rocketLauncher1.jpg" data-mg-type="image"
+            alt="Three printed launcher prototypes arranged on a wooden floor showing successive revisions"
+            class="w-full h-auto rounded-lg shadow-md" loading="lazy">
+          <figcaption class="text-sm text-gray-500 mt-2">Multiple printed prototypes illustrating successive design
+            revisions and changes to the controls, housing, and assembly.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Enlargeable Image -->
+      <div id="enlargeableImageModal" class="enlargeable-modal">
+        <span class="close enlargeable-modal-close android-hidden">&times;</span>
+        <img class="enlargeable-modal-content" id="enlargeableModalImage">
+      </div>
+    </section>
+
+    <!-- Back Button at the Bottom -->
+    <div class="text-center mt-8 android-hidden">
+      <a href="javascript:history.back()" class="back-button-link">Back</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-main">
+    <div class="footer-container">
+      <p>&copy; <span class="year"></span> <span class="my-name"></span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/src/scripts/enlargeImage.js"></script>
+</body>
+
+</html>
